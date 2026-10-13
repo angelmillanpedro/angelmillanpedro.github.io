@@ -4,7 +4,7 @@
 .g{background:rgba(255,255,255,.22);backdrop-filter:blur(22px) saturate(160%);-webkit-backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.55);box-shadow:0 8px 40px rgba(120,80,110,.18),inset 0 1px 0 rgba(255,255,255,.6)}
 .fi{min-width:0;max-width:100%;box-sizing:border-box;display:block;-webkit-appearance:none;appearance:none;font:inherit;min-height:3.25rem;width:100%;padding:.9rem 1rem;border-radius:1rem;background:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.7)}
 @keyframes d{0%,100%{transform:translate(0,0)}50%{transform:translate(30px,-40px)}}.b{animation:d 12s ease-in-out infinite}
-@media(prefers-reduced-motion:reduce){.b{animation:none}}</style></head>
+@media(prefers-reduced-motion:reduce){.b{animation:none}}.dt{position:relative;min-width:0}.dt::before{content:attr(data-ph);position:absolute;left:1rem;top:50%;transform:translateY(-50%);pointer-events:none;color:#6b7280;font-weight:500}.dt:has(input:valid)::before,.dt:focus-within::before{display:none}.dt input:invalid:not(:focus){color:transparent}</style></head>
 <body class="relative bg-gradient-to-br from-rose-200 via-[#f3e3ff] to-amber-100 text-stone-800 antialiased overflow-x-hidden min-h-screen">
 <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1400&q=60" alt="" class="fixed inset-0 w-full h-full object-cover opacity-40 -z-20" onerror="this.remove()">
 <div class="b fixed top-10 -left-20 w-80 h-80 rounded-full bg-fuchsia-300/60 blur-3xl -z-10"></div><div class="b fixed bottom-10 -right-20 w-96 h-96 rounded-full bg-amber-300/60 blur-3xl -z-10" style="animation-delay:-6s"></div>
@@ -40,7 +40,7 @@
 <details class="py-4"><summary class="font-semibold cursor-pointer">¿Hay bonos regalo?</summary><p class="mt-2 text-stone-600">Sí, desde 30 €, en formato digital o impreso.</p></details></section>
 
 <section id="cita" class="g rounded-[2rem] p-6 sm:p-10"><h2 class="f text-4xl sm:text-5xl">Pide tu cita</h2>
-<form id="rf" class="mt-6 grid grid-cols-2 gap-3"><input name="n" required placeholder="Nombre" class="fi col-span-2"><input name="p" required type="number" min="1" value="1" class="fi" aria-label="Personas"><input name="d" required type="date" class="fi"><input name="h" required type="time" class="fi col-span-2">
+<form id="rf" class="mt-6 grid grid-cols-2 gap-3"><input name="n" required placeholder="Nombre" class="fi col-span-2"><input name="p" required type="number" min="1" value="1" class="fi" aria-label="Personas"><div class="dt" data-ph="Fecha"><input name="d" required type="date" class="fi"></div><div class="dt col-span-2" data-ph="Hora"><input name="h" required type="time" class="fi"></div>
 <button class="col-span-2 flex items-center justify-center gap-2 py-5 rounded-full bg-stone-900 text-white font-semibold text-lg transition hover:bg-amber-500 active:scale-95"><i class="ph-bold ph-whatsapp-logo text-2xl"></i>Enviar por WhatsApp</button></form></section>
 
 <section class="g rounded-[2rem] p-3"><iframe title="Mapa" loading="lazy" class="w-full h-72 rounded-[1.5rem] border-0" src="https://www.google.com/maps?q=Calle+Sierpes+Sevilla&output=embed"></iframe>

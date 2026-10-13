@@ -4,7 +4,7 @@
 .tex{background:repeating-linear-gradient(90deg,#e11d74 0 14px,#f59e0b 14px 28px,#0f766e 28px 42px,#7c3aed 42px 56px)}
 .fi{min-width:0;max-width:100%;box-sizing:border-box;display:block;-webkit-appearance:none;appearance:none;font:inherit;min-height:3.25rem;width:100%;padding:.9rem 1rem;border-radius:1rem;background:#fff;color:#0b2b2a;border:0}
 .sun{animation:spin 40s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
-@media(prefers-reduced-motion:reduce){.sun{animation:none}}</style></head>
+@media(prefers-reduced-motion:reduce){.sun{animation:none}}.dt{position:relative;min-width:0}.dt::before{content:attr(data-ph);position:absolute;left:1rem;top:50%;transform:translateY(-50%);pointer-events:none;color:#6b7280;font-weight:500}.dt:has(input:valid)::before,.dt:focus-within::before{display:none}.dt input:invalid:not(:focus){color:transparent}</style></head>
 <body class="bg-[#0b2b2a] text-[#fff4e0] antialiased overflow-x-hidden">
 <nav class="fixed top-0 inset-x-0 z-40 h-16 px-6 flex items-center justify-between bg-[#0b2b2a]/85 backdrop-blur"><a href="#" class="f text-2xl text-[#e11d74] font-black">INTI</a>
 <div class="hidden md:flex gap-7"><a href="#historia">Historia</a><a href="#carta">Carta</a><a href="#degustacion">Degustación</a><a href="#galeria">Galería</a><a href="#donde">Dónde</a></div>
@@ -42,7 +42,7 @@
 <section class="px-6 pb-20 max-w-5xl mx-auto"><h2 class="f text-3xl sm:text-5xl">Opiniones</h2><div id="rv" class="mt-8 grid gap-5 md:grid-cols-3"></div></section>
 
 <section id="reservar" class="px-6 pb-20 max-w-xl mx-auto"><h2 class="f text-3xl sm:text-5xl">Reserva</h2><p class="mt-2 opacity-70">Confirmamos por WhatsApp.</p>
-<form id="rf" class="mt-8 grid grid-cols-2 gap-3 p-5 rounded-3xl bg-[#0f766e]"><input name="n" required placeholder="Nombre" class="fi col-span-2"><input name="p" required type="number" min="1" placeholder="Personas" class="fi"><input name="d" required type="date" class="fi"><input name="h" required type="time" class="fi col-span-2">
+<form id="rf" class="mt-8 grid grid-cols-2 gap-3 p-5 rounded-3xl bg-[#0f766e]"><input name="n" required placeholder="Nombre" class="fi col-span-2"><input name="p" required type="number" min="1" placeholder="Personas" class="fi"><div class="dt" data-ph="Fecha"><input name="d" required type="date" class="fi"></div><div class="dt col-span-2" data-ph="Hora"><input name="h" required type="time" class="fi"></div>
 <button class="col-span-2 flex items-center justify-center gap-2 py-4 rounded-2xl bg-[#f59e0b] text-[#0b2b2a] font-semibold text-lg transition hover:scale-[1.02] active:scale-95"><i class="ph-bold ph-paper-plane-tilt text-xl"></i>Enviar reserva</button></form></section>
 
 <footer id="donde" class="px-6 pt-4 pb-28"><div class="max-w-5xl mx-auto rounded-3xl bg-[#fff4e0] text-[#0b2b2a] p-6 sm:p-10 grid gap-8 md:grid-cols-2">

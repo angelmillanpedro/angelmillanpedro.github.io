@@ -4,7 +4,7 @@
 .az{background:#f3e9d2 repeating-conic-gradient(#1e4a7a 0 25%,#f3e9d2 0 50%) 0 0/36px 36px}
 .fi{min-width:0;max-width:100%;box-sizing:border-box;display:block;-webkit-appearance:none;appearance:none;font:inherit;min-height:3.25rem;width:100%;padding:.9rem 1rem;border-radius:.9rem;background:#fff;color:#2b0d08;border:0}
 @keyframes up{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}.in{animation:up 1s both}
-@media(prefers-reduced-motion:reduce){.in{animation:none}}</style></head>
+@media(prefers-reduced-motion:reduce){.in{animation:none}}.dt{position:relative;min-width:0}.dt::before{content:attr(data-ph);position:absolute;left:1rem;top:50%;transform:translateY(-50%);pointer-events:none;color:#6b7280;font-weight:500}.dt:has(input:valid)::before,.dt:focus-within::before{display:none}.dt input:invalid:not(:focus){color:transparent}</style></head>
 <body class="bg-[#f3e9d2] text-[#2b1810] antialiased overflow-x-hidden">
 <nav class="fixed top-0 inset-x-0 z-40 h-16 px-6 flex items-center justify-between bg-[#2b0d08]/85 backdrop-blur text-[#f3e9d2]">
 <a href="#" class="f text-2xl">El Rinconcillo</a>
@@ -44,7 +44,7 @@
 
 <section id="reservar" class="px-6 py-20 max-w-xl mx-auto"><h2 class="f text-4xl sm:text-5xl">Reserva tu mesa</h2><p class="mt-2 opacity-70">Te contestamos por WhatsApp para confirmar.</p>
 <form id="rf" class="mt-8 grid grid-cols-2 gap-3 p-5 rounded-3xl bg-[#e8d9b5]">
-<input name="n" required placeholder="Nombre" class="fi col-span-2"><input name="p" required type="number" min="1" placeholder="Personas" class="fi"><input name="d" required type="date" class="fi"><input name="h" required type="time" class="fi col-span-2">
+<input name="n" required placeholder="Nombre" class="fi col-span-2"><input name="p" required type="number" min="1" placeholder="Personas" class="fi"><div class="dt" data-ph="Fecha"><input name="d" required type="date" class="fi"></div><div class="dt col-span-2" data-ph="Hora"><input name="h" required type="time" class="fi"></div>
 <button class="col-span-2 flex items-center justify-center gap-2 py-4 rounded-full bg-[#9b2d20] text-[#f3e9d2] font-bold text-lg transition hover:bg-[#2b0d08] active:scale-95"><i class="ph-bold ph-paper-plane-tilt text-xl"></i>Enviar reserva</button></form></section>
 
 <footer id="visita" class="bg-[#2b0d08] text-[#f3e9d2] px-6 pt-16 pb-28"><div class="max-w-5xl mx-auto grid gap-10 md:grid-cols-2">
