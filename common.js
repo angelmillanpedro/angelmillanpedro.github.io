@@ -12,4 +12,4 @@ function menu(d,on,off){const k=Object.keys(d);const draw=t=>{
 $('#mb').onclick=()=>$('#mm').classList.toggle('hidden');
 document.querySelectorAll('#mm a').forEach(a=>a.onclick=()=>$('#mm').classList.add('hidden'));
 // Formulario de reserva: abre WhatsApp con el mensaje
-$('#rf').onsubmit=e=>{e.preventDefault();const f=new FormData(e.target);open('https://wa.me/34600000000?text='+encodeURIComponent(`Hola, soy ${f.get('n')}. Quiero reservar para ${f.get('p')} personas el ${f.get('d')} a las ${f.get('h')}.`))};
+$('#rf').onsubmit=e=>{e.preventDefault();const f=new FormData(e.target);open('https://wa.me/'+WA_NUM+'?text='+encodeURIComponent(`Hola, soy ${f.get('n')}. Quiero reservar para ${f.get('p')} personas el ${f.get('d')} a las ${f.get('h')}.`))};
