@@ -1,0 +1,74 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>(function(){var l=((navigator.languages&&navigator.languages[0])||navigator.language||'es').toLowerCase();var es=/^(es|ca|gl|eu)\b/.test(l);var d=document.documentElement;d.setAttribute('data-l',es?'es':'en');d.lang=es?'es':'en';
+document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('[data-hours]').forEach(function(el){try{var h=JSON.parse(el.getAttribute('data-hours'));var n=new Date(),day=n.getDay(),m=n.getHours()*60+n.getMinutes(),open=false;(h[day]||[]).forEach(function(r){var a=r[0].split(':'),b=r[1].split(':');var s=+a[0]*60+ +a[1],e=+b[0]*60+ +b[1];if(e<=s)e+=1440;if((m>=s&&m<e)||(m+1440>=s&&m+1440<e))open=true;});var p=(h[(day+6)%7]||[]);p.forEach(function(r){var a=r[0].split(':'),b=r[1].split(':');var s=+a[0]*60+ +a[1],e=+b[0]*60+ +b[1];if(e<=s&&m<e)open=true;});el.classList.add(open?'is-open':'is-closed');el.textContent=open?(es?'Abierto ahora':'Open now'):(es?'Cerrado ahora':'Closed now');}catch(e){}});
+var t=new Date().getDay();document.querySelectorAll('[data-day]').forEach(function(r){if(+r.getAttribute('data-day')===t)r.classList.add('today')});});})();</script>
+<style>html[data-l="es"] [lang="en"],html[data-l="en"] [lang="es"]{display:none!important}
+.demo-tag{position:fixed;left:max(10px,env(safe-area-inset-left));bottom:max(10px,env(safe-area-inset-bottom));z-index:9999;font:600 9px/1 system-ui,-apple-system,sans-serif;letter-spacing:.16em;text-transform:uppercase;padding:5px 7px;border-radius:3px;background:rgba(20,20,20,.55);color:#fff;opacity:.7;pointer-events:none}</style>
+
+<title>Cuentas Claras · Asesoría para autónomos</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+:root{--g:#0fa968;--g2:#e7f8ef;--ink:#0e1b14;--mute:#5b6b62;--bg:#f6f8f7;--line:#dfe7e2}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Sora",system-ui,sans-serif}
+.mono{font-family:"IBM Plex Mono",monospace}
+nav{display:flex;justify-content:space-between;align-items:center;padding:14px 18px}
+.lg{font-weight:800}.lg span{color:var(--g)}
+.hero{padding:16px 18px 30px;max-width:980px;margin:0 auto}
+h1{font:800 clamp(36px,10vw,64px)/1.02 "Sora";margin:10px 0 14px;letter-spacing:-.02em}
+h1 mark{background:none;color:var(--g)}
+.hero p{color:var(--mute);max-width:40ch}
+.ledger{margin-top:20px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;font-family:"IBM Plex Mono";font-size:14px}
+.ledger div{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px dashed var(--line)}.ledger div:last-child{border:0;font-weight:600;color:var(--g)}
+.btn{display:inline-flex;gap:10px;align-items:center;background:var(--ink);color:#fff;text-decoration:none;border-radius:12px;padding:14px 20px;font-weight:600;margin-top:18px}
+section{max-width:980px;margin:0 auto;padding:30px 18px}
+h2{font:800 28px "Sora";margin:0 0 16px;letter-spacing:-.01em}
+.plans{display:grid;gap:12px}@media(min-width:760px){.plans{grid-template-columns:repeat(3,1fr)}}
+.pl{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px}
+.pl.hot{border:2px solid var(--g);position:relative}.pl.hot::before{content:"★";position:absolute;top:-12px;right:16px;background:var(--g);color:#fff;border-radius:99px;padding:0 10px}
+.pl .pr{font:800 34px "Sora"}.pl .pr small{font:400 14px "Sora";color:var(--mute)}
+.pl ul{padding-left:18px;margin:10px 0 0;color:var(--mute)}
+.cal{display:grid;gap:8px}
+.dl{display:grid;grid-template-columns:72px 1fr;gap:12px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px}
+.dl .d{background:var(--g2);color:var(--g);border-radius:10px;text-align:center;padding:6px 0;font-family:"IBM Plex Mono";font-weight:600;line-height:1.2}
+.dl .d b{display:block;font-size:22px}
+.dl.past{opacity:.45}
+.desk{border-radius:18px;aspect-ratio:16/9;background:url(https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1000&q=70) center/cover}
+.two{display:grid;gap:18px}@media(min-width:760px){.two{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start}}
+.two .desk{align-self:stretch;aspect-ratio:auto;min-height:240px}
+.hrs{width:100%;border-collapse:collapse;font-family:"IBM Plex Mono";font-size:14px}.hrs td{padding:8px 0;border-bottom:1px solid var(--line)}.hrs td+td{text-align:right}
+.today td{color:var(--g);font-weight:600}
+.st{display:inline-block;font-family:"IBM Plex Mono";font-size:13px;border-radius:6px;padding:3px 8px;margin-bottom:10px}.st.is-open{background:var(--g2);color:var(--g)}.st.is-closed{background:#fdecea;color:#c0392b}
+.wa{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:20;width:58px;height:58px;border-radius:50%;background:#25D366;color:#fff;display:grid;place-items:center;box-shadow:0 8px 20px rgba(0,0,0,.2)}
+.wa svg{width:28px;height:28px}
+footer{text-align:center;font-size:12px;color:var(--mute);padding:20px 18px 90px}
+</style></head><body>
+<nav><span class="lg">cuentas<span>claras</span></span><span class="mono" style="font-size:12px">Almería</span></nav>
+<div class="hero"><div class="mono" style="color:var(--g);font-size:13px">// <span lang="es">asesoría fiscal y contable</span><span lang="en">tax & accounting advisors</span></div>
+ <h1><span lang="es">Tú facturas.<br><mark>Nosotros</mark> del resto.</span><span lang="en">You invoice.<br><mark>We</mark> handle the rest.</span></h1>
+ <p><span lang="es">Gestión para autónomos y pymes: IVA, IRPF, nóminas y altas. Sin letra pequeña y con respuesta en el día.</span><span lang="en">For freelancers and small businesses: VAT, income tax, payroll and registrations. No small print, same-day replies.</span></p>
+ <div class="ledger"><div><span lang="es">Modelo 303 (IVA)</span><span lang="en">Form 303 (VAT)</span><span>✓</span></div><div><span lang="es">Modelo 130 (IRPF)</span><span lang="en">Form 130 (income tax)</span><span>✓</span></div><div><span lang="es">Libro de facturas</span><span lang="en">Invoice ledger</span><span>✓</span></div><div><span lang="es">Tu tiempo</span><span lang="en">Your time</span><span>+8 h/<span lang="es">mes</span><span lang="en">mo</span></span></div></div>
+ <a class="btn" href="https://wa.me/34600000000?text=Hola%20Cuentas%20Claras%2C%20soy%20aut%C3%B3nomo%20y%20quer%C3%ADa%20informaci%C3%B3n%20sobre"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2s-1 .3-3.4-.7a11.6 11.6 0 0 1-4.5-4c-.3-.5-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 .9c.3.2.5.2.6.4.1.1.1.7-.1 1.3z"/></svg> <span lang="es">Hablemos</span><span lang="en">Let's talk</span></a></div>
+<section><h2><span lang="es">Tarifas</span><span lang="en">Pricing</span></h2>
+ <div class="plans">
+  <div class="pl"><b><span lang="es">Autónomo básico</span><span lang="en">Freelancer basic</span></b><div class="pr">45 €<small>/<span lang="es">mes</span><span lang="en">mo</span></small></div><ul><li><span lang="es">Trimestrales de IVA e IRPF</span><span lang="en">Quarterly VAT & income tax</span></li><li><span lang="es">Renta anual</span><span lang="en">Annual return</span></li></ul></div>
+  <div class="pl hot"><b><span lang="es">Autónomo plus</span><span lang="en">Freelancer plus</span></b><div class="pr">65 €<small>/<span lang="es">mes</span><span lang="en">mo</span></small></div><ul><li><span lang="es">Todo lo básico</span><span lang="en">Everything in basic</span></li><li><span lang="es">1 nómina incluida</span><span lang="en">1 payroll included</span></li><li><span lang="es">Asesor por WhatsApp</span><span lang="en">Advisor on WhatsApp</span></li></ul></div>
+  <div class="pl"><b><span lang="es">Sociedades</span><span lang="en">Companies</span></b><div class="pr">120 €<small>/<span lang="es">mes</span><span lang="en">mo</span></small></div><ul><li><span lang="es">Contabilidad completa</span><span lang="en">Full bookkeeping</span></li><li><span lang="es">Impuesto de sociedades</span><span lang="en">Corporate tax</span></li><li><span lang="es">Cuentas anuales</span><span lang="en">Annual accounts</span></li></ul></div>
+ </div></section>
+<section><h2><span lang="es">Próximos plazos</span><span lang="en">Upcoming deadlines</span></h2><div class="cal" id="cal"></div></section>
+<section class="two"><div class="desk" role="img" aria-label="Contabilidad"></div>
+ <div><h2><span lang="es">Horario</span><span lang="en">Office hours</span></h2><span class="st" data-hours='{"1": [["08:30", "14:30"], ["16:30", "19:00"]], "2": [["08:30", "14:30"], ["16:30", "19:00"]], "3": [["08:30", "14:30"], ["16:30", "19:00"]], "4": [["08:30", "14:30"], ["16:30", "19:00"]], "5": [["08:30", "14:30"]]}'>·</span><table class="hrs"><tr data-day="1"><td><span lang="es">Lunes</span><span lang="en">Monday</span></td><td>08:30–14:30 · 16:30–19:00</td></tr><tr data-day="2"><td><span lang="es">Martes</span><span lang="en">Tuesday</span></td><td>08:30–14:30 · 16:30–19:00</td></tr><tr data-day="3"><td><span lang="es">Miércoles</span><span lang="en">Wednesday</span></td><td>08:30–14:30 · 16:30–19:00</td></tr><tr data-day="4"><td><span lang="es">Jueves</span><span lang="en">Thursday</span></td><td>08:30–14:30 · 16:30–19:00</td></tr><tr data-day="5"><td><span lang="es">Viernes</span><span lang="en">Friday</span></td><td>08:30–14:30</td></tr><tr data-day="6"><td><span lang="es">Sábado</span><span lang="en">Saturday</span></td><td><span lang="es">Cerrado</span><span lang="en">Closed</span></td></tr><tr data-day="0"><td><span lang="es">Domingo</span><span lang="en">Sunday</span></td><td><span lang="es">Cerrado</span><span lang="en">Closed</span></td></tr></table>
+ <p>C. Javier Sanz, 11, 2ºA · 04004 Almería</p></div></section>
+<footer>cuentasclaras · <span lang="es">web de ejemplo</span><span lang="en">sample website</span></footer>
+<a class="wa" href="https://wa.me/34600000000?text=Hola%20Cuentas%20Claras" aria-label="WhatsApp"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2s-1 .3-3.4-.7a11.6 11.6 0 0 1-4.5-4c-.3-.5-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 .9c.3.2.5.2.6.4.1.1.1.7-.1 1.3z"/></svg></a>
+<div class="demo-tag">Demo</div>
+<script>
+(function(){var es=document.documentElement.dataset.l!=='en';
+var items=[[0,30,'Modelo 303 · IVA 4T','Form 303 · Q4 VAT'],[0,30,'Modelo 390 · resumen anual IVA','Form 390 · annual VAT summary'],[3,20,'Modelo 303 · IVA 1T','Form 303 · Q1 VAT'],[3,20,'Modelo 130 · IRPF 1T','Form 130 · Q1 income tax'],[5,30,'Declaración de la Renta','Income tax return'],[6,20,'Modelo 303 · IVA 2T','Form 303 · Q2 VAT'],[9,20,'Modelo 303 · IVA 3T','Form 303 · Q3 VAT'],[9,20,'Modelo 130 · IRPF 3T','Form 130 · Q3 income tax']];
+var now=new Date(),y=now.getFullYear(),list=[];
+items.forEach(function(i){var d=new Date(y,i[0],i[1]);if(d<now)d=new Date(y+1,i[0],i[1]);list.push([d,i[2],i[3]]);});
+list.sort(function(a,b){return a[0]-b[0]});
+var M=es?['ENE','FEB','MAR','ABR','MAY','JUN','JUL','AGO','SEP','OCT','NOV','DIC']:['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+var h='';list.slice(0,4).forEach(function(x){var days=Math.ceil((x[0]-now)/864e5);h+='<div class="dl"><div class="d"><b>'+x[0].getDate()+'</b>'+M[x[0].getMonth()]+'</div><div><b>'+(es?x[1]:x[2])+'</b><br><small class="mono">'+(es?'faltan ':'in ')+days+(es?' días':' days')+'</small></div></div>'});
+document.getElementById('cal').innerHTML=h;})();
+</script>
+</body></html>

@@ -1,0 +1,63 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>(function(){var l=((navigator.languages&&navigator.languages[0])||navigator.language||'es').toLowerCase();var es=/^(es|ca|gl|eu)\b/.test(l);var d=document.documentElement;d.setAttribute('data-l',es?'es':'en');d.lang=es?'es':'en';
+document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('[data-hours]').forEach(function(el){try{var h=JSON.parse(el.getAttribute('data-hours'));var n=new Date(),day=n.getDay(),m=n.getHours()*60+n.getMinutes(),open=false;(h[day]||[]).forEach(function(r){var a=r[0].split(':'),b=r[1].split(':');var s=+a[0]*60+ +a[1],e=+b[0]*60+ +b[1];if(e<=s)e+=1440;if((m>=s&&m<e)||(m+1440>=s&&m+1440<e))open=true;});var p=(h[(day+6)%7]||[]);p.forEach(function(r){var a=r[0].split(':'),b=r[1].split(':');var s=+a[0]*60+ +a[1],e=+b[0]*60+ +b[1];if(e<=s&&m<e)open=true;});el.classList.add(open?'is-open':'is-closed');el.textContent=open?(es?'Abierto ahora':'Open now'):(es?'Cerrado ahora':'Closed now');}catch(e){}});
+var t=new Date().getDay();document.querySelectorAll('[data-day]').forEach(function(r){if(+r.getAttribute('data-day')===t)r.classList.add('today')});});})();</script>
+<style>html[data-l="es"] [lang="en"],html[data-l="en"] [lang="es"]{display:none!important}
+.demo-tag{position:fixed;left:max(10px,env(safe-area-inset-left));bottom:max(10px,env(safe-area-inset-bottom));z-index:9999;font:600 9px/1 system-ui,-apple-system,sans-serif;letter-spacing:.16em;text-transform:uppercase;padding:5px 7px;border-radius:3px;background:rgba(20,20,20,.55);color:#fff;opacity:.7;pointer-events:none}</style>
+
+<title>Tinta Negra · Tattoo Studio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Archivo:wght@400;600;800&display=swap">
+<style>
+:root{--k:#0a0a0a;--paper:#efe7d6;--red:#b3141c;--grey:#8a8478}
+*{box-sizing:border-box}body{margin:0;background:var(--k);color:var(--paper);font:16px/1.55 "Archivo",system-ui,sans-serif}
+header{text-align:center;padding:30px 16px 20px;border-bottom:1px solid #2a2a2a}
+.small{font-weight:800;letter-spacing:.4em;font-size:11px;text-transform:uppercase;color:var(--grey)}
+h1{font:400 clamp(62px,19vw,140px)/.95 "UnifrakturMaguntia",serif;margin:8px 0}
+.star{color:var(--red);font-size:20px;letter-spacing:.6em}
+.hero{aspect-ratio:4/5;max-height:720px;width:100%;background:linear-gradient(180deg,transparent 60%,var(--k)),url(https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=1200&q=70) center/cover;filter:grayscale(1) contrast(1.15)}
+section{max-width:760px;margin:0 auto;padding:34px 16px}
+h2{font:400 46px/1 "UnifrakturMaguntia";margin:0 0 18px;text-align:center}
+.flash{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;background:var(--paper);padding:10px;color:var(--k)}
+@media(min-width:620px){.flash{grid-template-columns:repeat(3,1fr)}}
+.fl{border:2px solid var(--k);aspect-ratio:1;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4px;text-align:center;padding:8px;position:relative}
+.fl .g{font-size:46px;line-height:1;filter:grayscale(1) contrast(2)}
+.fl b{font-weight:800;text-transform:uppercase;font-size:13px;letter-spacing:.08em}
+.fl .p{position:absolute;top:6px;right:6px;background:var(--red);color:#fff;font-weight:800;font-size:12px;padding:2px 6px}
+.artists{display:grid;gap:14px}@media(min-width:620px){.artists{grid-template-columns:1fr 1fr}}
+.ar{border:1px solid #2e2e2e;padding:14px;display:flex;gap:14px;align-items:center}
+.ar .av{width:74px;height:74px;flex:none;background:center/cover;filter:grayscale(1)}
+.ar b{display:block;font-weight:800;text-transform:uppercase;letter-spacing:.1em}.ar small{color:var(--grey)}
+.rules{border:1px solid var(--red);padding:16px 18px}.rules li{margin:6px 0}
+.hrs{width:100%;border-collapse:collapse;text-transform:uppercase;letter-spacing:.06em;font-size:14px}.hrs td{padding:9px 0;border-bottom:1px solid #262626}.hrs td+td{text-align:right}
+.today td{color:var(--red);font-weight:800}
+.st{display:block;text-align:center;font-weight:800;letter-spacing:.25em;text-transform:uppercase;font-size:13px;margin-bottom:10px}.st.is-open{color:#9adf9a}.st.is-closed{color:#ff6b6b}
+.wa{display:flex;gap:10px;justify-content:center;align-items:center;background:var(--paper);color:var(--k);text-decoration:none;font-weight:800;letter-spacing:.2em;text-transform:uppercase;padding:16px;margin-top:20px}
+footer{text-align:center;font-size:12px;color:var(--grey);padding:20px 16px 80px}
+</style></head><body>
+<header><div class="small">Tattoo · Piercing · Almería</div><h1>Tinta Negra</h1><div class="star">✶ ✶ ✶</div></header>
+<div class="hero" role="img" aria-label="Tatuaje en la espalda"></div>
+<section><h2>Flash</h2>
+ <p style="text-align:center;color:var(--grey);margin-top:-6px"><span lang="es">Diseños disponibles · precio cerrado · sin cita los sábados</span><span lang="en">Available designs · fixed price · walk-ins on Saturdays</span></p>
+ <div class="flash">
+  <div class="fl"><span class="p">60 €</span><span class="g">🗡️</span><b><span lang="es">Daga</span><span lang="en">Dagger</span></b></div>
+  <div class="fl"><span class="p">80 €</span><span class="g">🐍</span><b><span lang="es">Serpiente</span><span lang="en">Snake</span></b></div>
+  <div class="fl"><span class="p">50 €</span><span class="g">🌹</span><b><span lang="es">Rosa</span><span lang="en">Rose</span></b></div>
+  <div class="fl"><span class="p">90 €</span><span class="g">🦅</span><b><span lang="es">Águila</span><span lang="en">Eagle</span></b></div>
+  <div class="fl"><span class="p">60 €</span><span class="g">💀</span><b><span lang="es">Calavera</span><span lang="en">Skull</span></b></div>
+  <div class="fl"><span class="p">70 €</span><span class="g">⚓</span><b><span lang="es">Ancla</span><span lang="en">Anchor</span></b></div>
+ </div></section>
+<section><h2><span lang="es">Artistas</span><span lang="en">Artists</span></h2>
+ <div class="artists">
+  <div class="ar"><div class="av" style="background-image:url(https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=300&q=70)"></div><div><b>Dani "Cuervo"</b><small>Blackwork · Neo-tradicional</small></div></div>
+  <div class="ar"><div class="av" style="background-image:url(https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=300&q=70)"></div><div><b>Marta Ruiz</b><small><span lang="es">Tradicional · Lettering</span><span lang="en">Traditional · Lettering</span></small></div></div>
+ </div></section>
+<section><div class="rules"><b style="text-transform:uppercase;letter-spacing:.15em"><span lang="es">Antes de venir</span><span lang="en">Before you come</span></b><ul>
+ <li><span lang="es">Mayores de 18 años (o con autorización).</span><span lang="en">18+ only (or with parental consent).</span></li>
+ <li><span lang="es">Señal de 30 € para reservar, se descuenta del precio.</span><span lang="en">€30 deposit to book, deducted from the price.</span></li>
+ <li><span lang="es">Material desechable y estudio con licencia sanitaria.</span><span lang="en">Single-use needles and licensed studio.</span></li></ul></div></section>
+<section><h2><span lang="es">Horario</span><span lang="en">Hours</span></h2><span class="st" data-hours='{"2": [["11:00", "14:00"], ["16:30", "21:00"]], "3": [["11:00", "14:00"], ["16:30", "21:00"]], "4": [["11:00", "14:00"], ["16:30", "21:00"]], "5": [["11:00", "14:00"], ["16:30", "21:00"]], "6": [["11:00", "20:00"]]}'>·</span><table class="hrs"><tr data-day="1"><td><span lang="es">Lunes</span><span lang="en">Monday</span></td><td><span lang="es">Cerrado</span><span lang="en">Closed</span></td></tr><tr data-day="2"><td><span lang="es">Martes</span><span lang="en">Tuesday</span></td><td>11:00–14:00 · 16:30–21:00</td></tr><tr data-day="3"><td><span lang="es">Miércoles</span><span lang="en">Wednesday</span></td><td>11:00–14:00 · 16:30–21:00</td></tr><tr data-day="4"><td><span lang="es">Jueves</span><span lang="en">Thursday</span></td><td>11:00–14:00 · 16:30–21:00</td></tr><tr data-day="5"><td><span lang="es">Viernes</span><span lang="en">Friday</span></td><td>11:00–14:00 · 16:30–21:00</td></tr><tr data-day="6"><td><span lang="es">Sábado</span><span lang="en">Saturday</span></td><td>11:00–20:00</td></tr><tr data-day="0"><td><span lang="es">Domingo</span><span lang="en">Sunday</span></td><td><span lang="es">Cerrado</span><span lang="en">Closed</span></td></tr></table>
+ <p style="text-align:center">C. Real del Barrio Alto, 27 · 04009 Almería</p>
+ <a class="wa" href="https://wa.me/34600000000?text=Hola%20Tinta%20Negra%2C%20quer%C3%ADa%20presupuesto%20para%20un%20tatuaje%20de"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2s-1 .3-3.4-.7a11.6 11.6 0 0 1-4.5-4c-.3-.5-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 .9c.3.2.5.2.6.4.1.1.1.7-.1 1.3z"/></svg> <span lang="es">Pide presupuesto</span><span lang="en">Ask for a quote</span></a></section>
+<footer>Tinta Negra Tattoo · <span lang="es">web de ejemplo</span><span lang="en">sample website</span></footer>
+<div class="demo-tag">Demo</div>
+</body></html>

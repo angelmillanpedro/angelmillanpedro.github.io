@@ -1,0 +1,60 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>(function(){var l=((navigator.languages&&navigator.languages[0])||navigator.language||'es').toLowerCase();var es=/^(es|ca|gl|eu)\b/.test(l);var d=document.documentElement;d.setAttribute('data-l',es?'es':'en');d.lang=es?'es':'en';
+document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('[data-hours]').forEach(function(el){try{var h=JSON.parse(el.getAttribute('data-hours'));var n=new Date(),day=n.getDay(),m=n.getHours()*60+n.getMinutes(),open=false;(h[day]||[]).forEach(function(r){var a=r[0].split(':'),b=r[1].split(':');var s=+a[0]*60+ +a[1],e=+b[0]*60+ +b[1];if(e<=s)e+=1440;if((m>=s&&m<e)||(m+1440>=s&&m+1440<e))open=true;});var p=(h[(day+6)%7]||[]);p.forEach(function(r){var a=r[0].split(':'),b=r[1].split(':');var s=+a[0]*60+ +a[1],e=+b[0]*60+ +b[1];if(e<=s&&m<e)open=true;});el.classList.add(open?'is-open':'is-closed');el.textContent=open?(es?'Abierto ahora':'Open now'):(es?'Cerrado ahora':'Closed now');}catch(e){}});
+var t=new Date().getDay();document.querySelectorAll('[data-day]').forEach(function(r){if(+r.getAttribute('data-day')===t)r.classList.add('today')});});})();</script>
+<style>html[data-l="es"] [lang="en"],html[data-l="en"] [lang="es"]{display:none!important}
+.demo-tag{position:fixed;left:max(10px,env(safe-area-inset-left));bottom:max(10px,env(safe-area-inset-bottom));z-index:9999;font:600 9px/1 system-ui,-apple-system,sans-serif;letter-spacing:.16em;text-transform:uppercase;padding:5px 7px;border-radius:3px;background:rgba(20,20,20,.55);color:#fff;opacity:.7;pointer-events:none}</style>
+
+<title>Frutería Huerta de Níjar</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Nunito+Sans:wght@400;700;800&display=swap">
+<style>
+:root{--madera:#b98454;--madera2:#8f5f36;--verde:#2f6b2f;--tomate:#e2412b;--papel:#fffdf6;--pizarra:#2b2f2a}
+*{box-sizing:border-box}body{margin:0;background:#f1ead8;color:var(--pizarra);font:16px/1.55 "Nunito Sans",system-ui,sans-serif}
+.awning{height:44px;background:repeating-linear-gradient(90deg,var(--verde) 0 36px,var(--papel) 36px 72px);position:relative}
+.awning::after{content:"";position:absolute;left:0;right:0;bottom:-14px;height:14px;background:radial-gradient(circle at 18px 0,var(--verde) 17px,transparent 18px) 0 0/72px 14px,radial-gradient(circle at 54px 0,var(--papel) 17px,transparent 18px) 0 0/72px 14px}
+header{text-align:center;padding:34px 18px 10px}
+h1{font:700 clamp(54px,16vw,96px)/.9 "Caveat",cursive;margin:0;color:var(--verde)}
+.since{font-weight:800;letter-spacing:.2em;font-size:12px;text-transform:uppercase}
+.hero{margin:18px 14px;border:8px solid var(--madera);border-radius:6px;aspect-ratio:4/3;background:url(https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=1000&q=70) center/cover;max-width:720px;margin-inline:auto}
+section{max-width:720px;margin:0 auto;padding:24px 16px}
+h2{font:700 40px/1 "Caveat";margin:0 0 14px;color:var(--madera2)}
+.crates{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(min-width:620px){.crates{grid-template-columns:repeat(3,1fr)}}
+.crate{background:repeating-linear-gradient(180deg,var(--madera) 0 22px,var(--madera2) 22px 24px);border-radius:6px;padding:14px 10px 10px;position:relative;text-align:center}
+.crate .e{font-size:44px;line-height:1}
+.crate .tag{display:inline-block;margin-top:8px;background:var(--pizarra);color:#fff;border-radius:4px;padding:4px 10px;font:700 22px "Caveat";transform:rotate(-3deg)}
+.crate .tag small{display:block;font:400 12px "Nunito Sans";opacity:.8}
+.pedido{background:var(--papel);border-radius:10px;padding:20px;border:2px dashed var(--verde)}
+.pedido ol{padding-left:20px;margin:8px 0}
+.flat{border-radius:10px;aspect-ratio:16/9;background:url(https://images.unsplash.com/photo-1610348725531-843dff563e2c?auto=format&fit=crop&w=900&q=70) center/cover}
+.hrs{width:100%;border-collapse:collapse;background:var(--papel);border-radius:10px;overflow:hidden}.hrs td{padding:9px 12px;border-bottom:1px solid #eadfc6}.hrs td+td{text-align:right}
+.today td{background:#e6f0d9;font-weight:800}
+.st{display:block;font:700 26px "Caveat";margin-bottom:6px}.st.is-open{color:var(--verde)}.st.is-closed{color:var(--tomate)}
+.wa{display:flex;gap:10px;justify-content:center;align-items:center;background:var(--verde);color:#fff;text-decoration:none;font-weight:800;border-radius:10px;padding:16px;margin-top:14px;box-shadow:0 5px 0 #1d461d}
+footer{text-align:center;font-size:13px;padding:20px 18px 80px}
+</style></head><body>
+<div class="awning"></div>
+<header><div class="since"><span lang="es">Frutas y verduras desde 1988</span><span lang="en">Fruit & veg since 1988</span></div>
+ <h1>Huerta de Níjar</h1>
+ <p><span lang="es">Del campo almeriense a tu mesa en menos de 24 horas.</span><span lang="en">From Almería's fields to your table in under 24 hours.</span></p></header>
+<div class="hero" role="img" aria-label="Verduras"></div>
+<section><h2><span lang="es">Precios de esta semana</span><span lang="en">This week's prices</span></h2>
+ <div class="crates">
+  <div class="crate"><div class="e">🍅</div><div class="tag">1,80 €<small><span lang="es">Tomate raf · kg</span><span lang="en">Raf tomato · kg</span></small></div></div>
+  <div class="crate"><div class="e">🫑</div><div class="tag">1,40 €<small><span lang="es">Pimiento · kg</span><span lang="en">Peppers · kg</span></small></div></div>
+  <div class="crate"><div class="e">🍉</div><div class="tag">0,90 €<small><span lang="es">Sandía · kg</span><span lang="en">Watermelon · kg</span></small></div></div>
+  <div class="crate"><div class="e">🥒</div><div class="tag">1,10 €<small><span lang="es">Pepino · kg</span><span lang="en">Cucumber · kg</span></small></div></div>
+  <div class="crate"><div class="e">🍊</div><div class="tag">1,50 €<small><span lang="es">Naranja · kg</span><span lang="en">Oranges · kg</span></small></div></div>
+  <div class="crate"><div class="e">🥑</div><div class="tag">3,90 €<small><span lang="es">Aguacate · kg</span><span lang="en">Avocado · kg</span></small></div></div>
+ </div></section>
+<section><div class="pedido"><h2 style="color:var(--verde)"><span lang="es">Pedido a domicilio</span><span lang="en">Home delivery</span></h2>
+ <ol><li><span lang="es">Mándanos tu lista por WhatsApp.</span><span lang="en">Send us your list on WhatsApp.</span></li>
+  <li><span lang="es">Te confirmamos precio y hora.</span><span lang="en">We confirm price and time.</span></li>
+  <li><span lang="es">Lo llevamos gratis a partir de 25 € en Almería capital.</span><span lang="en">Free delivery over €25 in Almería city.</span></li></ol>
+ <a class="wa" href="https://wa.me/34600000000?text=Hola%20Huerta%20de%20N%C3%ADjar%2C%20os%20paso%20mi%20pedido%3A"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2s-1 .3-3.4-.7a11.6 11.6 0 0 1-4.5-4c-.3-.5-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 .9c.3.2.5.2.6.4.1.1.1.7-.1 1.3z"/></svg> <span lang="es">Hacer pedido</span><span lang="en">Place order</span></a></div></section>
+<section><div class="flat" role="img" aria-label="Verduras"></div></section>
+<section><h2><span lang="es">Horario</span><span lang="en">Opening hours</span></h2><span class="st" data-hours='{"1": [["08:30", "14:30"], ["17:30", "20:30"]], "2": [["08:30", "14:30"], ["17:30", "20:30"]], "3": [["08:30", "14:30"], ["17:30", "20:30"]], "4": [["08:30", "14:30"], ["17:30", "20:30"]], "5": [["08:30", "14:30"], ["17:30", "20:30"]], "6": [["08:30", "14:30"]]}'>·</span><table class="hrs"><tr data-day="1"><td><span lang="es">Lunes</span><span lang="en">Monday</span></td><td>08:30–14:30 · 17:30–20:30</td></tr><tr data-day="2"><td><span lang="es">Martes</span><span lang="en">Tuesday</span></td><td>08:30–14:30 · 17:30–20:30</td></tr><tr data-day="3"><td><span lang="es">Miércoles</span><span lang="en">Wednesday</span></td><td>08:30–14:30 · 17:30–20:30</td></tr><tr data-day="4"><td><span lang="es">Jueves</span><span lang="en">Thursday</span></td><td>08:30–14:30 · 17:30–20:30</td></tr><tr data-day="5"><td><span lang="es">Viernes</span><span lang="en">Friday</span></td><td>08:30–14:30 · 17:30–20:30</td></tr><tr data-day="6"><td><span lang="es">Sábado</span><span lang="en">Saturday</span></td><td>08:30–14:30</td></tr><tr data-day="0"><td><span lang="es">Domingo</span><span lang="en">Sunday</span></td><td><span lang="es">Cerrado</span><span lang="en">Closed</span></td></tr></table>
+ <p>Mercado Central, puesto 42 · C. Aguilar de Campoo · 04001 Almería</p></section>
+<footer>Frutería Huerta de Níjar · <span lang="es">web de ejemplo</span><span lang="en">sample website</span></footer>
+<div class="demo-tag">Demo</div>
+</body></html>

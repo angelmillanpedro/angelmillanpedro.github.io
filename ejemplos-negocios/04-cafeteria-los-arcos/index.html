@@ -1,0 +1,58 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>(function(){var l=((navigator.languages&&navigator.languages[0])||navigator.language||'es').toLowerCase();var es=/^(es|ca|gl|eu)\b/.test(l);var d=document.documentElement;d.setAttribute('data-l',es?'es':'en');d.lang=es?'es':'en';
+document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('[data-hours]').forEach(function(el){try{var h=JSON.parse(el.getAttribute('data-hours'));var n=new Date(),day=n.getDay(),m=n.getHours()*60+n.getMinutes(),open=false;(h[day]||[]).forEach(function(r){var a=r[0].split(':'),b=r[1].split(':');var s=+a[0]*60+ +a[1],e=+b[0]*60+ +b[1];if(e<=s)e+=1440;if((m>=s&&m<e)||(m+1440>=s&&m+1440<e))open=true;});var p=(h[(day+6)%7]||[]);p.forEach(function(r){var a=r[0].split(':'),b=r[1].split(':');var s=+a[0]*60+ +a[1],e=+b[0]*60+ +b[1];if(e<=s&&m<e)open=true;});el.classList.add(open?'is-open':'is-closed');el.textContent=open?(es?'Abierto ahora':'Open now'):(es?'Cerrado ahora':'Closed now');}catch(e){}});
+var t=new Date().getDay();document.querySelectorAll('[data-day]').forEach(function(r){if(+r.getAttribute('data-day')===t)r.classList.add('today')});});})();</script>
+<style>html[data-l="es"] [lang="en"],html[data-l="en"] [lang="es"]{display:none!important}
+.demo-tag{position:fixed;left:max(10px,env(safe-area-inset-left));bottom:max(10px,env(safe-area-inset-bottom));z-index:9999;font:600 9px/1 system-ui,-apple-system,sans-serif;letter-spacing:.16em;text-transform:uppercase;padding:5px 7px;border-radius:3px;background:rgba(20,20,20,.55);color:#fff;opacity:.7;pointer-events:none}</style>
+
+<title>Cafetería Los Arcos · Desayunos</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Karla:wght@400;600;800&display=swap">
+<style>
+:root{--naranja:#e8662a;--mostaza:#f2b33d;--marron:#5b2f1c;--crema:#fff4e2;--rosa:#f6c8b4}
+*{box-sizing:border-box}body{margin:0;background:var(--crema);color:var(--marron);font:16px/1.5 "Karla",system-ui,sans-serif}
+.stripes{height:46px;background:repeating-linear-gradient(90deg,var(--naranja) 0 40px,var(--mostaza) 40px 80px,var(--marron) 80px 120px)}
+header{text-align:center;padding:34px 18px 24px}
+.since{font-weight:800;letter-spacing:.3em;font-size:12px;text-transform:uppercase}
+h1{font:400 clamp(52px,16vw,104px)/.9 "Shrikhand",cursive;color:var(--naranja);margin:10px 0;text-shadow:4px 4px 0 var(--marron)}
+.sub{font-size:19px;max-width:30ch;margin:0 auto}
+.photo{margin:24px auto 0;max-width:560px;border:6px solid var(--marron);border-radius:28px;overflow:hidden;aspect-ratio:4/3;background:url(https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=1000&q=70) center/cover}
+section{max-width:620px;margin:0 auto;padding:36px 18px}
+h2{font:400 36px "Shrikhand",cursive;color:var(--marron);margin:0 0 16px;text-align:center}
+.combos{display:grid;gap:14px}
+.combo{background:#fff;border:3px solid var(--marron);border-radius:20px;padding:16px 18px;display:flex;gap:14px;align-items:center;box-shadow:6px 6px 0 var(--mostaza)}
+.combo .n{font:400 30px "Shrikhand",cursive;color:var(--naranja);min-width:52px;text-align:center}
+.combo h3{margin:0;font-size:18px}.combo p{margin:2px 0 0;font-size:14px}
+.combo .pr{margin-left:auto;font-weight:800;font-size:20px;white-space:nowrap}
+.pics{display:grid;grid-template-columns:1fr 1fr;gap:10px}.pics div{aspect-ratio:1;border-radius:50%;background:center/cover;border:5px solid var(--naranja)}
+.hours{background:var(--marron);color:var(--crema);border-radius:24px;padding:22px}
+.hours h2{color:var(--mostaza)}
+.hrs{width:100%;border-collapse:collapse}.hrs td{padding:7px 0;border-bottom:1px dashed rgba(255,244,226,.25)}.hrs td+td{text-align:right}
+.today td{color:var(--mostaza);font-weight:800}
+.st{display:block;text-align:center;font-weight:800;margin-bottom:10px}.st.is-open{color:#9be3a5}.st.is-closed{color:var(--rosa)}
+.wa{display:block;text-align:center;background:var(--naranja);color:#fff;text-decoration:none;font-weight:800;font-size:18px;padding:16px;border-radius:999px;border:3px solid var(--marron);box-shadow:5px 5px 0 var(--marron);margin-top:18px}
+.wa svg{vertical-align:middle;margin-right:6px}
+footer{text-align:center;padding:20px 18px 80px;font-size:13px}
+</style></head><body>
+<div class="stripes"></div>
+<header>
+ <div class="since"><span lang="es">El bar del barrio · desde 1979</span><span lang="en">The neighbourhood café · since 1979</span></div>
+ <h1>Los Arcos</h1>
+ <p class="sub"><span lang="es">Churros recién hechos, tostadas con tomate y el café con leche de siempre.</span><span lang="en">Freshly made churros, tomato toast and the classic café con leche.</span></p>
+ <div class="photo" role="img" aria-label="Terraza"></div>
+</header>
+<section>
+ <h2><span lang="es">Desayunos</span><span lang="en">Breakfasts</span></h2>
+ <div class="combos">
+  <div class="combo"><span class="n">1</span><div><h3><span lang="es">Mollete con tomate</span><span lang="en">Mollete bread with tomato</span></h3><p><span lang="es">+ café o colacao</span><span lang="en">+ coffee or hot chocolate</span></p></div><span class="pr">2,50 €</span></div>
+  <div class="combo"><span class="n">2</span><div><h3><span lang="es">Churros (6) con chocolate</span><span lang="en">6 churros with chocolate</span></h3><p><span lang="es">Solo hasta las 12:00</span><span lang="en">Until 12:00 only</span></p></div><span class="pr">3,90 €</span></div>
+  <div class="combo"><span class="n">3</span><div><h3><span lang="es">Tostada de jamón</span><span lang="en">Ham toast</span></h3><p><span lang="es">+ zumo de naranja + café</span><span lang="en">+ orange juice + coffee</span></p></div><span class="pr">4,80 €</span></div>
+ </div>
+</section>
+<section class="pics"><div style="background-image:url(https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=500&q=70)"></div><div style="background-image:url(https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=500&q=70)"></div></section>
+<section><div class="hours"><h2><span lang="es">¿Cuándo abrimos?</span><span lang="en">When are we open?</span></h2><span class="st" data-hours='{"1": [["06:30", "13:30"], ["16:30", "20:30"]], "2": [["06:30", "13:30"], ["16:30", "20:30"]], "3": [["06:30", "13:30"], ["16:30", "20:30"]], "4": [["06:30", "13:30"], ["16:30", "20:30"]], "5": [["06:30", "13:30"], ["16:30", "20:30"]], "6": [["07:30", "13:30"]], "0": [["08:00", "13:00"]]}'>·</span><table class="hrs"><tr data-day="1"><td><span lang="es">Lunes</span><span lang="en">Monday</span></td><td>06:30–13:30 · 16:30–20:30</td></tr><tr data-day="2"><td><span lang="es">Martes</span><span lang="en">Tuesday</span></td><td>06:30–13:30 · 16:30–20:30</td></tr><tr data-day="3"><td><span lang="es">Miércoles</span><span lang="en">Wednesday</span></td><td>06:30–13:30 · 16:30–20:30</td></tr><tr data-day="4"><td><span lang="es">Jueves</span><span lang="en">Thursday</span></td><td>06:30–13:30 · 16:30–20:30</td></tr><tr data-day="5"><td><span lang="es">Viernes</span><span lang="en">Friday</span></td><td>06:30–13:30 · 16:30–20:30</td></tr><tr data-day="6"><td><span lang="es">Sábado</span><span lang="en">Saturday</span></td><td>07:30–13:30</td></tr><tr data-day="0"><td><span lang="es">Domingo</span><span lang="en">Sunday</span></td><td>08:00–13:00</td></tr></table></div>
+ <a class="wa" href="https://wa.me/34600000000?text=Hola%20Los%20Arcos%2C%20quer%C3%ADa%20encargar%20churros%20para"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2s-1 .3-3.4-.7a11.6 11.6 0 0 1-4.5-4c-.3-.5-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 .9c.3.2.5.2.6.4.1.1.1.7-.1 1.3z"/></svg><span lang="es">Encarga churros por WhatsApp</span><span lang="en">Order churros on WhatsApp</span></a>
+ <p style="text-align:center;margin-top:20px">Av. de la Estación, 21 · 04005 Almería</p></section>
+<div class="stripes"></div>
+<footer>Cafetería Los Arcos · <span lang="es">web de ejemplo</span><span lang="en">sample website</span></footer>
+<div class="demo-tag">Demo</div>
+</body></html>

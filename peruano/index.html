@@ -1,65 +1,277 @@
-<!DOCTYPE html><html lang="es" class="scroll-smooth"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><script src="https://cdn.tailwindcss.com"></script><script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script><title>Inti · Cocina peruana en Triana</title>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Inti · Restaurante peruano en Triana</title>
+<meta name="description" content="Web de muestra: restaurante peruano con carta, menú degustación y reservas por WhatsApp.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;900&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
-<style>body{font-family:'Outfit',sans-serif}.f{font-family:'Unbounded',sans-serif}section{scroll-margin-top:4rem}
-.tex{background:repeating-linear-gradient(90deg,#e11d74 0 14px,#f59e0b 14px 28px,#0f766e 28px 42px,#7c3aed 42px 56px)}
-.fi{min-width:0;max-width:100%;box-sizing:border-box;display:block;-webkit-appearance:none;appearance:none;font:inherit;min-height:3.25rem;width:100%;padding:.9rem 1rem;border-radius:1rem;background:#fff;color:#0b2b2a;border:0}
-.sun{animation:spin 40s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
-@media(prefers-reduced-motion:reduce){.sun{animation:none}}.dt{position:relative;min-width:0}.dt::before{content:attr(data-ph);position:absolute;left:1rem;top:50%;transform:translateY(-50%);pointer-events:none;color:#6b7280;font-weight:500}.dt:has(input:valid)::before,.dt:focus-within::before{display:none}.dt input:invalid:not(:focus){color:transparent}</style></head>
-<body class="bg-[#0b2b2a] text-[#fff4e0] antialiased overflow-x-hidden">
-<nav class="fixed top-0 inset-x-0 z-40 h-16 px-6 flex items-center justify-between bg-[#0b2b2a]/85 backdrop-blur"><a href="#" class="f text-2xl text-[#e11d74] font-black">INTI</a>
-<div class="hidden md:flex gap-7"><a href="#historia">Historia</a><a href="#carta">Carta</a><a href="#degustacion">Degustación</a><a href="#galeria">Galería</a><a href="#donde">Dónde</a></div>
-<a href="#reservar" class="hidden md:block px-5 py-2 rounded-xl bg-[#f59e0b] text-[#0b2b2a] font-semibold transition hover:bg-white">Reservar</a>
-<button id="mb" aria-label="Menú" class="md:hidden text-3xl"><i class="ph-bold ph-list"></i></button></nav>
-<div id="mm" class="hidden md:hidden fixed top-16 inset-x-0 z-40 flex flex-col gap-5 p-6 text-xl bg-[#0b2b2a]"><a href="#historia">Historia</a><a href="#carta">Carta</a><a href="#degustacion">Degustación</a><a href="#galeria">Galería</a><a href="#donde">Dónde</a><a href="#reservar" class="text-[#f59e0b] font-semibold">Reservar</a></div>
+<style>
+:root{--noche:#0b2b2a;--crema:#fff4e0;--fucsia:#e11d74;--sol:#f59e0b;--jade:#0f766e;--morado:#7c3aed}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--noche);color:var(--crema);font:17px/1.6 'Outfit',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:'Unbounded',sans-serif;line-height:1.05;margin:0}
+h2{font-size:clamp(1.8rem,5.5vw,3rem);font-weight:900}
+.wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+section{padding:76px 0;scroll-margin-top:64px}
+.tex{height:16px;background:repeating-linear-gradient(90deg,var(--fucsia) 0 16px,var(--sol) 0 32px,var(--jade) 0 48px,var(--morado) 0 64px)}
+.tex.zz{height:22px;background:linear-gradient(135deg,var(--noche) 25%,transparent 25%) -11px 0/22px 22px,linear-gradient(225deg,var(--noche) 25%,transparent 25%) -11px 0/22px 22px,var(--sol)}
+.strip{margin:0;background:#000;color:#fff;font-size:.85rem;text-align:center;padding:.45rem 1rem}
+.strip a{color:var(--sol);font-weight:700;text-decoration:none}
 
-<header class="relative min-h-screen grid place-items-center text-center px-6 overflow-hidden">
-<i class="sun ph-fill ph-sun absolute text-[#f59e0b]/25 text-[34rem] sm:text-[48rem]"></i>
-<div class="relative"><p class="text-[#f59e0b] flex items-center justify-center gap-2 mb-4"><i class="ph-fill ph-map-pin"></i>Junto al Puente de Triana, Sevilla</p>
-<h1 class="f text-7xl sm:text-9xl font-black leading-none text-[#e11d74] [text-shadow:4px_4px_0_#f59e0b]">INTI</h1>
-<p class="mt-6 text-xl sm:text-2xl font-light">Ceviche, lomo saltado y pisco<br>a un paso del Guadalquivir</p>
-<div class="mt-9 flex flex-col sm:flex-row gap-3 justify-center">
-<a href="#carta" class="flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-[#e11d74] font-semibold text-lg transition hover:rotate-2 hover:scale-105 active:scale-95"><i class="ph-bold ph-fish text-xl"></i>Ver Carta</a>
-<a href="#reservar" class="flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-[#f59e0b] text-[#0b2b2a] font-semibold text-lg transition hover:-rotate-2 hover:scale-105 active:scale-95"><i class="ph-bold ph-calendar-check text-xl"></i>Reservar</a></div></div></header>
-<div class="tex h-4"></div>
+nav{position:sticky;top:0;z-index:30;background:var(--noche);border-bottom:1px solid #fff4e01a}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:64px}
+.logo{font:900 1.6rem 'Unbounded',sans-serif;color:var(--fucsia);text-decoration:none}
+.links{display:none;gap:1.6rem}
+.links a{text-decoration:none;opacity:.85}.links a:hover{opacity:1;color:var(--sol)}
+@media(min-width:820px){.links{display:flex}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border:0;border-radius:16px;font:600 1.05rem 'Outfit',sans-serif;text-decoration:none;padding:1rem 1.8rem;cursor:pointer;transition:transform .2s}
+.btn:hover{transform:translateY(-3px) rotate(-1.5deg)}
+.btn.f{background:var(--fucsia);color:#fff}
+.btn.s{background:var(--sol);color:var(--noche)}
+nav .btn{padding:.55rem 1.1rem;font-size:.95rem}
 
-<section id="historia" class="px-6 py-20 max-w-5xl mx-auto grid gap-10 md:grid-cols-2 items-center">
-<div><h2 class="f text-3xl sm:text-4xl leading-tight">Perú entero, en una cocina de Triana</h2>
-<p class="mt-5 leading-relaxed opacity-90">Inti significa «sol» en quechua. Cocinamos la costa, los Andes y la herencia nikkei con pescado fresco de la lonja y ajíes que llegan directos desde Lima.</p>
-<p class="mt-4 leading-relaxed opacity-90">Ven a compartir ceviches, anticuchos y un pisco sour bien batido, con el río a dos pasos.</p>
-<div class="mt-6 grid grid-cols-3 gap-3 text-center text-sm"><div class="rounded-2xl bg-[#e11d74] p-4"><i class="ph-fill ph-fish text-3xl"></i><p class="mt-1">Pescado del día</p></div><div class="rounded-2xl bg-[#7c3aed] p-4"><i class="ph-fill ph-pepper text-3xl"></i><p class="mt-1">Ajíes peruanos</p></div><div class="rounded-2xl bg-[#0f766e] p-4"><i class="ph-fill ph-martini text-3xl"></i><p class="mt-1">Barra de pisco</p></div></div></div>
-<div id="g0" class="grid grid-cols-2 gap-3"></div></section>
+/* Portada con sol que gira */
+header{position:relative;overflow:hidden;text-align:center;padding:90px 0 100px}
+.sol{position:absolute;left:50%;top:50%;width:min(140vw,900px);aspect-ratio:1;margin:calc(min(140vw,900px)/-2) 0 0 calc(min(140vw,900px)/-2);border-radius:50%;
+  background:repeating-conic-gradient(#f59e0b2e 0 7.5deg,transparent 7.5deg 15deg);-webkit-mask:radial-gradient(circle,#000 0 70%,transparent 71%);mask:radial-gradient(circle,#000 0 70%,transparent 71%);animation:gira 60s linear infinite}
+.sol::after{content:"";position:absolute;inset:34%;border-radius:50%;background:radial-gradient(circle,#f59e0b40,#f59e0b14 70%)}
+@keyframes gira{to{transform:rotate(360deg)}}
+header .wrap{position:relative}
+.donde{display:inline-flex;align-items:center;gap:.4rem;color:var(--sol);margin:0 0 1rem}
+header h1{font-size:clamp(5rem,24vw,11rem);font-weight:900;color:var(--fucsia);text-shadow:5px 5px 0 var(--sol);letter-spacing:-.02em;line-height:.9}
+.tipo{display:inline-block;margin-top:1.2rem;font:600 .85rem 'Unbounded',sans-serif;letter-spacing:.2em;text-transform:uppercase;background:var(--crema);color:var(--noche);padding:.5rem 1rem;border-radius:999px}
+header p.lead{font-size:clamp(1.2rem,3vw,1.6rem);font-weight:300;margin:1.4rem auto 0;max-width:30rem}
+.ctas{display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem;margin-top:2.2rem}
+.st{display:inline-flex;align-items:center;gap:.45rem;font-size:.85rem;font-weight:600;padding:.3rem .8rem;border-radius:999px;background:#fff4e01a;margin-top:1.8rem}
+.st::before{content:"";width:8px;height:8px;border-radius:50%;background:#bbb}
+.st.is-open::before{background:#4ade80;box-shadow:0 0 0 4px #4ade8033}
+.st.is-closed::before{background:#f87171}
 
-<section id="carta" class="bg-[#fff4e0] text-[#0b2b2a] px-6 py-20"><div class="max-w-3xl mx-auto"><h2 class="f text-3xl sm:text-5xl">La carta</h2><p class="opacity-70 mt-2">Pescado fresco, ajíes peruanos y recetas de casa.</p>
-<div id="tb" class="mt-8 flex gap-2 overflow-x-auto pb-2"></div><ul id="mi" class="mt-4"></ul></div></section>
+.hist{display:grid;gap:2.5rem;align-items:center}
+@media(min-width:820px){.hist{grid-template-columns:1.1fr 1fr}}
+.hist p{opacity:.9;margin:1.1rem 0 0}
+.pilares{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem;margin-top:1.8rem;text-align:center;font-size:.9rem}
+.pilares div{border-radius:18px;padding:1rem .4rem}
+.pilares b{display:block;font:900 1.4rem 'Unbounded',sans-serif;margin-bottom:.2rem}
+.fotos{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+.fotos img,.gal img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:22px;background:var(--fucsia)}
+.fotos img:nth-child(2){transform:translateY(24px)}
+.fotos img:nth-child(4){transform:translateY(24px)}
 
-<section id="degustacion" class="px-6 py-20"><div class="max-w-5xl mx-auto rounded-[2rem] bg-gradient-to-br from-[#e11d74] to-[#7c3aed] p-8 sm:p-12 grid gap-8 md:grid-cols-2 items-center">
-<div><i class="ph-fill ph-sparkle text-4xl text-[#f59e0b]"></i><h2 class="f text-3xl sm:text-4xl mt-2">Menú degustación</h2><p class="mt-3 opacity-90">Cinco pasos para recorrer Perú: tiradito, ceviche, anticucho, lomo saltado y suspiro limeño. Maridaje opcional con pisco.</p>
-<p class="f text-4xl mt-5">38 € <span class="text-base font-light">por persona</span></p></div>
-<ol class="space-y-3 font-semibold"><li class="flex gap-3"><i class="ph-fill ph-check-circle text-2xl text-[#f59e0b]"></i>Tiradito nikkei</li><li class="flex gap-3"><i class="ph-fill ph-check-circle text-2xl text-[#f59e0b]"></i>Ceviche clásico</li><li class="flex gap-3"><i class="ph-fill ph-check-circle text-2xl text-[#f59e0b]"></i>Anticucho de corazón</li><li class="flex gap-3"><i class="ph-fill ph-check-circle text-2xl text-[#f59e0b]"></i>Lomo saltado</li><li class="flex gap-3"><i class="ph-fill ph-check-circle text-2xl text-[#f59e0b]"></i>Suspiro limeño</li></ol></div></section>
+/* Carta */
+.carta{background:var(--crema);color:var(--noche)}
+.tabs{display:flex;gap:.5rem;overflow-x:auto;margin-top:2rem;padding-bottom:.3rem;scrollbar-width:none}
+.tabs button{font:600 1rem 'Outfit',sans-serif;border:1.5px solid #0b2b2a33;background:none;color:var(--noche);border-radius:14px;padding:.55rem 1.2rem;cursor:pointer;white-space:nowrap}
+.tabs button[aria-pressed=true]{background:var(--fucsia);border-color:var(--fucsia);color:#fff}
+.platos{list-style:none;margin:1rem 0 0;padding:0;display:grid;gap:0 2.5rem}
+@media(min-width:820px){.platos{grid-template-columns:1fr 1fr}}
+.platos li{display:flex;align-items:baseline;gap:.8rem;padding:1rem 0;border-bottom:1.5px dashed #0b2b2a26}
+.platos b{font-weight:600;font-size:1.1rem}
+.platos small{display:block;opacity:.65}
+.platos i{flex:1}
+.platos span{font:900 1.05rem 'Unbounded',sans-serif;color:var(--jade);white-space:nowrap}
 
-<section id="galeria" class="px-6 pb-20 max-w-5xl mx-auto"><h2 class="f text-3xl sm:text-5xl">Del mar a tu mesa</h2><div id="gl" class="mt-8 grid grid-cols-2 md:grid-cols-3 gap-3"></div></section>
+.deg{display:grid;gap:2rem;align-items:center;border-radius:34px;padding:clamp(1.6rem,5vw,3.2rem);background:linear-gradient(135deg,var(--fucsia),var(--morado))}
+@media(min-width:820px){.deg{grid-template-columns:1fr 1fr}}
+.deg p{opacity:.92}
+.precio{font:900 2.6rem 'Unbounded',sans-serif;margin:.6rem 0 0}
+.precio small{font:300 1rem 'Outfit',sans-serif}
+.deg ol{list-style:none;margin:0;padding:0;counter-reset:p}
+.deg li{counter-increment:p;display:flex;align-items:center;gap:.9rem;padding:.7rem 0;border-bottom:1px solid #ffffff2e;font-weight:600;font-size:1.1rem}
+.deg li::before{content:counter(p);flex:none;width:2.2rem;height:2.2rem;border-radius:50%;display:grid;place-items:center;background:var(--sol);color:var(--noche);font:900 .9rem 'Unbounded',sans-serif}
 
-<section class="px-6 pb-20 max-w-5xl mx-auto"><h2 class="f text-3xl sm:text-5xl">Opiniones</h2><div id="rv" class="mt-8 grid gap-5 md:grid-cols-3"></div></section>
+.gal{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem;margin-top:2rem}
+@media(min-width:760px){.gal{grid-template-columns:repeat(3,minmax(0,1fr))}}
 
-<section id="reservar" class="px-6 pb-20 max-w-xl mx-auto"><h2 class="f text-3xl sm:text-5xl">Reserva</h2><p class="mt-2 opacity-70">Confirmamos por WhatsApp.</p>
-<form id="rf" class="mt-8 grid grid-cols-2 gap-3 p-5 rounded-3xl bg-[#0f766e]"><input name="n" required placeholder="Nombre" class="fi col-span-2"><input name="p" required type="number" min="1" placeholder="Personas" class="fi"><div class="dt" data-ph="Fecha"><input name="d" required type="date" class="fi"></div><div class="dt col-span-2" data-ph="Hora"><input name="h" required type="time" class="fi"></div>
-<button class="col-span-2 flex items-center justify-center gap-2 py-4 rounded-2xl bg-[#f59e0b] text-[#0b2b2a] font-semibold text-lg transition hover:scale-[1.02] active:scale-95"><i class="ph-bold ph-paper-plane-tilt text-xl"></i>Enviar reserva</button></form></section>
+.revs{display:grid;gap:1rem;margin-top:2rem}
+@media(min-width:820px){.revs{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.revs figure{margin:0;background:var(--jade);border-radius:24px;padding:1.5rem}
+.revs .stars{color:var(--sol);letter-spacing:.15em}
+.revs blockquote{margin:.5rem 0 0}
+.revs figcaption{margin-top:.9rem;font-weight:600;font-size:.9rem}
 
-<footer id="donde" class="px-6 pt-4 pb-28"><div class="max-w-5xl mx-auto rounded-3xl bg-[#fff4e0] text-[#0b2b2a] p-6 sm:p-10 grid gap-8 md:grid-cols-2">
-<div class="space-y-4"><h2 class="f text-3xl">Cómo llegar</h2>
-<p class="flex gap-3"><i class="ph-fill ph-map-pin text-2xl text-[#e11d74]"></i>C. Farmacéutico Murillo Herrera, 10<br>41010 Sevilla</p>
-<p class="flex gap-3"><i class="ph-fill ph-clock text-2xl text-[#e11d74]"></i>Mar–Dom 13:00–16:30 y 20:00–24:00<br>Lunes cerrado</p>
-<p class="flex gap-3"><i class="ph-fill ph-phone text-2xl text-[#e11d74]"></i>954 33 08 72</p>
-<p class="flex gap-3"><i class="ph-fill ph-instagram-logo text-2xl text-[#e11d74]"></i>@inti.sevilla</p>
-<p class="flex gap-3"><i class="ph-fill ph-leaf text-2xl text-[#e11d74]"></i>Opciones veganas y sin gluten</p></div>
-<iframe title="Mapa" loading="lazy" class="w-full h-72 rounded-2xl border-0" src="https://www.google.com/maps?q=Calle+Farmac%C3%A9utico+Murillo+Herrera+10+41010+Sevilla&output=embed"></iframe></div>
-<p class="text-center text-sm opacity-50 mt-10">© 2026 Inti Cocina Peruana · Sevilla</p></footer>
-<a href="https://wa.me/34644821536" aria-label="WhatsApp" class="fixed bottom-5 right-5 z-50 grid place-items-center w-16 h-16 rounded-full bg-[#25D366] text-white text-4xl shadow-xl shadow-black/30 transition hover:scale-110 active:scale-90"><span class="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-40"></span><i class="ph-fill ph-whatsapp-logo relative"></i></a><a href="../index.html" class="fixed bottom-5 left-4 z-50 flex items-center gap-1 px-4 py-3 rounded-full bg-black/60 backdrop-blur text-white text-sm"><i class="ph-bold ph-arrow-left"></i>Portfolio</a>
-<script>var WA_NUM='34644821536'</script>
-<script src="../common.js"></script>
+.res{max-width:580px}
+form{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:.7rem;margin-top:1.8rem;padding:1.2rem;border-radius:26px;background:var(--jade)}
+label{display:grid;gap:.25rem;font-size:.85rem;font-weight:600;min-width:0}
+input{font:inherit;width:100%;min-width:0;min-height:3.1rem;padding:.7rem .9rem;border:0;border-radius:14px;background:#fff;color:var(--noche)}
+.full{grid-column:1/-1}
+
+footer{padding:0 0 110px}
+.fin{display:grid;gap:2rem;border-radius:30px;background:var(--crema);color:var(--noche);padding:clamp(1.5rem,5vw,2.8rem)}
+@media(min-width:820px){.fin{grid-template-columns:1fr 1fr}}
+.fin p{margin:.5rem 0}
+table{width:100%;border-collapse:collapse;margin-top:.6rem}
+td{padding:.45rem 0;border-bottom:1px solid #0b2b2a1a}
+td:last-child{text-align:right;font-variant-numeric:tabular-nums}
+.today td{font-weight:600;color:var(--fucsia)}
+.copy{text-align:center;font-size:.85rem;opacity:.5;margin-top:2.5rem}
+
+.wa{position:fixed;right:18px;bottom:18px;z-index:40;width:60px;height:60px;border-radius:50%;display:grid;place-items:center;background:#25D366;color:#fff;box-shadow:0 8px 20px #0005;transition:transform .2s}
+.wa:hover{transform:scale(1.08)}
+.wa svg{width:32px;height:32px}
+.demo-tag{position:fixed;left:14px;bottom:14px;z-index:41;font:600 9px/1 system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;padding:5px 7px;border-radius:3px;background:#141414aa;color:#fff;opacity:.75;pointer-events:none}
+@media(prefers-reduced-motion:reduce){.sol{animation:none}*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<p class="strip"><a href="../index.html#proyectos">← Volver al portfolio</a> · Web de muestra, negocio inventado</p>
+
+<nav><div class="wrap">
+  <a href="#" class="logo">INTI</a>
+  <div class="links"><a href="#historia">Historia</a><a href="#carta">Carta</a><a href="#degustacion">Degustación</a><a href="#donde">Dónde</a></div>
+  <a href="#reservar" class="btn s">Reservar</a>
+</div></nav>
+
+<header>
+  <div class="sol" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="donde">Triana · Sevilla</p>
+    <h1>INTI</h1>
+    <span class="tipo">Restaurante peruano</span>
+    <p class="lead">Ceviche, lomo saltado y pisco sour a un paso del Guadalquivir.</p>
+    <div class="ctas"><a href="#carta" class="btn f">Ver la carta</a><a href="#reservar" class="btn s">Reservar mesa</a></div>
+    <span class="st" data-hours='{"0":[["13:00","16:30"],["20:00","24:00"]],"1":[],"2":[["13:00","16:30"],["20:00","24:00"]],"3":[["13:00","16:30"],["20:00","24:00"]],"4":[["13:00","16:30"],["20:00","24:00"]],"5":[["13:00","16:30"],["20:00","24:00"]],"6":[["13:00","16:30"],["20:00","24:00"]]}'>Horario</span>
+  </div>
+</header>
+<div class="tex"></div>
+
+<section id="historia"><div class="wrap hist">
+  <div>
+    <h2>Perú entero, en una cocina de Triana</h2>
+    <p>Inti significa «sol» en quechua. Cocinamos la costa, los Andes y la herencia nikkei con pescado fresco del día y ajíes traídos de Lima.</p>
+    <p>Ven a compartir ceviches, anticuchos y un pisco sour bien batido, con el río a dos pasos.</p>
+    <div class="pilares">
+      <div style="background:var(--fucsia)"><b>Mar</b>Pescado del día</div>
+      <div style="background:var(--morado)"><b>Ají</b>Traído de Perú</div>
+      <div style="background:var(--jade)"><b>Pisco</b>Barra propia</div>
+    </div>
+  </div>
+  <div class="fotos">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1535399831218-d5bd36d1a6b3?w=600&q=70" alt="Ceviche">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1604909052743-94e838986d24?w=600&q=70" alt="Plato de la casa">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=600&q=70" alt="Cocina">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&q=70" alt="Bol de verduras">
+  </div>
+</div></section>
+<div class="tex zz"></div>
+
+<section id="carta" class="carta"><div class="wrap">
+  <h2>La carta</h2>
+  <p style="opacity:.7;margin:.5rem 0 0">Pescado fresco, ajíes peruanos y recetas de casa.</p>
+  <div class="tabs" id="tabs" role="toolbar" aria-label="Secciones de la carta"></div>
+  <ul class="platos" id="platos"></ul>
+</div></section>
+
+<section id="degustacion"><div class="wrap">
+  <div class="deg">
+    <div>
+      <h2>Menú degustación</h2>
+      <p>Cinco pasos para recorrer Perú de la costa a los Andes. Maridaje opcional con pisco.</p>
+      <p class="precio">38 € <small>por persona</small></p>
+      <a href="#reservar" class="btn s" style="margin-top:1rem">Lo quiero probar</a>
+    </div>
+    <ol><li>Tiradito nikkei</li><li>Ceviche clásico</li><li>Anticucho</li><li>Lomo saltado</li><li>Suspiro limeño</li></ol>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <h2>Del mar a tu mesa</h2>
+  <div class="gal">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1535399831218-d5bd36d1a6b3?w=600&q=70" alt="">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=70" alt="">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1604909052743-94e838986d24?w=600&q=70" alt="">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600&q=70" alt="">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&q=70" alt="">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=600&q=70" alt="">
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <h2>Opiniones</h2>
+  <div class="revs">
+    <figure><div class="stars">★★★★★</div><blockquote>El mejor ceviche que he probado fuera de Perú. Y el pisco sour, perfecto.</blockquote><figcaption>Carmen, Sevilla</figcaption></figure>
+    <figure><div class="stars">★★★★★</div><blockquote>Lo descubrimos paseando por el puente. Volvimos dos noches seguidas.</blockquote><figcaption>David, Londres</figcaption></figure>
+    <figure><div class="stars">★★★★★</div><blockquote>Lomo saltado espectacular y trato muy cercano. Ideal para ir en grupo.</blockquote><figcaption>Rocío P.</figcaption></figure>
+  </div>
+</div></section>
+
+<section id="reservar" style="padding-top:0"><div class="wrap res">
+  <h2>Reserva</h2>
+  <p style="opacity:.75;margin:.5rem 0 0">Te confirmamos por WhatsApp.</p>
+  <form id="rf">
+    <label class="full">Nombre<input name="n" required autocomplete="given-name"></label>
+    <label>Personas<input name="p" type="number" min="1" max="20" value="2" required></label>
+    <label>Hora<input name="h" type="time" value="21:00" required></label>
+    <label class="full">Día<input name="d" type="date" required></label>
+    <button class="btn s full">Enviar reserva por WhatsApp</button>
+  </form>
+</div></section>
+
+<footer id="donde"><div class="wrap">
+  <div class="fin">
+    <div>
+      <h2 style="font-size:1.8rem">Cómo llegar</h2>
+      <p>Barrio de Triana, Sevilla<br>junto al río</p>
+      <p>600 000 000</p>
+      <p>Opciones veganas y sin gluten</p>
+    </div>
+    <div>
+      <h2 style="font-size:1.8rem">Horario</h2>
+      <table>
+        <tr data-day="1"><td>Lunes</td><td>Cerrado</td></tr>
+        <tr data-day="2"><td>Martes</td><td>13:00–16:30 · 20:00–24:00</td></tr>
+        <tr data-day="3"><td>Miércoles</td><td>13:00–16:30 · 20:00–24:00</td></tr>
+        <tr data-day="4"><td>Jueves</td><td>13:00–16:30 · 20:00–24:00</td></tr>
+        <tr data-day="5"><td>Viernes</td><td>13:00–16:30 · 20:00–24:00</td></tr>
+        <tr data-day="6"><td>Sábado</td><td>13:00–16:30 · 20:00–24:00</td></tr>
+        <tr data-day="0"><td>Domingo</td><td>13:00–16:30 · 20:00–24:00</td></tr>
+      </table>
+    </div>
+  </div>
+  <p class="copy">© <span class="yr">2026</span> Inti · Negocio ficticio, web de muestra</p>
+</div></footer>
+
+<a href="https://wa.me/34600000000?text=Hola%2C%20quer%C3%ADa%20reservar%20en%20Inti" class="wa" aria-label="Escribir por WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 2.5 1 3 .8 3.6.8.6-.1 1.8-.7 2-1.5.3-.7.3-1.3.2-1.5-.1-.1-.3-.2-.6-.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 0 1 12 2.2a9.8 9.8 0 1 1 0 19.6zm0-21.6A11.8 11.8 0 0 0 1.8 17.9L.1 24l6.3-1.6A11.8 11.8 0 1 0 12 .2z"/></svg></a>
+<div class="demo-tag">Demo</div>
+
 <script>
-$('#g0').innerHTML=gal(['1535399831218-d5bd36d1a6b3','1604909052743-94e838986d24','1551218808-94e220e084d2','1546069901-ba9599a7e63c'],'aspect-square rounded-2xl bg-[#e11d74]');
-$('#gl').innerHTML=gal(['1535399831218-d5bd36d1a6b3','1604909052743-94e838986d24','1551218808-94e220e084d2','1546069901-ba9599a7e63c','1517248135467-4c7edcad34c4','1470337458703-46ad1756a187'],'aspect-square rounded-2xl bg-[#7c3aed]');
-$('#rv').innerHTML=rev([['Carmen, Sevilla','El mejor ceviche que he probado fuera de Perú. Y el pisco sour, perfecto.'],['David, Londres','Descubrimos el sitio paseando por el puente. Volvimos dos noches seguidas.'],['Rocío P.','Lomo saltado espectacular y trato muy cercano. Ideal para ir en grupo.']],'rounded-3xl bg-[#0f766e] p-6');
-menu({Ceviches:[['Ceviche clásico','Corvina, limón, ají limo, cancha','14 €'],['Ceviche mixto','Pescado y marisco','16 €'],['Leche de tigre','Con chicharrón de calamar','9 €']],'Piqueos':[['Tiradito nikkei','Pescado blanco, ají amarillo','13 €'],['Anticuchos de corazón','Con papas y choclo','12 €'],['Causa limeña','Patata, pollo y palta','9 €'],['Yuca frita','Con huancaína','6 €']],Calientes:[['Lomo saltado','Solomillo, cebolla, tomate, patatas','16 €'],['Ají de gallina','Crema de ají amarillo, arroz','14 €'],['Arroz chaufa','Estilo chifa','13 €'],['Tacu tacu','Con pescado a lo macho','18 €']],Postres:[['Suspiro limeño','Dulce de leche y merengue','6 €'],['Picarones','Buñuelos con chancaca','6 €'],['Lúcuma helada','Fruta andina','5 €']],Pisco:[['Pisco sour','Clásico peruano','9 €'],['Chilcano','Pisco, ginger ale, lima','8 €'],['Maracuyá sour','Fruta de la pasión','9 €'],['Inca Kola','Botella','3 €']]},'px-5 py-2 rounded-xl bg-[#e11d74] text-white font-semibold whitespace-nowrap','px-5 py-2 rounded-xl border border-[#0b2b2a]/30 whitespace-nowrap');
-</script></body></html>
+const $=s=>document.querySelector(s),$$=s=>document.querySelectorAll(s);
+const WA='https://wa.me/34600000000?text=';
+
+// Carta con pestañas
+const CARTA={
+  Ceviches:[['Ceviche clásico','Corvina, limón, ají limo y cancha','14 €'],['Ceviche mixto','Pescado y marisco','16 €'],['Leche de tigre','Con chicharrón de calamar','9 €']],
+  Piqueos:[['Tiradito nikkei','Pescado blanco y ají amarillo','13 €'],['Anticuchos','Con papas y choclo','12 €'],['Causa limeña','Patata, pollo y palta','9 €'],['Yuca frita','Con salsa huancaína','6 €']],
+  Calientes:[['Lomo saltado','Solomillo, cebolla, tomate y patatas','16 €'],['Ají de gallina','Crema de ají amarillo y arroz','14 €'],['Arroz chaufa','Al estilo chifa','13 €'],['Tacu tacu','Con pescado a lo macho','18 €']],
+  Postres:[['Suspiro limeño','Dulce de leche y merengue','6 €'],['Picarones','Buñuelos con miel de chancaca','6 €'],['Helado de lúcuma','Fruta andina','5 €']],
+  Pisco:[['Pisco sour','El clásico peruano','9 €'],['Chilcano','Pisco, ginger ale y lima','8 €'],['Maracuyá sour','Con fruta de la pasión','9 €'],['Inca Kola','Botella','3 €']]
+};
+const show=k=>{$$('#tabs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.k==k));
+  $('#platos').innerHTML=CARTA[k].map(([n,d,p])=>`<li><div><b>${n}</b><small>${d}</small></div><i></i><span>${p}</span></li>`).join('')};
+$('#tabs').innerHTML=Object.keys(CARTA).map(k=>`<button type="button" data-k="${k}">${k}</button>`).join('');
+$('#tabs').onclick=e=>{const b=e.target.closest('button');if(b)show(b.dataset.k)};
+show('Ceviches');
+
+// Reserva: abre WhatsApp con el mensaje montado
+const hoy=new Date();$('[name=d]').min=hoy.toISOString().slice(0,10);
+$('#rf').onsubmit=e=>{e.preventDefault();const f=new FormData(e.target);
+  const dia=new Date(f.get('d')+'T12:00').toLocaleDateString('es-ES',{weekday:'long',day:'numeric',month:'long'});
+  open(WA+encodeURIComponent(`Hola, soy ${f.get('n')}. Quiero reservar mesa para ${f.get('p')} el ${dia} a las ${f.get('h')}.`))};
+
+// Abierto / cerrado ahora y día de hoy resaltado
+const mins=t=>{const [h,m]=t.split(':');return +h*60+ +m};
+$$('[data-hours]').forEach(el=>{const H=JSON.parse(el.dataset.hours),m=hoy.getHours()*60+hoy.getMinutes();
+  const open=(H[hoy.getDay()]||[]).some(([a,b])=>{let e=mins(b);if(e==0)e=1440;return m>=mins(a)&&m<e});
+  el.classList.add(open?'is-open':'is-closed');el.textContent=open?'Abierto ahora':'Cerrado ahora'});
+$$('[data-day]').forEach(r=>r.classList.toggle('today',+r.dataset.day==hoy.getDay()));
+$$('.yr').forEach(e=>e.textContent=hoy.getFullYear());
+</script>
+</body>
+</html>

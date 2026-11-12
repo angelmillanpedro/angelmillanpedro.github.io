@@ -1,0 +1,144 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>(function(){var l=((navigator.languages&&navigator.languages[0])||navigator.language||'es').toLowerCase();var es=/^(es|ca|gl|eu)\b/.test(l);var d=document.documentElement;d.setAttribute('data-l',es?'es':'en');d.lang=es?'es':'en';
+document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('[data-hours]').forEach(function(el){try{var h=JSON.parse(el.getAttribute('data-hours'));var n=new Date(),day=n.getDay(),m=n.getHours()*60+n.getMinutes(),open=false;(h[day]||[]).forEach(function(r){var a=r[0].split(':'),b=r[1].split(':');var s=+a[0]*60+ +a[1],e=+b[0]*60+ +b[1];if(e<=s)e+=1440;if((m>=s&&m<e)||(m+1440>=s&&m+1440<e))open=true;});var p=(h[(day+6)%7]||[]);p.forEach(function(r){var a=r[0].split(':'),b=r[1].split(':');var s=+a[0]*60+ +a[1],e=+b[0]*60+ +b[1];if(e<=s&&m<e)open=true;});el.classList.add(open?'is-open':'is-closed');el.textContent=open?(es?'Abierto ahora':'Open now'):(es?'Cerrado ahora':'Closed now');}catch(e){}});
+var t=new Date().getDay();document.querySelectorAll('[data-day]').forEach(function(r){if(+r.getAttribute('data-day')===t)r.classList.add('today')});});})();</script>
+<style>html[data-l="es"] [lang="en"],html[data-l="en"] [lang="es"]{display:none!important}
+.demo-tag{position:fixed;left:max(10px,env(safe-area-inset-left));bottom:max(10px,env(safe-area-inset-bottom));z-index:9999;font:600 9px/1 system-ui,-apple-system,sans-serif;letter-spacing:.16em;text-transform:uppercase;padding:5px 7px;border-radius:3px;background:rgba(20,20,20,.55);color:#fff;opacity:.7;pointer-events:none}</style>
+
+<title>Obrador Doña Pura · Pan y dulces</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lora:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+:root{--kraft:#c9a77c;--papel:#f6efe2;--harina:#fffdf8;--horno:#7a3b1f;--tinta:#2d221b;--miel:#e0a43a}
+*{box-sizing:border-box}body{margin:0;background:var(--papel);color:var(--tinta);font:17px/1.6 "Lora",Georgia,serif;overflow-x:hidden}
+.w{max-width:960px;margin:0 auto;padding:0 20px}
+/* Cabecera kraft */
+.band{overflow:hidden;background:var(--kraft);background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.06) 0 2px,transparent 2px 6px);padding:34px 0 70px;color:var(--tinta);position:relative}
+.band::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:22px;background:radial-gradient(circle at 16px 22px,var(--papel) 15px,transparent 16px) 0 0/32px 22px}
+.hgrid{display:grid;gap:28px;align-items:center;text-align:center}
+@media(min-width:780px){.hgrid{grid-template-columns:1.1fr 1fr;text-align:left}}
+.stamp{display:inline-grid;place-items:center;width:120px;height:120px;border-radius:50%;border:3px double var(--horno);color:var(--horno);font:400 17px/1.1 "Abril Fatface",serif;transform:rotate(-8deg);background:var(--harina);text-align:center}
+.stamp small{display:block;font:italic 12px "Lora"}
+h1{font:400 clamp(52px,13vw,100px)/.95 "Abril Fatface",serif;margin:16px 0 10px}
+.band p{max-width:34ch;margin:0 auto;font-style:italic;font-size:19px}
+@media(min-width:780px){.band p{margin:0}}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;justify-content:center}
+@media(min-width:780px){.btns{justify-content:flex-start}}
+.wa,.ghost{display:inline-flex;gap:10px;align-items:center;background:var(--horno);color:var(--harina);text-decoration:none;padding:14px 22px;font:600 16px "Lora";border-radius:2px;border:2px solid var(--horno);cursor:pointer;transition:transform .2s}
+.wa:hover,.ghost:hover{transform:translateY(-2px)}
+.ghost{background:transparent;color:var(--horno)}
+.pan{position:relative;width:min(340px,80vw);aspect-ratio:1;margin:0 auto}
+.pan .foto{position:absolute;inset:8%;border-radius:50%;background:url(https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=70) center/cover;border:8px solid var(--harina);box-shadow:0 20px 40px -20px rgba(45,34,27,.6)}
+.pan svg{position:absolute;inset:0;width:100%;height:100%;animation:gira 22s linear infinite}
+.pan text{font:600 13px "Lora";letter-spacing:.32em;text-transform:uppercase;fill:var(--horno)}
+@keyframes gira{to{transform:rotate(360deg)}}
+.pan .espiga{position:absolute;inset:auto -6% 2% auto;width:70px;height:auto;transform:rotate(18deg);color:var(--horno);animation:none}
+/* Hornadas */
+.horno{margin:-30px auto 0;max-width:920px;position:relative;z-index:2;background:var(--tinta);color:var(--harina);border-radius:14px;padding:18px 20px;display:grid;gap:14px;box-shadow:0 18px 30px -20px rgba(45,34,27,.7)}
+@media(min-width:780px){.horno{grid-template-columns:auto 1fr;align-items:center}}
+.horno .now{display:flex;gap:12px;align-items:center}
+.llama{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--miel);color:var(--tinta);animation:latido 1.6s ease-in-out infinite;flex:none}
+@keyframes latido{50%{box-shadow:0 0 0 10px rgba(224,164,58,0)}0%{box-shadow:0 0 0 0 rgba(224,164,58,.6)}}
+.horno .now b{display:block;font:400 22px "Abril Fatface"}
+.horno .now small{color:#d8c9b2;font-style:italic}
+.hl{display:flex;gap:8px;flex-wrap:wrap}
+@media(min-width:780px){.hl{justify-content:flex-end}}
+.hl span{border:1px solid #6b5848;border-radius:99px;padding:5px 12px;font-size:14px;white-space:nowrap}
+.hl span.ya{opacity:.45;text-decoration:line-through}
+.hl span.prox{background:var(--miel);border-color:var(--miel);color:var(--tinta);font-weight:600}
+/* Ticket */
+.ticket{background:var(--harina);margin:46px auto 0;max-width:640px;padding:24px;border:1px solid #e3d6c0;position:relative;box-shadow:0 10px 30px rgba(122,59,31,.12);transform:rotate(-.6deg)}
+.ticket::after{content:"";position:absolute;left:0;right:0;bottom:-10px;height:10px;background:radial-gradient(circle at 10px 0,transparent 8px,var(--harina) 9px) 0 0/20px 10px}
+.ticket h2{font:400 30px "Abril Fatface";margin:0 0 12px;text-align:center}
+.li{display:flex;gap:8px;padding:6px 0}.li span:nth-child(2){flex:1;border-bottom:1px dotted #b9a68a;transform:translateY(-6px)}
+.li span:last-child{font-weight:600}
+.gallery{display:grid;grid-template-columns:1.2fr 1fr;grid-template-rows:170px 170px;gap:10px;margin:56px 0}
+.gallery div{background:center/cover;border-radius:2px;border:6px solid var(--harina);box-shadow:0 8px 18px -10px rgba(45,34,27,.5)}
+.gallery div:first-child{grid-row:1/3;transform:rotate(-1.5deg)}.gallery div:nth-child(2){transform:rotate(1.5deg)}
+h2.s{font:400 34px "Abril Fatface";margin:0 0 10px}
+/* Configurador de tartas */
+.tarta{display:grid;gap:24px;background:var(--harina);border:1px solid #e3d6c0;padding:26px;border-radius:4px}
+@media(min-width:780px){.tarta{grid-template-columns:1fr 1.1fr}}
+.enc{border-left:4px solid var(--horno);padding:4px 0 4px 16px;margin:18px 0 0}
+.lbl{display:block;font-weight:600;margin:0 0 8px}
+.sab{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.sab button{font:15px "Lora";border:1.5px solid var(--horno);background:none;color:var(--horno);border-radius:99px;padding:7px 14px;cursor:pointer}
+.sab button[aria-pressed="true"]{background:var(--horno);color:var(--harina)}
+.rac{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.rac button{width:42px;height:42px;border-radius:50%;border:1.5px solid var(--horno);background:none;color:var(--horno);font-size:22px;cursor:pointer}
+.rac output{font:400 30px "Abril Fatface";min-width:2ch;text-align:center}
+.fecha{font:16px "Lora";padding:10px 12px;border:1.5px solid #c9b79a;border-radius:4px;background:#fff;color:var(--tinta);width:100%;max-width:240px;margin-bottom:18px}
+.hrs{width:100%;border-collapse:collapse;font-size:16px}.hrs td{padding:7px 0;border-bottom:1px solid #e3d6c0}.hrs td+td{text-align:right}
+.today td{color:var(--horno);font-weight:600}
+.st{font:italic 15px "Lora"}.st.is-open{color:#3d7a42}.st.is-closed{color:var(--horno)}
+.cols{display:grid;gap:30px;margin-top:56px}@media(min-width:780px){.cols{grid-template-columns:1.3fr 1fr}}
+.mapa{background:var(--kraft);border-radius:4px;padding:22px;color:var(--tinta);align-self:start}
+.mapa b{font:400 24px "Abril Fatface";display:block}
+footer{text-align:center;font-size:13px;padding:40px 20px 80px;font-style:italic}
+@media(prefers-reduced-motion:reduce){.pan svg,.llama{animation:none}}
+</style></head><body>
+<div class="band"><div class="w hgrid">
+ <div><div class="stamp"><span>Obrador<small><span lang="es">desde 1962</span><span lang="en">since 1962</span></small></span></div>
+  <h1>Doña Pura</h1><p><span lang="es">Pan de masa madre, roscos y tortas de aceite hechos a mano, como los hacía la abuela.</span><span lang="en">Sourdough bread, traditional pastries and olive oil cakes, handmade like grandma used to.</span></p>
+  <div class="btns"><a class="ghost" href="#tarta"><span lang="es">Encargar una tarta</span><span lang="en">Order a cake</span></a></div></div>
+ <div class="pan" aria-hidden="true"><div class="foto"></div>
+  <svg viewBox="0 0 200 200"><defs><path id="cr" d="M100,100 m-92,0 a92,92 0 1,1 184,0 a92,92 0 1,1 -184,0"/></defs><text><textPath href="#cr">recién hecho · recién hecho · recién hecho ·</textPath></text></svg>
+  <svg class="espiga" viewBox="0 0 40 120" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M20 118V20"/><path d="M20 30c-8-2-12-10-12-18 8 2 12 10 12 18zM20 30c8-2 12-10 12-18-8 2-12 10-12 18zM20 52c-8-2-12-10-12-18 8 2 12 10 12 18zM20 52c8-2 12-10 12-18-8 2-12 10-12 18zM20 74c-8-2-12-10-12-18 8 2 12 10 12 18zM20 74c8-2 12-10 12-18-8 2-12 10-12 18z"/></svg></div>
+</div></div>
+<div class="w">
+ <div class="horno" aria-live="polite"><div class="now"><span class="llama">🔥</span><div><b id="hnow"></b><small id="hsub"></small></div></div><div class="hl" id="hl"></div></div>
+ <div class="ticket"><h2><span lang="es">Del horno de hoy</span><span lang="en">Fresh from today's oven</span></h2>
+  <div class="li"><span><span lang="es">Hogaza de masa madre</span><span lang="en">Sourdough loaf</span></span><span></span><span>3,90 €</span></div>
+  <div class="li"><span><span lang="es">Pan de pueblo (½ kg)</span><span lang="en">Country bread (½ kg)</span></span><span></span><span>1,60 €</span></div>
+  <div class="li"><span><span lang="es">Torta de aceite</span><span lang="en">Olive oil cake</span></span><span></span><span>1,20 €</span></div>
+  <div class="li"><span><span lang="es">Roscos de vino (docena)</span><span lang="en">Wine rings (dozen)</span></span><span></span><span>4,50 €</span></div>
+  <div class="li"><span><span lang="es">Tarta de chocolate (8 raciones)</span><span lang="en">Chocolate cake (8 servings)</span></span><span></span><span>24 €</span></div>
+ </div>
+ <div class="gallery"><div style="background-image:url(https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=70)"></div><div style="background-image:url(https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=70)"></div><div style="background-image:url(https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&w=600&q=70)"></div></div>
+
+ <div class="tarta" id="tarta">
+  <div><h2 class="s"><span lang="es">Tartas por encargo</span><span lang="en">Custom cakes</span></h2>
+   <p><span lang="es">Cumpleaños, comuniones y bodas. Cuéntanos qué te apetece y para cuántas personas, y te preparamos presupuesto.</span><span lang="en">Birthdays, christenings and weddings. Tell us what you'd like and for how many, and we'll send you a quote.</span></p>
+   <p class="enc"><i><span lang="es">Encarga con 48 horas de antelación.</span><span lang="en">Please order 48 hours in advance.</span></i></p></div>
+  <div>
+   <span class="lbl"><span lang="es">1. Sabor</span><span lang="en">1. Flavour</span></span>
+   <div class="sab" id="sab"></div>
+   <span class="lbl"><span lang="es">2. Raciones</span><span lang="en">2. Servings</span></span>
+   <div class="rac"><button type="button" id="rm" aria-label="Menos">−</button><output id="rn">12</output><button type="button" id="rp" aria-label="Más">+</button></div>
+   <label class="lbl" for="fd"><span lang="es">3. ¿Para cuándo?</span><span lang="en">3. When for?</span></label>
+   <input class="fecha" type="date" id="fd">
+   <div><a class="wa" id="go" href="#"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2s-1 .3-3.4-.7a11.6 11.6 0 0 1-4.5-4c-.3-.5-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 .9c.3.2.5.2.6.4.1.1.1.7-.1 1.3z"/></svg> <span lang="es">Encargar por WhatsApp</span><span lang="en">Order on WhatsApp</span></a></div>
+  </div>
+ </div>
+
+ <div class="cols">
+  <div><h2 class="s"><span lang="es">Horario</span><span lang="en">Opening hours</span></h2><span class="st" data-hours='{"1": [["07:30", "14:30"], ["17:30", "20:30"]], "2": [["07:30", "14:30"], ["17:30", "20:30"]], "3": [["07:30", "14:30"], ["17:30", "20:30"]], "4": [["07:30", "14:30"], ["17:30", "20:30"]], "5": [["07:30", "14:30"], ["17:30", "20:30"]], "6": [["08:00", "14:30"]], "0": [["08:30", "13:30"]]}'>·</span><table class="hrs"><tr data-day="1"><td><span lang="es">Lunes</span><span lang="en">Monday</span></td><td>07:30–14:30 · 17:30–20:30</td></tr><tr data-day="2"><td><span lang="es">Martes</span><span lang="en">Tuesday</span></td><td>07:30–14:30 · 17:30–20:30</td></tr><tr data-day="3"><td><span lang="es">Miércoles</span><span lang="en">Wednesday</span></td><td>07:30–14:30 · 17:30–20:30</td></tr><tr data-day="4"><td><span lang="es">Jueves</span><span lang="en">Thursday</span></td><td>07:30–14:30 · 17:30–20:30</td></tr><tr data-day="5"><td><span lang="es">Viernes</span><span lang="en">Friday</span></td><td>07:30–14:30 · 17:30–20:30</td></tr><tr data-day="6"><td><span lang="es">Sábado</span><span lang="en">Saturday</span></td><td>08:00–14:30</td></tr><tr data-day="0"><td><span lang="es">Domingo</span><span lang="en">Sunday</span></td><td>08:30–13:30</td></tr></table></div>
+  <div class="mapa"><b><span lang="es">Ven a por tu pan</span><span lang="en">Come get your bread</span></b><p style="margin:6px 0 0">C. Ricardos, 9 · 04004 Almería</p><p style="margin:6px 0 0;font-style:italic"><span lang="es">Huele a horno desde la esquina.</span><span lang="en">You can smell the oven from the corner.</span></p></div>
+ </div>
+</div>
+<footer>Obrador Doña Pura · <span lang="es">web de ejemplo</span><span lang="en">sample website</span></footer>
+<div class="demo-tag">Demo</div>
+<script>
+(function(){var es=document.documentElement.dataset.l!=='en';
+// Hornadas del día: [hora, es, en]
+var H=[['07:30','Pan de pueblo','Country bread'],['09:00','Bollería','Pastries'],['12:00','Masa madre','Sourdough'],['18:00','Segunda hornada','Second batch']];
+var n=new Date(),m=n.getHours()*60+n.getMinutes(),next=-1;
+H.forEach(function(h,i){var t=h[0].split(':');h.m=+t[0]*60+ +t[1];if(next<0&&h.m>m)next=i;});
+document.getElementById('hl').innerHTML=H.map(function(h,i){return '<span class="'+(i===next?'prox':(h.m<=m?'ya':''))+'">'+h[0]+' · '+(es?h[1]:h[2])+'</span>'}).join('');
+var now=document.getElementById('hnow'),sub=document.getElementById('hsub');
+if(next<0){now.textContent=es?'Hoy ya no hay más hornadas':'No more batches today';sub.textContent=es?'Mañana, primera hornada a las 07:30':'Tomorrow, first batch at 07:30';}
+else{var d=H[next].m-m,txt=d<60?d+' min':Math.floor(d/60)+' h '+(d%60?d%60+' min':'');now.textContent=(es?'Próxima hornada en ':'Next batch in ')+txt;sub.textContent=(es?H[next][1]:H[next][2])+' · '+H[next][0];}
+// Configurador de tartas
+var S=[['Chocolate','Chocolate'],['Nata y fresa','Cream & strawberry'],['Limón','Lemon'],['Zanahoria','Carrot'],['Tres leches','Tres leches']],sab=0,rac=12;
+var sb=document.getElementById('sab');
+sb.innerHTML=S.map(function(s,i){return '<button type="button" data-i="'+i+'" aria-pressed="'+(i===0)+'">'+(es?s[0]:s[1])+'</button>'}).join('');
+sb.onclick=function(e){var b=e.target.closest('button');if(!b)return;sab=+b.dataset.i;sb.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});upd()};
+var fd=document.getElementById('fd'),min=new Date(Date.now()+2*864e5);fd.min=min.toISOString().slice(0,10);fd.value=fd.min;fd.onchange=upd;
+document.getElementById('rm').onclick=function(){rac=Math.max(6,rac-2);upd()};
+document.getElementById('rp').onclick=function(){rac=Math.min(60,rac+2);upd()};
+function upd(){document.getElementById('rn').textContent=rac;
+ var f=fd.value?fd.value.split('-').reverse().join('/'):'';
+ var msg=es?'Hola Doña Pura, quería encargar una tarta de '+S[sab][0].toLowerCase()+' para '+rac+' personas'+(f?' para el '+f:'')+'.':'Hi Doña Pura, I would like to order a '+S[sab][1].toLowerCase()+' cake for '+rac+' people'+(f?' for '+f:'')+'.';
+ document.getElementById('go').href='https://wa.me/34600000000?text='+encodeURIComponent(msg);}
+upd();})();
+</script>
+</body></html>

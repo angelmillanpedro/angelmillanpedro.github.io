@@ -1,56 +1,262 @@
-<!DOCTYPE html><html lang="es" class="scroll-smooth"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><script src="https://cdn.tailwindcss.com"></script><script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script><title>Atelier Lumière · Hair Studio</title>
-<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Manrope:wght@300;400;600&display=swap" rel="stylesheet">
-<style>body{font-family:'Manrope',sans-serif}.f{font-family:'Italiana',serif}section{scroll-margin-top:5rem}
-.g{background:rgba(255,255,255,.22);backdrop-filter:blur(22px) saturate(160%);-webkit-backdrop-filter:blur(22px) saturate(160%);border:1px solid rgba(255,255,255,.55);box-shadow:0 8px 40px rgba(120,80,110,.18),inset 0 1px 0 rgba(255,255,255,.6)}
-.fi{min-width:0;max-width:100%;box-sizing:border-box;display:block;-webkit-appearance:none;appearance:none;font:inherit;min-height:3.25rem;width:100%;padding:.9rem 1rem;border-radius:1rem;background:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.7)}
-@keyframes d{0%,100%{transform:translate(0,0)}50%{transform:translate(30px,-40px)}}.b{animation:d 12s ease-in-out infinite}
-@media(prefers-reduced-motion:reduce){.b{animation:none}}.dt{position:relative;min-width:0}.dt::before{content:attr(data-ph);position:absolute;left:1rem;top:50%;transform:translateY(-50%);pointer-events:none;color:#6b7280;font-weight:500}.dt:has(input:valid)::before,.dt:focus-within::before{display:none}.dt input:invalid:not(:focus){color:transparent}</style></head>
-<body class="relative bg-gradient-to-br from-rose-200 via-[#f3e3ff] to-amber-100 text-stone-800 antialiased overflow-x-hidden min-h-screen">
-<img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1400&q=60" alt="" class="fixed inset-0 w-full h-full object-cover opacity-40 -z-20" onerror="this.remove()">
-<div class="b fixed top-10 -left-20 w-80 h-80 rounded-full bg-fuchsia-300/60 blur-3xl -z-10"></div><div class="b fixed bottom-10 -right-20 w-96 h-96 rounded-full bg-amber-300/60 blur-3xl -z-10" style="animation-delay:-6s"></div>
-<nav class="g fixed top-3 inset-x-3 z-40 max-w-4xl mx-auto rounded-full h-14 px-5 flex items-center justify-between">
-<a href="#" class="f text-2xl">Atelier Lumière</a>
-<div class="hidden md:flex gap-6 text-sm font-semibold"><a href="#servicios">Servicios</a><a href="#proceso">Proceso</a><a href="#trabajos">Trabajos</a><a href="#faq">Dudas</a></div>
-<a href="#cita" class="hidden md:block px-5 py-2 rounded-full bg-stone-900 text-white text-sm font-semibold transition hover:bg-amber-500">Pedir Cita</a>
-<button id="mb" aria-label="Menú" class="md:hidden text-3xl"><i class="ph-bold ph-list"></i></button></nav>
-<div id="mm" class="g hidden md:hidden fixed top-20 inset-x-3 z-40 rounded-3xl flex flex-col gap-4 p-6 text-lg font-semibold"><a href="#servicios">Servicios</a><a href="#proceso">Proceso</a><a href="#trabajos">Trabajos</a><a href="#faq">Dudas</a><a href="#cita" class="text-amber-600">Pedir Cita</a></div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Atelier Lumière · Hair Studio</title>
+<meta name="description" content="Web de muestra: peluquería con servicios y precios, cita por WhatsApp y horario.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--tinta:#2a2226;--suave:#6d5f66;--rosa:#f6d7dc;--lila:#e9dcff;--miel:#f2c879;--oro:#b9852f;--vidrio:#ffffffa6;--borde:#ffffffd9}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--tinta);font:17px/1.6 'Manrope',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  background:linear-gradient(160deg,#fbe3e8 0%,#f3e8ff 45%,#fdf0d8 100%) fixed}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:'Italiana',serif;font-weight:400;line-height:1.02;margin:0}
+h2{font-size:clamp(2.4rem,7vw,3.6rem)}
+.wrap{max-width:980px;margin:0 auto;padding:0 18px}
+section{margin-top:22px;scroll-margin-top:90px}
+/* Tarjetas "de cristal" sin desenfoque (más ligeras de pintar) */
+.g{background:var(--vidrio);border:1px solid var(--borde);border-radius:32px;box-shadow:0 10px 40px #78506e1f,inset 0 1px 0 #fff}
+.pad{padding:clamp(1.4rem,5vw,3rem)}
+.strip{margin:0;background:var(--tinta);color:#fff;font-size:.85rem;text-align:center;padding:.45rem 1rem}
+.strip a{color:var(--miel);font-weight:700;text-decoration:none}
 
-<main class="max-w-4xl mx-auto px-5 pt-24 pb-32 space-y-8">
-<section class="g rounded-[2rem] px-6 py-20 text-center"><i class="ph-fill ph-scissors text-4xl text-amber-600"></i>
-<h1 class="f text-5xl sm:text-7xl mt-3">Atelier Lumière</h1><p class="text-lg text-stone-600 mt-3">Tu mejor versión te está esperando</p>
-<a href="#cita" class="mt-8 flex items-center justify-center gap-3 w-full sm:w-auto sm:inline-flex px-12 py-6 rounded-full bg-stone-900/90 text-white text-xl font-semibold transition duration-300 hover:bg-amber-500 hover:scale-105 active:scale-95"><i class="ph-bold ph-calendar-heart text-2xl"></i>Pedir Cita</a>
-<div class="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-stone-600"><span><i class="ph-fill ph-star text-amber-500"></i> 4,9 en valoraciones</span><span><i class="ph-fill ph-leaf text-emerald-600"></i> Productos veganos</span><span><i class="ph-fill ph-clock text-rose-500"></i> Cita online</span></div></section>
+nav{position:sticky;top:10px;z-index:30;margin:10px auto 0;max-width:980px;padding:0 10px}
+nav .g{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:58px;padding:0 10px 0 22px;border-radius:999px;background:#fffffff5}
+.logo{font:1.6rem 'Italiana',serif;text-decoration:none;white-space:nowrap}
+.links{display:none;gap:1.5rem;font-size:.92rem;font-weight:600}
+.links a{text-decoration:none}.links a:hover{color:var(--oro)}
+@media(min-width:780px){.links{display:flex}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border:0;border-radius:999px;background:var(--tinta);color:#fff;font:700 1rem 'Manrope',sans-serif;text-decoration:none;padding:.95rem 1.8rem;cursor:pointer;transition:background .25s,transform .25s}
+.btn:hover{background:var(--oro);transform:translateY(-2px)}
+nav .btn{padding:.6rem 1.2rem;font-size:.9rem}
 
-<section id="servicios" class="g rounded-[2rem] p-6 sm:p-10"><h2 class="f text-4xl sm:text-5xl">Servicios &amp; precios</h2>
-<div id="tb" class="mt-6 flex gap-2 overflow-x-auto pb-2"></div><ul id="mi" class="mt-2"></ul></section>
+/* Portada */
+.hero{position:relative;overflow:hidden;display:grid;gap:2rem;align-items:center;margin-top:22px}
+@media(min-width:780px){.hero{grid-template-columns:1.1fr 1fr}}
+.hero h1{font-size:clamp(3.4rem,11vw,6.2rem)}
+.hero p.lead{color:var(--suave);font-size:1.15rem;margin:1rem 0 0;max-width:26rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem 1.2rem;margin-top:1.6rem;font-size:.9rem;color:var(--suave)}
+.chips span::before{content:"✦ ";color:var(--oro)}
+.hero .btn{margin-top:1.8rem;font-size:1.1rem;padding:1.1rem 2.2rem}
+.retrato{position:relative;justify-self:center;width:min(100%,360px)}
+.retrato img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:200px 200px 32px 32px;border:8px solid #fff;background:var(--rosa)}
+.retrato .sello{position:absolute;right:-6px;top:24px;width:96px;height:96px;border-radius:50%;background:var(--miel);display:grid;place-items:center;text-align:center;font:700 .78rem/1.2 'Manrope',sans-serif;transform:rotate(10deg);box-shadow:0 8px 20px #0002}
+.retrato .sello b{display:block;font:1.8rem/1 'Italiana',serif}
+.st{display:inline-flex;align-items:center;gap:.45rem;font-size:.85rem;font-weight:700;padding:.3rem .8rem;border-radius:999px;background:#fff;margin-bottom:1rem}
+.st::before{content:"";width:8px;height:8px;border-radius:50%;background:#bbb}
+.st.is-open::before{background:#2fb35a;box-shadow:0 0 0 4px #2fb35a33}
+.st.is-closed::before{background:#e0564a}
 
-<section id="proceso"><h2 class="f text-4xl sm:text-5xl mb-5 px-2">Cómo trabajamos</h2><div class="grid gap-4 sm:grid-cols-2">
-<div class="g rounded-3xl p-6"><span class="f text-4xl text-amber-600">1</span><h3 class="font-semibold mt-1">Consulta</h3><p class="text-stone-600 text-sm mt-1">Hablamos de tu pelo, tu rutina y lo que buscas.</p></div>
-<div class="g rounded-3xl p-6"><span class="f text-4xl text-amber-600">2</span><h3 class="font-semibold mt-1">Diseño</h3><p class="text-stone-600 text-sm mt-1">Elegimos corte y tono según tu rostro y tu tipo de cabello.</p></div>
-<div class="g rounded-3xl p-6"><span class="f text-4xl text-amber-600">3</span><h3 class="font-semibold mt-1">Servicio</h3><p class="text-stone-600 text-sm mt-1">Trabajamos con calma, con productos que cuidan la fibra.</p></div>
-<div class="g rounded-3xl p-6"><span class="f text-4xl text-amber-600">4</span><h3 class="font-semibold mt-1">Cuidado en casa</h3><p class="text-stone-600 text-sm mt-1">Te explicamos cómo mantener el resultado.</p></div></div></section>
+/* Servicios */
+.tabs{display:flex;gap:.5rem;overflow-x:auto;margin-top:1.4rem;padding-bottom:.3rem;scrollbar-width:none}
+.tabs button{font:600 .95rem 'Manrope',sans-serif;border:1px solid var(--borde);background:#ffffff80;color:var(--tinta);border-radius:999px;padding:.55rem 1.2rem;cursor:pointer;white-space:nowrap}
+.tabs button[aria-pressed=true]{background:var(--tinta);color:#fff;border-color:var(--tinta)}
+.serv{list-style:none;margin:.6rem 0 0;padding:0}
+.serv li{display:flex;align-items:baseline;gap:.8rem;padding:1rem 0;border-bottom:1px solid #2a222614}
+.serv li:last-child{border:0}
+.serv b{font-weight:700}
+.serv small{display:block;color:var(--suave);font-size:.88rem}
+.serv i{flex:1}
+.serv span{font:1.5rem 'Italiana',serif;white-space:nowrap}
 
-<section id="trabajos"><h2 class="f text-4xl sm:text-5xl mb-5 px-2">Nuestros trabajos</h2><div id="gl" class="grid grid-cols-2 md:grid-cols-3 gap-3"></div></section>
-<section><h2 class="f text-4xl sm:text-5xl mb-5 px-2">Opiniones</h2><div id="rv" class="grid gap-4 md:grid-cols-3"></div></section>
+/* Proceso */
+.pasos{display:grid;gap:14px;margin-top:1.4rem}
+@media(min-width:640px){.pasos{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:900px){.pasos{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.pasos .g{padding:1.4rem;border-radius:26px}
+.pasos b{font:3rem/1 'Italiana',serif;color:var(--oro)}
+.pasos h3{font:700 1.05rem 'Manrope',sans-serif;margin-top:.4rem}
+.pasos p{margin:.3rem 0 0;color:var(--suave);font-size:.92rem}
 
-<section id="faq" class="g rounded-[2rem] p-6 sm:p-10"><h2 class="f text-4xl sm:text-5xl mb-4">Preguntas frecuentes</h2>
-<details class="py-4 border-b border-white/60"><summary class="font-semibold cursor-pointer">¿Cuánto dura un balayage?</summary><p class="mt-2 text-stone-600">Entre 3 y 4 horas según el largo y el tono de partida.</p></details>
-<details class="py-4 border-b border-white/60"><summary class="font-semibold cursor-pointer">¿Puedo cancelar mi cita?</summary><p class="mt-2 text-stone-600">Sí, hasta 24 horas antes y sin coste, por WhatsApp.</p></details>
-<details class="py-4 border-b border-white/60"><summary class="font-semibold cursor-pointer">¿Usáis productos veganos?</summary><p class="mt-2 text-stone-600">La mayoría de nuestra gama lo es. Pregúntanos si tienes alergias.</p></details>
-<details class="py-4"><summary class="font-semibold cursor-pointer">¿Hay bonos regalo?</summary><p class="mt-2 text-stone-600">Sí, desde 30 €, en formato digital o impreso.</p></details></section>
+.gal{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:1.4rem}
+@media(min-width:760px){.gal{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.gal img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:26px;background:var(--lila);transition:transform .5s}
+.gal img:nth-child(3n+2){border-radius:120px 120px 26px 26px}
+.gal img:hover{transform:translateY(-6px)}
 
-<section id="cita" class="g rounded-[2rem] p-6 sm:p-10"><h2 class="f text-4xl sm:text-5xl">Pide tu cita</h2>
-<form id="rf" class="mt-6 grid grid-cols-2 gap-3"><input name="n" required placeholder="Nombre" class="fi col-span-2"><input name="p" required type="number" min="1" value="1" class="fi" aria-label="Personas"><div class="dt" data-ph="Fecha"><input name="d" required type="date" class="fi"></div><div class="dt col-span-2" data-ph="Hora"><input name="h" required type="time" class="fi"></div>
-<button class="col-span-2 flex items-center justify-center gap-2 py-5 rounded-full bg-stone-900 text-white font-semibold text-lg transition hover:bg-amber-500 active:scale-95"><i class="ph-bold ph-whatsapp-logo text-2xl"></i>Enviar por WhatsApp</button></form></section>
+.revs{display:grid;gap:14px;margin-top:1.4rem}
+@media(min-width:780px){.revs{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.revs figure{margin:0;padding:1.5rem;border-radius:26px}
+.revs .stars{color:var(--oro);letter-spacing:.15em}
+.revs blockquote{margin:.5rem 0 0}
+.revs figcaption{margin-top:.9rem;font-weight:700;font-size:.9rem}
 
-<section class="g rounded-[2rem] p-3"><iframe title="Mapa" loading="lazy" class="w-full h-72 rounded-[1.5rem] border-0" src="https://www.google.com/maps?q=Calle+Sierpes+Sevilla&output=embed"></iframe>
-<div class="p-5 grid gap-2 text-sm sm:grid-cols-2"><p class="flex gap-2"><i class="ph-fill ph-map-pin text-xl text-rose-500"></i>Calle Sierpes · Sevilla</p><p class="flex gap-2"><i class="ph-fill ph-clock text-xl text-rose-500"></i>Lun–Sáb 10:00–20:00</p><p class="flex gap-2"><i class="ph-fill ph-phone text-xl text-rose-500"></i>954 56 12 47</p><p class="flex gap-2"><i class="ph-fill ph-instagram-logo text-xl text-rose-500"></i>@atelierlumiere</p></div></section>
-<p class="text-center text-sm text-stone-500">© 2026 Atelier Lumière · Calle Sierpes · Sevilla</p></main>
-<a href="https://wa.me/34678305419" aria-label="WhatsApp" class="fixed bottom-5 right-5 z-50 grid place-items-center w-16 h-16 rounded-full bg-[#25D366] text-white text-4xl shadow-xl shadow-black/30 transition hover:scale-110 active:scale-90"><span class="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-40"></span><i class="ph-fill ph-whatsapp-logo relative"></i></a><a href="../index.html" class="fixed bottom-5 left-4 z-50 flex items-center gap-1 px-4 py-3 rounded-full bg-black/60 backdrop-blur text-white text-sm"><i class="ph-bold ph-arrow-left"></i>Portfolio</a>
-<script>var WA_NUM='34678305419'</script>
-<script src="../common.js"></script>
+details{border-bottom:1px solid #2a222614;padding:1.05rem 0}
+details:last-child{border:0}
+summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:1rem}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font:300 1.6rem/1 'Manrope',sans-serif;transition:transform .3s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin:.5rem 0 0;color:var(--suave)}
+
+form{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:.7rem;margin-top:1.4rem}
+label{display:grid;gap:.25rem;font-size:.85rem;font-weight:700;min-width:0}
+input,select{font:inherit;width:100%;min-width:0;min-height:3.1rem;padding:.7rem .9rem;border:1px solid var(--borde);border-radius:16px;background:#ffffffcc;color:var(--tinta)}
+.full{grid-column:1/-1}
+
+.info{display:grid;gap:1.6rem}
+@media(min-width:780px){.info{grid-template-columns:1fr 1fr}}
+.info p{margin:.4rem 0}
+table{width:100%;border-collapse:collapse;margin-top:.6rem}
+td{padding:.45rem 0;border-bottom:1px solid #2a222612}
+td:last-child{text-align:right;font-variant-numeric:tabular-nums}
+.today td{font-weight:700;color:var(--oro)}
+footer{text-align:center;color:var(--suave);font-size:.85rem;padding:2.2rem 0 6rem}
+
+.wa{position:fixed;right:18px;bottom:18px;z-index:40;width:60px;height:60px;border-radius:50%;display:grid;place-items:center;background:#25D366;color:#fff;box-shadow:0 8px 20px #0003;transition:transform .2s}
+.wa:hover{transform:scale(1.08)}
+.wa svg{width:32px;height:32px}
+.demo-tag{position:fixed;left:14px;bottom:14px;z-index:41;font:600 9px/1 system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;padding:5px 7px;border-radius:3px;background:#141414aa;color:#fff;opacity:.75;pointer-events:none}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<p class="strip"><a href="../index.html#proyectos">← Volver al portfolio</a> · Web de muestra, negocio inventado</p>
+
+<nav><div class="g">
+  <a href="#" class="logo">Atelier Lumière</a>
+  <div class="links"><a href="#servicios">Servicios</a><a href="#proceso">Cómo trabajamos</a><a href="#trabajos">Trabajos</a><a href="#dudas">Dudas</a></div>
+  <a href="#cita" class="btn">Pedir cita</a>
+</div></nav>
+
+<main class="wrap">
+<section class="g pad hero">
+  <div>
+    <span class="st" data-hours='{"1":[],"2":[["10:00","20:00"]],"3":[["10:00","20:00"]],"4":[["10:00","20:00"]],"5":[["10:00","20:00"]],"6":[["10:00","14:00"]],"0":[]}'>Horario</span>
+    <h1>Atelier<br>Lumière</h1>
+    <p class="lead">Color, corte y cuidado sin prisas. Tu mejor versión te está esperando.</p>
+    <a href="#cita" class="btn">Pedir cita</a>
+    <div class="chips"><span>4,9 en valoraciones</span><span>Productos veganos</span><span>Cita por WhatsApp</span></div>
+  </div>
+  <div class="retrato">
+    <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=700&q=70" alt="Interior del salón">
+    <span class="sello"><span><b>12</b>años<br>cuidando<br>melenas</span></span>
+  </div>
+</section>
+
+<section id="servicios" class="g pad">
+  <h2>Servicios &amp; precios</h2>
+  <div class="tabs" id="tabs" role="toolbar" aria-label="Tipo de servicio"></div>
+  <ul class="serv" id="serv"></ul>
+</section>
+
+<section id="proceso">
+  <h2 style="padding:0 .4rem">Cómo trabajamos</h2>
+  <div class="pasos">
+    <div class="g"><b>1</b><h3>Consulta</h3><p>Hablamos de tu pelo, tu rutina y lo que buscas.</p></div>
+    <div class="g"><b>2</b><h3>Diseño</h3><p>Elegimos corte y tono según tu cara y tu tipo de cabello.</p></div>
+    <div class="g"><b>3</b><h3>Servicio</h3><p>Trabajamos con calma, con productos que cuidan la fibra.</p></div>
+    <div class="g"><b>4</b><h3>En casa</h3><p>Te explicamos cómo mantener el resultado.</p></div>
+  </div>
+</section>
+
+<section id="trabajos">
+  <h2 style="padding:0 .4rem">Nuestros trabajos</h2>
+  <div class="gal">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=70" alt="">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=600&q=70" alt="">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&q=70" alt="">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?w=600&q=70" alt="">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1519735777090-ec97162dc266?w=600&q=70" alt="">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=70" alt="">
+  </div>
+</section>
+
+<section>
+  <h2 style="padding:0 .4rem">Opiniones</h2>
+  <div class="revs">
+    <figure class="g"><div class="stars">★★★★★</div><blockquote>Salí con el color que llevaba años buscando. Muy atentas y sin prisas.</blockquote><figcaption>Paula R.</figcaption></figure>
+    <figure class="g"><div class="stars">★★★★★</div><blockquote>Un corte limpio y el sitio es precioso. Pedir cita por WhatsApp es comodísimo.</blockquote><figcaption>Andrés M.</figcaption></figure>
+    <figure class="g"><div class="stars">★★★★★</div><blockquote>Me hicieron el recogido de mi boda y aguantó toda la noche.</blockquote><figcaption>Irene G.</figcaption></figure>
+  </div>
+</section>
+
+<section id="dudas" class="g pad">
+  <h2>Preguntas frecuentes</h2>
+  <div style="margin-top:.8rem">
+    <details><summary>¿Cuánto dura un balayage?</summary><p>Entre 3 y 4 horas, según el largo y el tono de partida.</p></details>
+    <details><summary>¿Puedo cambiar o cancelar mi cita?</summary><p>Sí, hasta 24 horas antes y sin coste, por WhatsApp.</p></details>
+    <details><summary>¿Usáis productos veganos?</summary><p>La mayoría de nuestra gama lo es. Pregúntanos si tienes alergias.</p></details>
+    <details><summary>¿Hay tarjetas regalo?</summary><p>Sí, desde 30 €, en digital o impresas.</p></details>
+  </div>
+</section>
+
+<section id="cita" class="g pad">
+  <h2>Pide tu cita</h2>
+  <p style="color:var(--suave);margin:.5rem 0 0">Elige servicio y hora y te confirmamos por WhatsApp.</p>
+  <form id="rf">
+    <label class="full">Nombre<input name="n" required autocomplete="given-name"></label>
+    <label class="full">Servicio<select name="s" id="selS"></select></label>
+    <label>Día<input name="d" type="date" required></label>
+    <label>Hora<input name="h" type="time" min="10:00" max="19:30" value="11:00" required></label>
+    <button class="btn full">Enviar por WhatsApp</button>
+  </form>
+</section>
+
+<section class="g pad info">
+  <div>
+    <h2 style="font-size:2.2rem">Dónde estamos</h2>
+    <p>Centro de Sevilla</p>
+    <p>600 000 000</p>
+    <p>Accesible · Wifi · Café mientras esperas</p>
+  </div>
+  <div>
+    <h2 style="font-size:2.2rem">Horario</h2>
+    <table>
+      <tr data-day="1"><td>Lunes</td><td>Cerrado</td></tr>
+      <tr data-day="2"><td>Martes</td><td>10:00–20:00</td></tr>
+      <tr data-day="3"><td>Miércoles</td><td>10:00–20:00</td></tr>
+      <tr data-day="4"><td>Jueves</td><td>10:00–20:00</td></tr>
+      <tr data-day="5"><td>Viernes</td><td>10:00–20:00</td></tr>
+      <tr data-day="6"><td>Sábado</td><td>10:00–14:00</td></tr>
+      <tr data-day="0"><td>Domingo</td><td>Cerrado</td></tr>
+    </table>
+  </div>
+</section>
+</main>
+<footer>© <span class="yr">2026</span> Atelier Lumière · Negocio ficticio, web de muestra</footer>
+
+<a href="https://wa.me/34600000000?text=Hola%2C%20quer%C3%ADa%20pedir%20cita%20en%20Atelier%20Lumi%C3%A8re" class="wa" aria-label="Escribir por WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 2.5 1 3 .8 3.6.8.6-.1 1.8-.7 2-1.5.3-.7.3-1.3.2-1.5-.1-.1-.3-.2-.6-.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 0 1 12 2.2a9.8 9.8 0 1 1 0 19.6zm0-21.6A11.8 11.8 0 0 0 1.8 17.9L.1 24l6.3-1.6A11.8 11.8 0 1 0 12 .2z"/></svg></a>
+<div class="demo-tag">Demo</div>
+
 <script>
-$('#gl').innerHTML=gal(['1560066984-138dadb4c035','1522337360788-8b13dee7a37e','1521590832167-7bcbfaa6381f','1562322140-8baeececf3df','1600948836101-f9ffda59d250','1519735777090-ec97162dc266'],'aspect-square rounded-3xl bg-rose-200');
-$('#rv').innerHTML=rev([['Paula R.','Salí con el color que llevaba años buscando. Muy atentos y sin prisas.'],['Andrés M.','Un corte limpio y el sitio es precioso. Reservar por WhatsApp es comodísimo.'],['Irene G.','Me hicieron el recogido de mi boda y duró toda la noche.']],'g rounded-3xl p-6');
-menu({Corte:[['Corte mujer','Lavado, corte y peinado','25 €'],['Corte hombre','Incluye perfilado','14 €'],['Corte infantil','Hasta 12 años','10 €'],['Barba','Toalla caliente','8 €']],Color:[['Tinte raíz','Cobertura de canas','35 €'],['Color completo','Largo medio','48 €'],['Mechas / Balayage','Según largo','desde 65 €'],['Matiz y brillo','Tono a tono','20 €']],Peinado:[['Lavado y secado','Con mascarilla','15 €'],['Ondas y planchado','Acabado de salón','18 €'],['Recogido de evento','Con prueba previa','desde 40 €']],Tratamientos:[['Hidratación profunda','Cabello seco','22 €'],['Keratina','Efecto antiencrespamiento','desde 90 €'],['Ritual de cuero cabelludo','Masaje y mascarilla','30 €']]},'px-5 py-2 rounded-full bg-stone-900 text-white font-semibold whitespace-nowrap','px-5 py-2 rounded-full bg-white/40 border border-white/70 whitespace-nowrap');
-</script></body></html>
+const $=s=>document.querySelector(s),$$=s=>document.querySelectorAll(s);
+const WA='https://wa.me/34600000000?text=';
+
+// Servicios con pestañas (también rellenan el desplegable de la cita)
+const SERV={
+  Corte:[['Corte mujer','Lavado, corte y peinado','25 €'],['Corte hombre','Incluye perfilado','14 €'],['Corte infantil','Hasta 12 años','10 €'],['Barba','Toalla caliente','8 €']],
+  Color:[['Tinte raíz','Cobertura de canas','35 €'],['Color completo','Largo medio','48 €'],['Mechas o balayage','Según largo','desde 65 €'],['Matiz y brillo','Tono sobre tono','20 €']],
+  Peinado:[['Lavado y secado','Con mascarilla','15 €'],['Ondas o planchado','Acabado de salón','18 €'],['Recogido de evento','Con prueba previa','desde 40 €']],
+  Tratamientos:[['Hidratación profunda','Cabello seco','22 €'],['Keratina','Adiós al encrespado','desde 90 €'],['Ritual de cuero cabelludo','Masaje y mascarilla','30 €']]
+};
+const show=k=>{$$('#tabs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.k==k));
+  $('#serv').innerHTML=SERV[k].map(([n,d,p])=>`<li><div><b>${n}</b><small>${d}</small></div><i></i><span>${p}</span></li>`).join('')};
+$('#tabs').innerHTML=Object.keys(SERV).map(k=>`<button type="button" data-k="${k}">${k}</button>`).join('');
+$('#tabs').onclick=e=>{const b=e.target.closest('button');if(b)show(b.dataset.k)};
+show('Corte');
+$('#selS').innerHTML=Object.entries(SERV).map(([k,l])=>`<optgroup label="${k}">${l.map(([n,,p])=>`<option>${n} (${p})</option>`).join('')}</optgroup>`).join('');
+
+// Cita: abre WhatsApp con el mensaje montado
+const hoy=new Date();$('[name=d]').min=hoy.toISOString().slice(0,10);
+$('#rf').onsubmit=e=>{e.preventDefault();const f=new FormData(e.target);
+  const dia=new Date(f.get('d')+'T12:00').toLocaleDateString('es-ES',{weekday:'long',day:'numeric',month:'long'});
+  open(WA+encodeURIComponent(`Hola, soy ${f.get('n')}. Quería cita para ${f.get('s')} el ${dia} a las ${f.get('h')}.`))};
+
+// Abierto / cerrado ahora y día de hoy resaltado
+const mins=t=>{const [h,m]=t.split(':');return +h*60+ +m};
+$$('[data-hours]').forEach(el=>{const H=JSON.parse(el.dataset.hours),m=hoy.getHours()*60+hoy.getMinutes();
+  const open=(H[hoy.getDay()]||[]).some(([a,b])=>m>=mins(a)&&m<mins(b));
+  el.classList.add(open?'is-open':'is-closed');el.textContent=open?'Abierto ahora':'Cerrado ahora'});
+$$('[data-day]').forEach(r=>r.classList.toggle('today',+r.dataset.day==hoy.getDay()));
+$$('.yr').forEach(e=>e.textContent=hoy.getFullYear());
+</script>
+</body>
+</html>

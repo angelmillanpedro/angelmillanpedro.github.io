@@ -1,0 +1,105 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>(function(){var l=((navigator.languages&&navigator.languages[0])||navigator.language||'es').toLowerCase();var es=/^(es|ca|gl|eu)\b/.test(l);var d=document.documentElement;d.setAttribute('data-l',es?'es':'en');d.lang=es?'es':'en';
+document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('[data-hours]').forEach(function(el){try{var h=JSON.parse(el.getAttribute('data-hours'));var n=new Date(),day=n.getDay(),m=n.getHours()*60+n.getMinutes(),open=false;(h[day]||[]).forEach(function(r){var a=r[0].split(':'),b=r[1].split(':');var s=+a[0]*60+ +a[1],e=+b[0]*60+ +b[1];if(e<=s)e+=1440;if((m>=s&&m<e)||(m+1440>=s&&m+1440<e))open=true;});var p=(h[(day+6)%7]||[]);p.forEach(function(r){var a=r[0].split(':'),b=r[1].split(':');var s=+a[0]*60+ +a[1],e=+b[0]*60+ +b[1];if(e<=s&&m<e)open=true;});el.classList.add(open?'is-open':'is-closed');el.textContent=open?(es?'Abierto ahora':'Open now'):(es?'Cerrado ahora':'Closed now');}catch(e){}});
+var t=new Date().getDay();document.querySelectorAll('[data-day]').forEach(function(r){if(+r.getAttribute('data-day')===t)r.classList.add('today')});});})();</script>
+<style>html[data-l="es"] [lang="en"],html[data-l="en"] [lang="es"]{display:none!important}
+.demo-tag{position:fixed;left:max(10px,env(safe-area-inset-left));bottom:max(10px,env(safe-area-inset-bottom));z-index:9999;font:600 9px/1 system-ui,-apple-system,sans-serif;letter-spacing:.16em;text-transform:uppercase;padding:5px 7px;border-radius:3px;background:rgba(20,20,20,.55);color:#fff;opacity:.7;pointer-events:none}</style>
+
+<title>Ultramarinos Ortega · Almería</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Cabin:wght@400;600&display=swap">
+<style>
+:root{--ox:#6e1423;--papel:#f3ead7;--oro:#b48a3c;--tinta:#231a14;--verde:#284a3a;--madera:#7a4a2a;--madera2:#5c351c}
+*{box-sizing:border-box}body{margin:0;background:var(--papel);color:var(--tinta);font:16px/1.6 "Cabin",system-ui,sans-serif;overflow-x:hidden}
+/* Toldo de rayas */
+.toldo{height:54px;background:repeating-linear-gradient(90deg,var(--ox) 0 44px,#faf4e6 44px 88px);position:relative}
+.toldo::after{content:"";position:absolute;left:0;right:0;top:100%;height:18px;background:radial-gradient(circle at 22px 0,var(--ox) 21px,transparent 22px) 0 0/88px 18px,radial-gradient(circle at 66px 0,#faf4e6 21px,transparent 22px) 0 0/88px 18px}
+/* Rótulo */
+.label{max-width:660px;margin:52px auto 0;width:calc(100% - 44px);border:2px solid var(--ox);outline:6px solid var(--papel);box-shadow:0 0 0 8px var(--ox),0 22px 40px -20px rgba(35,26,20,.5);background:#faf4e6;text-align:center;padding:26px 18px}
+.label .ano{font:italic 400 16px "Old Standard TT"}
+h1{font:700 clamp(28px,8.2vw,58px)/.98 "Old Standard TT",serif;margin:8px 0;color:var(--ox);text-transform:uppercase;letter-spacing:.01em}
+.orn{color:var(--oro);letter-spacing:.5em}
+.label p{margin:8px 0 0;font:italic 400 18px "Old Standard TT"}
+/* Estantería dibujada */
+.mueble{max-width:760px;margin:46px auto 0;width:calc(100% - 28px);background:var(--madera);border:10px solid var(--madera2);border-top-width:18px;padding:14px 14px 0;position:relative;box-shadow:inset 0 0 0 2px rgba(0,0,0,.15)}
+.mueble::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(0,0,0,.06) 0 3px,transparent 3px 40px);pointer-events:none}
+.balda{display:flex;align-items:flex-end;justify-content:center;gap:clamp(4px,1.4vw,12px);height:clamp(92px,17vw,128px);padding:0 4px;border-bottom:12px solid var(--madera2);margin-bottom:14px;position:relative}
+.balda:last-child{margin-bottom:0}
+.balda i{display:block;flex:none;position:relative;font-style:normal;transition:transform .4s cubic-bezier(.3,1.6,.5,1)}
+.balda i:hover{transform:translateY(-8px) rotate(-3deg)}
+.lata{width:clamp(30px,6vw,46px);height:62%;border-radius:4px;background:linear-gradient(90deg,rgba(0,0,0,.18),transparent 40%,rgba(255,255,255,.25) 55%,rgba(0,0,0,.18)),var(--c,var(--ox));border-top:5px solid #c9c2b4;border-bottom:5px solid #c9c2b4}
+.lata::after{content:"";position:absolute;left:12%;right:12%;top:28%;height:34%;background:var(--papel);border-radius:2px}
+.tarro{width:clamp(34px,6.6vw,50px);height:72%;border-radius:10px 10px 6px 6px;background:linear-gradient(90deg,rgba(255,255,255,.35),transparent 30%),var(--c,#d9a441);opacity:.95}
+.tarro::before{content:"";position:absolute;left:-3px;right:-3px;top:-9px;height:12px;border-radius:3px;background:repeating-linear-gradient(90deg,var(--ox) 0 5px,#faf4e6 5px 10px)}
+.tarro::after{content:"";position:absolute;left:16%;right:16%;top:34%;height:30%;background:#faf4e6;border:1px solid var(--oro)}
+.botella{width:clamp(20px,3.6vw,28px);height:92%;border-radius:8px 8px 4px 4px;background:linear-gradient(90deg,rgba(255,255,255,.3),transparent 35%),var(--c,var(--verde));clip-path:polygon(34% 0,66% 0,66% 22%,100% 36%,100% 100%,0 100%,0 36%,34% 22%)}
+.botella::after{content:"";position:absolute;left:10%;right:10%;top:52%;height:24%;background:#faf4e6}
+.queso{width:clamp(56px,11vw,84px);height:42%;background:#e9c46a;border-radius:50% 50% 8px 8px/60% 60% 8px 8px;box-shadow:inset 0 -8px 0 #c99a3a}
+.queso::after{content:"";position:absolute;inset:30% 20% auto auto;width:9px;height:9px;border-radius:50%;background:#c99a3a;box-shadow:-22px 6px 0 -1px #c99a3a,-10px 14px 0 -2px #c99a3a}
+.jamon{width:clamp(70px,13vw,100px);height:58%;background:#8c2f2f;border-radius:60% 40% 30% 70%/60% 50% 50% 40%;box-shadow:inset -10px -6px 0 #6d1f1f}
+.jamon::after{content:"";position:absolute;right:-14px;top:12%;width:22px;height:10px;background:#efe2c5;border-radius:6px;transform:rotate(-30deg)}
+.etq{position:absolute;right:clamp(10px,4vw,30px);top:-26px;background:#faf4e6;border:2px solid var(--ox);padding:6px 12px 6px 20px;font:italic 700 15px "Old Standard TT";color:var(--ox);transform:rotate(6deg);clip-path:polygon(12px 0,100% 0,100% 100%,12px 100%,0 50%);z-index:2}
+/* Secciones */
+section{max-width:760px;margin:0 auto;padding:44px 18px}
+h2{font:700 30px "Old Standard TT";color:var(--ox);text-align:center;margin:0 0 6px;text-transform:uppercase}
+.h2s{text-align:center;font-style:italic;margin-bottom:22px;font-family:"Old Standard TT"}
+.h2s::before,.h2s::after{content:"—— ";color:var(--oro)}.h2s::after{content:" ——"}
+/* Etiquetas de precio colgadas */
+.shelf{display:grid;grid-template-columns:1fr 1fr;gap:26px 14px;padding-top:12px}
+@media(min-width:640px){.shelf{grid-template-columns:repeat(3,1fr)}}
+.jar{position:relative;background:#fffaf0;border:1.5px solid var(--ox);padding:22px 12px 14px 26px;text-align:center;clip-path:polygon(16px 0,100% 0,100% 100%,16px 100%,0 50%);transform:rotate(var(--r,-2deg));transition:transform .4s cubic-bezier(.3,1.6,.5,1);filter:drop-shadow(0 6px 6px rgba(35,26,20,.15))}
+.jar:nth-child(2n){--r:2deg}.jar:nth-child(3n){--r:-1deg}
+.jar:hover{transform:rotate(0) translateY(-4px)}
+.jar::before{content:"";position:absolute;left:12px;top:50%;width:9px;height:9px;margin-top:-5px;border-radius:50%;background:var(--papel);border:1.5px solid var(--ox)}
+.jar b{font:700 17px/1.2 "Old Standard TT";display:block}.jar small{color:#7a6a55}.jar .pr{display:block;font:700 22px "Old Standard TT";color:var(--ox);margin-top:4px}
+.jar:nth-child(even) .pr{color:var(--verde)}
+/* Cesta */
+.cesta{display:grid;grid-template-columns:1fr;gap:18px;background:var(--verde);color:var(--papel);padding:28px;border:3px double var(--oro)}
+@media(min-width:640px){.cesta{grid-template-columns:1fr 1.1fr;align-items:center}}
+.basket{position:relative;height:220px;display:flex;align-items:flex-end;justify-content:center}
+.basket .asa{position:absolute;bottom:92px;left:50%;width:170px;height:120px;margin-left:-85px;border:12px solid #c48b4a;border-bottom:0;border-radius:90px 90px 0 0}
+.basket .cuerpo{position:relative;width:230px;height:110px;border-radius:6px 6px 40px 40px;background:repeating-linear-gradient(45deg,#c48b4a 0 7px,#a26b33 7px 14px),#c48b4a;background-blend-mode:multiply;border-top:12px solid #8e5a28;z-index:2}
+.basket .lazo{position:absolute;z-index:3;top:-18px;left:50%;width:46px;height:26px;margin-left:-23px;background:var(--ox);clip-path:polygon(0 0,50% 40%,100% 0,100% 100%,50% 60%,0 100%)}
+.basket .b1{position:absolute;bottom:80px;left:calc(50% - 70px);width:26px;height:110px;background:#2c5a45;clip-path:polygon(34% 0,66% 0,66% 22%,100% 36%,100% 100%,0 100%,0 36%,34% 22%);z-index:1}
+.basket .b2{position:absolute;bottom:84px;left:calc(50% - 26px);width:60px;height:46px;border-radius:50% 50% 6px 6px;background:#e9c46a;z-index:1}
+.basket .b3{position:absolute;bottom:84px;left:calc(50% + 40px);width:40px;height:58px;border-radius:4px;background:var(--ox);border-top:5px solid #c9c2b4;z-index:1}
+.cesta h3{font:700 28px/1.15 "Old Standard TT";margin:0 0 8px}
+.hrs{width:100%;border-collapse:collapse}.hrs td{padding:9px 0;border-bottom:1px dotted var(--oro)}.hrs td+td{text-align:right}
+.today td{color:var(--ox);font-weight:600}
+.st{display:block;text-align:center;font:italic 18px "Old Standard TT";margin-bottom:8px}.st.is-open{color:var(--verde)}.st.is-closed{color:var(--ox)}
+.wa{display:inline-flex;gap:10px;align-items:center;background:var(--ox);color:var(--papel);text-decoration:none;padding:14px 20px;font-weight:600;margin-top:12px;transition:transform .2s}
+.wa:hover{transform:translateY(-2px)}
+.cesta .wa{background:var(--papel);color:var(--verde)}
+.dir{text-align:center;font:italic 18px "Old Standard TT";margin-top:18px}
+footer{text-align:center;font-size:13px;padding:20px 18px 80px;font-family:"Old Standard TT";font-style:italic}
+footer::before{content:"✦ ✦ ✦";display:block;color:var(--oro);letter-spacing:.5em;margin-bottom:10px}
+</style></head><body>
+<div class="toldo" aria-hidden="true"></div>
+<div class="label"><div class="ano">— <span lang="es">Casa fundada en</span><span lang="en">Established</span> 1951 —</div>
+ <h1>Ultramarinos<br>Ortega</h1><div class="orn">✦ ✦ ✦</div>
+ <p><span lang="es">Conservas, embutidos, quesos y vinos de la tierra</span><span lang="en">Tinned goods, cured meats, cheese and local wine</span></p></div>
+
+<div class="mueble" role="img" aria-label="Estantería con productos de la tienda">
+ <span class="etq"><span lang="es">¡Pase y vea!</span><span lang="en">Come on in!</span></span>
+ <div class="balda"><i class="botella" style="--c:#284a3a"></i><i class="botella" style="--c:#5a1a26"></i><i class="lata"></i><i class="lata" style="--c:#284a3a"></i><i class="lata" style="--c:#b48a3c"></i><i class="tarro"></i><i class="tarro" style="--c:#a8432f"></i><i class="botella" style="--c:#6b7d2a"></i></div>
+ <div class="balda"><i class="jamon"></i><i class="queso"></i><i class="queso" style="transform:scale(.8)"></i><i class="tarro" style="--c:#7d8f3a"></i><i class="lata" style="--c:#1d4f91"></i></div>
+ <div class="balda"><i class="lata" style="--c:#b48a3c"></i><i class="lata"></i><i class="lata" style="--c:#284a3a"></i><i class="tarro" style="--c:#d9a441"></i><i class="botella" style="--c:#b48a3c"></i><i class="botella" style="--c:#284a3a"></i><i class="tarro" style="--c:#a8432f"></i></div>
+</div>
+
+<section><h2><span lang="es">Del mostrador</span><span lang="en">From the counter</span></h2><div class="h2s"><span lang="es">Selección de la casa</span><span lang="en">House selection</span></div>
+ <div class="shelf">
+  <div class="jar"><b><span lang="es">Jamón de Serón</span><span lang="en">Serón cured ham</span></b><small>100 g</small><span class="pr">4,20 €</span></div>
+  <div class="jar"><b><span lang="es">Queso de cabra curado</span><span lang="en">Aged goat cheese</span></b><small>kg</small><span class="pr">18 €</span></div>
+  <div class="jar"><b><span lang="es">Mojama de atún</span><span lang="en">Cured tuna (mojama)</span></b><small>100 g</small><span class="pr">5,50 €</span></div>
+  <div class="jar"><b><span lang="es">Aceite de Tabernas</span><span lang="en">Tabernas olive oil</span></b><small>750 ml</small><span class="pr">9,90 €</span></div>
+  <div class="jar"><b><span lang="es">Vino de la Alpujarra</span><span lang="en">Alpujarra wine</span></b><small>75 cl</small><span class="pr">8,50 €</span></div>
+  <div class="jar"><b><span lang="es">Conserva de melva</span><span lang="en">Tinned frigate tuna</span></b><small><span lang="es">lata</span><span lang="en">tin</span></small><span class="pr">3,80 €</span></div>
+ </div></section>
+<section style="max-width:900px"><div class="cesta"><div class="basket" role="img" aria-label="Cesta de regalo"><span class="asa"></span><span class="b1"></span><span class="b2"></span><span class="b3"></span><div class="cuerpo"><span class="lazo"></span></div></div>
+ <div><h3><span lang="es">Cestas y lotes por encargo</span><span lang="en">Gift hampers to order</span></h3>
+ <p><span lang="es">Para empresas, Navidad o un regalo especial. Desde 35 €, montadas a tu gusto.</span><span lang="en">For companies, Christmas or a special gift. From €35, made to your taste.</span></p>
+ <a class="wa" href="https://wa.me/34600000000?text=Hola%20Ultramarinos%20Ortega%2C%20quer%C3%ADa%20encargar%20una%20cesta%20de"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2s-1 .3-3.4-.7a11.6 11.6 0 0 1-4.5-4c-.3-.5-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 .9c.3.2.5.2.6.4.1.1.1.7-.1 1.3z"/></svg> <span lang="es">Encargar cesta</span><span lang="en">Order a hamper</span></a></div></div></section>
+<section><h2><span lang="es">Horario</span><span lang="en">Opening hours</span></h2><span class="st" data-hours='{"1": [["09:00", "14:00"], ["17:30", "20:30"]], "2": [["09:00", "14:00"], ["17:30", "20:30"]], "3": [["09:00", "14:00"], ["17:30", "20:30"]], "4": [["09:00", "14:00"], ["17:30", "20:30"]], "5": [["09:00", "14:00"], ["17:30", "20:30"]], "6": [["09:30", "14:00"]]}'>·</span><table class="hrs"><tr data-day="1"><td><span lang="es">Lunes</span><span lang="en">Monday</span></td><td>09:00–14:00 · 17:30–20:30</td></tr><tr data-day="2"><td><span lang="es">Martes</span><span lang="en">Tuesday</span></td><td>09:00–14:00 · 17:30–20:30</td></tr><tr data-day="3"><td><span lang="es">Miércoles</span><span lang="en">Wednesday</span></td><td>09:00–14:00 · 17:30–20:30</td></tr><tr data-day="4"><td><span lang="es">Jueves</span><span lang="en">Thursday</span></td><td>09:00–14:00 · 17:30–20:30</td></tr><tr data-day="5"><td><span lang="es">Viernes</span><span lang="en">Friday</span></td><td>09:00–14:00 · 17:30–20:30</td></tr><tr data-day="6"><td><span lang="es">Sábado</span><span lang="en">Saturday</span></td><td>09:30–14:00</td></tr><tr data-day="0"><td><span lang="es">Domingo</span><span lang="en">Sunday</span></td><td><span lang="es">Cerrado</span><span lang="en">Closed</span></td></tr></table>
+ <p class="dir">C. Real, 41 · 04002 Almería</p></section>
+<footer>Ultramarinos Ortega · <span lang="es">web de ejemplo</span><span lang="en">sample website</span></footer>
+<div class="demo-tag">Demo</div>
+</body></html>

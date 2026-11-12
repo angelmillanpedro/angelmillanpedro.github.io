@@ -1,0 +1,67 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>(function(){var l=((navigator.languages&&navigator.languages[0])||navigator.language||'es').toLowerCase();var es=/^(es|ca|gl|eu)\b/.test(l);var d=document.documentElement;d.setAttribute('data-l',es?'es':'en');d.lang=es?'es':'en';
+document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('[data-hours]').forEach(function(el){try{var h=JSON.parse(el.getAttribute('data-hours'));var n=new Date(),day=n.getDay(),m=n.getHours()*60+n.getMinutes(),open=false;(h[day]||[]).forEach(function(r){var a=r[0].split(':'),b=r[1].split(':');var s=+a[0]*60+ +a[1],e=+b[0]*60+ +b[1];if(e<=s)e+=1440;if((m>=s&&m<e)||(m+1440>=s&&m+1440<e))open=true;});var p=(h[(day+6)%7]||[]);p.forEach(function(r){var a=r[0].split(':'),b=r[1].split(':');var s=+a[0]*60+ +a[1],e=+b[0]*60+ +b[1];if(e<=s&&m<e)open=true;});el.classList.add(open?'is-open':'is-closed');el.textContent=open?(es?'Abierto ahora':'Open now'):(es?'Cerrado ahora':'Closed now');}catch(e){}});
+var t=new Date().getDay();document.querySelectorAll('[data-day]').forEach(function(r){if(+r.getAttribute('data-day')===t)r.classList.add('today')});});})();</script>
+<style>html[data-l="es"] [lang="en"],html[data-l="en"] [lang="es"]{display:none!important}
+.demo-tag{position:fixed;left:max(10px,env(safe-area-inset-left));bottom:max(10px,env(safe-area-inset-bottom));z-index:9999;font:600 9px/1 system-ui,-apple-system,sans-serif;letter-spacing:.16em;text-transform:uppercase;padding:5px 7px;border-radius:3px;background:rgba(20,20,20,.55);color:#fff;opacity:.7;pointer-events:none}</style>
+
+<title>La Lonja Gastrobar · Puerto de Aguadulce</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;700&display=swap">
+<style>
+:root{--ink:#0e0e0e;--salmon:#ff7a59;--sal:#f1efe9;--mar:#0b5563}
+*{box-sizing:border-box}body{margin:0;background:var(--ink);color:var(--sal);font:16px/1.5 "Work Sans",system-ui,sans-serif}
+.top{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;position:sticky;top:0;background:rgba(14,14,14,.92);z-index:20;border-bottom:1px solid #222}
+.logo{font:400 22px "Anton",sans-serif;letter-spacing:1px}.logo b{color:var(--salmon);font-weight:400}
+.book{background:var(--salmon);color:var(--ink);text-decoration:none;font-weight:700;padding:9px 14px;border-radius:2px;font-size:14px}
+.hero{padding:30px 18px 0}
+.hero h1{font:400 clamp(64px,22vw,170px)/.82 "Anton",sans-serif;text-transform:uppercase;margin:0}
+.hero h1 span.o{color:transparent;-webkit-text-stroke:2px var(--salmon)}
+.hero p{max-width:36ch;color:#bdb9af;margin:16px 0 22px}
+.heroimg{height:58vw;max-height:460px;background:url(https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=1200&q=70) center/cover;margin:0 -18px}
+.strip{background:var(--salmon);color:var(--ink);font:400 20px "Anton",sans-serif;white-space:nowrap;overflow:hidden;padding:10px 0;text-transform:uppercase}
+.strip div{display:inline-block;animation:mq 22s linear infinite}
+@keyframes mq{to{transform:translateX(-50%)}}@media(prefers-reduced-motion:reduce){.strip div{animation:none}}
+section{padding:40px 18px}
+h2{font:400 44px/.9 "Anton",sans-serif;text-transform:uppercase;margin:0 0 18px}
+.cards{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;margin:0 -18px;padding-left:18px}
+.card{flex:0 0 78%;max-width:320px;scroll-snap-align:start;background:#1a1a1a;border:1px solid #2a2a2a}
+.card .im{aspect-ratio:1;background:center/cover}
+.card div.t{padding:14px}.card h3{margin:0 0 4px;font-size:18px}.card .pr{color:var(--salmon);font-weight:700}
+.card p{margin:6px 0 0;color:#a9a59c;font-size:14px}
+.split{display:grid;gap:22px}@media(min-width:760px){.split{grid-template-columns:1fr 1fr}}
+.hrs{width:100%;border-collapse:collapse;font-size:15px}.hrs td{padding:9px 0;border-bottom:1px solid #2a2a2a}.hrs td:last-child{text-align:right}
+.today td{color:var(--salmon)}
+.st{display:inline-block;margin-bottom:12px;font-weight:700;text-transform:uppercase;font-size:12px;letter-spacing:.1em;padding:5px 9px;border:1px solid currentColor}
+.st.is-open{color:#7CFFB2}.st.is-closed{color:#ff9d8a}
+.terr{background:url(https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1000&q=70) center/cover;min-height:280px;display:flex;align-items:flex-end}
+.terr p{background:var(--ink);margin:0;padding:14px 16px;font-weight:500;max-width:30ch}
+.wa{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:30;background:var(--salmon);color:var(--ink);padding:14px 16px;font-weight:700;text-decoration:none;display:flex;gap:8px;align-items:center;border-radius:2px}
+footer{padding:30px 18px 90px;color:#77736b;font-size:13px}
+</style></head><body>
+<div class="top"><div class="logo">LA <b>LONJA</b></div><a class="book" href="https://wa.me/34600000000?text=Hola%20La%20Lonja%2C%20quiero%20reservar%20mesa"><span lang="es">Reservar</span><span lang="en">Book</span></a></div>
+<div class="hero">
+ <h1>Tapas<br><span class="o">de lonja</span></h1>
+ <p><span lang="es">Producto del día comprado en la lonja de Almería y cocinado en minutos. Terraza frente a los barcos.</span><span lang="en">Fish bought each morning at Almería's fish market and cooked in minutes. Terrace overlooking the boats.</span></p>
+ <div class="heroimg" role="img" aria-label="Barra"></div>
+</div>
+<div class="strip"><div>Gamba roja · Quisquilla de Motril · Tataki de atún · Vermut de grifo · Gamba roja · Quisquilla de Motril · Tataki de atún · Vermut de grifo · </div></div>
+<section>
+ <h2><span lang="es">Lo que más se pide</span><span lang="en">Most ordered</span></h2>
+ <div class="cards">
+  <div class="card"><div class="im" style="background-image:url(https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=70)"></div><div class="t"><h3><span lang="es">Tataki de atún rojo</span><span lang="en">Bluefin tuna tataki</span></h3><span class="pr">14 €</span><p><span lang="es">Sésamo tostado, ajoblanco y lima.</span><span lang="en">Toasted sesame, ajoblanco and lime.</span></p></div></div>
+  <div class="card"><div class="im" style="background-image:url(https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=70)"></div><div class="t"><h3><span lang="es">Tabla de la lonja</span><span lang="en">Fish market board</span></h3><span class="pr">22 €</span><p><span lang="es">Para compartir entre dos o tres.</span><span lang="en">Shareable for two or three.</span></p></div></div>
+  <div class="card"><div class="im" style="background-image:url(https://images.unsplash.com/photo-1515443961218-a51367888e4b?auto=format&fit=crop&w=600&q=70)"></div><div class="t"><h3><span lang="es">Arroz meloso del día</span><span lang="en">Creamy rice of the day</span></h3><span class="pr">16 € / p.</span><p><span lang="es">Mínimo dos personas.</span><span lang="en">Minimum two people.</span></p></div></div>
+ </div>
+</section>
+<div class="terr"><p><span lang="es">Terraza con 30 mesas mirando a los veleros. Perros bienvenidos.</span><span lang="en">Terrace with 30 tables facing the sailboats. Dogs welcome.</span></p></div>
+<section class="split">
+ <div><h2><span lang="es">Horario</span><span lang="en">Hours</span></h2><span class="st" data-hours='{"2": [["13:00", "16:30"], ["20:00", "23:30"]], "3": [["13:00", "16:30"], ["20:00", "23:30"]], "4": [["13:00", "16:30"], ["20:00", "23:30"]], "5": [["13:00", "17:00"], ["20:00", "00:30"]], "6": [["13:00", "17:00"], ["20:00", "00:30"]], "0": [["13:00", "17:00"]]}'>·</span><table class="hrs"><tr data-day="1"><td><span lang="es">Lunes</span><span lang="en">Monday</span></td><td><span lang="es">Cerrado</span><span lang="en">Closed</span></td></tr><tr data-day="2"><td><span lang="es">Martes</span><span lang="en">Tuesday</span></td><td>13:00–16:30 · 20:00–23:30</td></tr><tr data-day="3"><td><span lang="es">Miércoles</span><span lang="en">Wednesday</span></td><td>13:00–16:30 · 20:00–23:30</td></tr><tr data-day="4"><td><span lang="es">Jueves</span><span lang="en">Thursday</span></td><td>13:00–16:30 · 20:00–23:30</td></tr><tr data-day="5"><td><span lang="es">Viernes</span><span lang="en">Friday</span></td><td>13:00–17:00 · 20:00–00:30</td></tr><tr data-day="6"><td><span lang="es">Sábado</span><span lang="en">Saturday</span></td><td>13:00–17:00 · 20:00–00:30</td></tr><tr data-day="0"><td><span lang="es">Domingo</span><span lang="en">Sunday</span></td><td>13:00–17:00</td></tr></table></div>
+ <div><h2><span lang="es">Contacto</span><span lang="en">Contact</span></h2>
+  <p>Puerto Deportivo de Aguadulce, local 7<br>04720 Aguadulce</p>
+  <p>WhatsApp 600 000 000</p>
+  <p style="color:#a9a59c"><span lang="es">Lunes cerrado por descanso del personal.</span><span lang="en">Closed on Mondays.</span></p></div>
+</section>
+<footer>La Lonja Gastrobar · <span lang="es">web de ejemplo</span><span lang="en">sample website</span></footer>
+<a class="wa" href="https://wa.me/34600000000?text=Hola%20La%20Lonja"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2s-1 .3-3.4-.7a11.6 11.6 0 0 1-4.5-4c-.3-.5-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 .9c.3.2.5.2.6.4.1.1.1.7-.1 1.3z"/></svg> WhatsApp</a>
+<div class="demo-tag">Demo</div>
+</body></html>

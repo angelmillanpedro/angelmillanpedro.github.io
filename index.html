@@ -1,42 +1,705 @@
-<!DOCTYPE html><html lang="es" class="scroll-smooth"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><script src="https://cdn.tailwindcss.com"></script><script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script><title>Pedro Millán · Diseñador web freelance</title>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;800&display=swap" rel="stylesheet">
-<style>body{font-family:'Sora',sans-serif}@keyframes fl{50%{transform:translateY(-24px)}}.fl{animation:fl 8s ease-in-out infinite}@media(prefers-reduced-motion:reduce){.fl{animation:none}}</style></head>
-<body class="bg-[#09090b] text-zinc-200 antialiased overflow-x-hidden">
-<!-- HERO -->
-<header class="relative min-h-screen grid place-items-center px-6 text-center">
-<div class="fl absolute top-10 -left-16 w-72 h-72 rounded-full bg-indigo-600/30 blur-3xl"></div><div class="fl absolute bottom-10 -right-16 w-80 h-80 rounded-full bg-fuchsia-600/20 blur-3xl" style="animation-delay:-4s"></div>
-<div class="relative max-w-2xl">
-<!-- FOTO: cambia el div interior por <img src="foto.jpg" class="w-full h-full rounded-full object-cover"> -->
-<div class="mx-auto mb-8 w-36 h-36 rounded-full p-1 bg-gradient-to-br from-indigo-500 to-fuchsia-500"><img src="foto.jpeg" class="w-full h-full rounded-full object-cover"></div>
-<h1 class="text-4xl sm:text-6xl font-extrabold text-white leading-tight">Hola, soy Pedro Millán</h1>
-<p class="mt-6 text-lg sm:text-xl text-zinc-400 leading-relaxed">Soy estudiante y diseñador web freelance. Ayudo a negocios locales a tener una presencia digital profesional y atractiva.</p>
-<div class="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
-<a href="#portfolio" class="flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-zinc-900 font-semibold transition hover:scale-105 active:scale-95"><i class="ph-bold ph-squares-four text-xl"></i>Ver proyectos</a>
-<a href="#contacto" class="flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-zinc-700 font-semibold transition hover:bg-white/10 active:scale-95"><i class="ph-bold ph-envelope-simple text-xl"></i>Contactar</a></div></div></header>
-<!-- PORTFOLIO con previews en vivo -->
-<section id="portfolio" class="px-6 py-20 max-w-6xl mx-auto"><h2 class="text-3xl sm:text-4xl font-bold text-white">Proyectos</h2><p class="text-zinc-400 mt-2 mb-10">Toca una web para verla completa.</p>
-<div class="grid grid-cols-2 gap-3 sm:gap-6">
-<a href="bar/index.html" class="card group block rounded-2xl sm:rounded-3xl bg-zinc-900 border border-zinc-800 overflow-hidden transition duration-500 hover:-translate-y-2 hover:border-white/30 active:scale-[.98]">
-<div class="pv relative aspect-[4/3] overflow-hidden bg-zinc-800"><iframe src="bar/index.html" title="Vista previa de Bar / Restaurante" loading="lazy" tabindex="-1" class="absolute top-0 left-0 origin-top-left border-0 pointer-events-none" style="width:1280px;height:960px"></iframe></div>
-<div class="p-3 sm:p-6 flex items-center justify-between gap-2"><div><h3 class="text-sm sm:text-xl font-bold flex items-center gap-1 sm:gap-2 leading-tight"><i class="ph-duotone ph-wine text-lg sm:text-2xl shrink-0"></i>Bar / Restaurante</h3><p class="text-zinc-400 text-[11px] sm:text-sm mt-1 leading-snug">Taberna con tarjetas arco, azulejos y mapa.</p></div><i class="ph-bold ph-arrow-up-right text-base sm:text-2xl shrink-0 transition group-hover:translate-x-1 group-hover:-translate-y-1"></i></div></a>
-<a href="peluqueria/index.html" class="card group block rounded-2xl sm:rounded-3xl bg-zinc-900 border border-zinc-800 overflow-hidden transition duration-500 hover:-translate-y-2 hover:border-white/30 active:scale-[.98]">
-<div class="pv relative aspect-[4/3] overflow-hidden bg-zinc-800"><iframe src="peluqueria/index.html" title="Vista previa de Peluquería / Estética" loading="lazy" tabindex="-1" class="absolute top-0 left-0 origin-top-left border-0 pointer-events-none" style="width:1280px;height:960px"></iframe></div>
-<div class="p-3 sm:p-6 flex items-center justify-between gap-2"><div><h3 class="text-sm sm:text-xl font-bold flex items-center gap-1 sm:gap-2 leading-tight"><i class="ph-duotone ph-scissors text-lg sm:text-2xl shrink-0"></i>Peluquería / Estética</h3><p class="text-zinc-400 text-[11px] sm:text-sm mt-1 leading-snug">Estilo glassmorphism con servicios y precios.</p></div><i class="ph-bold ph-arrow-up-right text-base sm:text-2xl shrink-0 transition group-hover:translate-x-1 group-hover:-translate-y-1"></i></div></a>
-<a href="peruano/index.html" class="card group block rounded-2xl sm:rounded-3xl bg-zinc-900 border border-zinc-800 overflow-hidden transition duration-500 hover:-translate-y-2 hover:border-white/30 active:scale-[.98]">
-<div class="pv relative aspect-[4/3] overflow-hidden bg-zinc-800"><iframe src="peruano/index.html" title="Vista previa de Restaurante peruano" loading="lazy" tabindex="-1" class="absolute top-0 left-0 origin-top-left border-0 pointer-events-none" style="width:1280px;height:960px"></iframe></div>
-<div class="p-3 sm:p-6 flex items-center justify-between gap-2"><div><h3 class="text-sm sm:text-xl font-bold flex items-center gap-1 sm:gap-2 leading-tight"><i class="ph-duotone ph-fish text-lg sm:text-2xl shrink-0"></i>Restaurante peruano</h3><p class="text-zinc-400 text-[11px] sm:text-sm mt-1 leading-snug">Colores andinos, carta deslizable y ubicación.</p></div><i class="ph-bold ph-arrow-up-right text-base sm:text-2xl shrink-0 transition group-hover:translate-x-1 group-hover:-translate-y-1"></i></div></a>
-<a href="gimnasio/index.html" class="card group block rounded-2xl sm:rounded-3xl bg-zinc-900 border border-zinc-800 overflow-hidden transition duration-500 hover:-translate-y-2 hover:border-white/30 active:scale-[.98]">
-<div class="pv relative aspect-[4/3] overflow-hidden bg-zinc-800"><iframe src="gimnasio/index.html" title="Vista previa de Gimnasio" loading="lazy" tabindex="-1" class="absolute top-0 left-0 origin-top-left border-0 pointer-events-none" style="width:1280px;height:960px"></iframe></div>
-<div class="p-3 sm:p-6 flex items-center justify-between gap-2"><div><h3 class="text-sm sm:text-xl font-bold flex items-center gap-1 sm:gap-2 leading-tight"><i class="ph-duotone ph-barbell text-lg sm:text-2xl shrink-0"></i>Gimnasio</h3><p class="text-zinc-400 text-[11px] sm:text-sm mt-1 leading-snug">Neobrutalismo con tienda, bonos y contacto.</p></div><i class="ph-bold ph-arrow-up-right text-base sm:text-2xl shrink-0 transition group-hover:translate-x-1 group-hover:-translate-y-1"></i></div></a>
-</div></section>
-<!-- CONTACTO -->
-<footer id="contacto" class="px-6 py-20 text-center border-t border-zinc-800 bg-zinc-950"><h2 class="text-3xl font-bold text-white">¿Hablamos de tu negocio?</h2>
-<p class="text-zinc-400 mt-3 flex items-center justify-center gap-2"><i class="ph-fill ph-envelope-simple"></i>angelmillanpedro@gmail.com</p>
-<a href="mailto:hola@pedromillan.dev" class="mt-8 inline-flex items-center gap-2 px-10 py-4 rounded-full bg-gradient-to-r from-indigo-500 to-fuchsia-500 text-white font-semibold transition hover:scale-105 active:scale-95"><i class="ph-bold ph-paper-plane-tilt text-xl"></i>Contactar</a>
-<p class="mt-12 text-sm text-zinc-600">© 2026 Pedro Millán</p></footer>
-<a href="https://wa.me/34669174839" aria-label="WhatsApp" class="fixed bottom-5 right-5 z-50 grid place-items-center w-16 h-16 rounded-full bg-[#25D366] text-white text-4xl shadow-xl shadow-black/30 transition hover:scale-110 active:scale-90"><span class="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-40"></span><i class="ph-fill ph-whatsapp-logo relative"></i></a>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pedro Millán · Diseñador web freelance</title>
+<meta name="description" content="Pedro Millán, estudiante y diseñador web freelance. Webs con personalidad propia para negocios, desde 300 €.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pedro Millán · Diseñador web freelance">
+<meta property="og:description" content="Webs profesionales y con personalidad propia para negocios, desde 300 €.">
+<meta property="og:image" content="https://angelmillanpedro.github.io/og.png">
+<meta property="og:url" content="https://angelmillanpedro.github.io/">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f1ebdf">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Instrument+Sans:wght@400;500;600;700&family=Caveat:wght@500;700&family=Archivo+Black&family=Italiana&display=swap" rel="stylesheet">
+<style>
+/* ================= Base ================= */
+:root{
+  --paper:#f1ebdf; --paper-2:#e6dccb; --ink:#16130f; --ink-2:#4a433a;
+  --tomato:#ff4a1c; --lime:#c9f24b; --sky:#9fd3ff;
+  --serif:'Fraunces',Georgia,serif; --sans:'Instrument Sans',system-ui,sans-serif; --hand:'Caveat',cursive;
+  --gut:clamp(16px,4vw,48px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;font-family:var(--sans);font-size:1.0625rem;color:var(--ink);background:var(--paper);
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.55;
+  /* grano de papel: imagen estática, barata de pintar */
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+a{color:inherit}
+img{display:block;max-width:100%}
+button{font:inherit;color:inherit}
+::selection{background:var(--tomato);color:var(--paper)}
+:focus-visible{outline:3px solid var(--tomato);outline-offset:4px;border-radius:6px}
+.wrap{max-width:1320px;margin:0 auto;padding:0 var(--gut)}
+.hand{font-family:var(--hand);font-weight:700;line-height:1}
+
+/* ================= Barra superior ================= */
+.top{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 90%,transparent);border-bottom:1.5px solid var(--ink)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:.6rem;height:64px}
+.logo{font-family:var(--serif);font-weight:800;font-size:1.3rem;text-decoration:none;letter-spacing:-.02em;display:flex;align-items:center;gap:.55rem;white-space:nowrap}
+.logo img{width:34px;height:34px;transition:transform .4s cubic-bezier(.3,1.6,.5,1)}
+.logo:hover img{transform:rotate(-12deg) scale(1.1)}
+.logo span{display:none}
+@media(min-width:460px){.logo span{display:inline}}
+.status{display:none;align-items:center;gap:.5rem;font-size:.95rem;font-weight:500}
+.status::before{content:"";width:9px;height:9px;border-radius:50%;background:#2fbf4a;animation:beat 2s infinite}
+@keyframes beat{0%{box-shadow:0 0 0 0 #2fbf4a88}70%,100%{box-shadow:0 0 0 9px #2fbf4a00}}
+.tools{display:flex;align-items:center;gap:.45rem}
+.chip{font-size:1rem;font-weight:600;text-decoration:none;padding:.45rem 1rem;border:1.5px solid var(--ink);border-radius:99px;transition:background .2s,color .2s;white-space:nowrap}
+.chip:hover{background:var(--ink);color:var(--paper)}
+.chip.solid{background:var(--ink);color:var(--paper)}
+.chip.solid:hover{background:var(--tomato);border-color:var(--tomato)}
+.chip.hide-s{display:none}
+/* selector de tamaño de letra */
+.fs{display:flex;align-items:center;border:1.5px solid var(--ink);border-radius:99px;overflow:hidden;background:var(--paper)}
+.fs button{border:0;background:none;cursor:pointer;height:36px;min-width:40px;font-weight:700;display:grid;place-items:center;transition:background .2s,color .2s}
+.fs button:hover:not(:disabled){background:var(--ink);color:var(--paper)}
+.fs button:disabled{opacity:.3;cursor:default}
+.fs button+button{border-left:1.5px solid var(--ink)}
+.fs .s{font-size:.85rem}.fs .b{font-size:1.15rem}
+@media(min-width:900px){.status,.chip.hide-s{display:flex}}
+
+/* ================= Hero ================= */
+.hero{position:relative;padding:clamp(2rem,5vw,4.5rem) 0 clamp(3.5rem,6vw,5rem)}
+.hero .wrap{display:grid;gap:2.5rem;align-items:center}
+@media(min-width:960px){.hero .wrap{grid-template-columns:1.2fr 1fr}}
+.kicker{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;font-weight:600;font-size:1.15rem;margin:0 0 1.2rem}
+#hi{flex-basis:100%}
+.kicker b{background:var(--lime);padding:.1rem .6rem;border:1.5px solid var(--ink);border-radius:7px;transform:rotate(-2deg);display:inline-block}
+h1{font-family:var(--serif);font-weight:800;font-variation-settings:"opsz" 144;font-size:clamp(3.4rem,14.5vw,8.8rem);line-height:.9;letter-spacing:-.045em;margin:0}
+@media(min-width:960px){h1{font-size:clamp(5rem,8.4vw,8.8rem)}}
+h1 .ln{display:block;overflow:hidden;padding-bottom:.08em}
+h1 .ln>span{display:inline-block;transform:translateY(105%);animation:rise 1s cubic-bezier(.2,.8,.2,1) forwards}
+h1 .ln:nth-child(2)>span{animation-delay:.12s}
+h1 .ln:nth-child(3)>span{animation-delay:.24s}
+@keyframes rise{to{transform:none}}
+h1 em{font-style:italic;font-weight:400;color:var(--tomato);position:relative;display:inline-block}
+.squig{position:absolute;left:-2%;bottom:-.06em;width:104%;height:.22em;overflow:visible}
+.squig path{fill:none;stroke:var(--ink);stroke-width:5;stroke-linecap:round;stroke-dasharray:420;stroke-dashoffset:420;animation:draw 1.1s .9s ease-out forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.lead{font-size:1.3rem;line-height:1.5;max-width:30ch;margin:1.8rem 0 0;color:var(--ink-2)}
+.lead strong{color:var(--ink)}
+@media(min-width:960px){.lead{font-size:1.45rem}}
+.ctas{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+.btn{display:inline-flex;align-items:center;gap:.6rem;font-weight:700;font-size:1.1rem;text-decoration:none;padding:1rem 1.5rem;border:2px solid var(--ink);border-radius:14px;background:var(--paper);box-shadow:5px 5px 0 var(--ink);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink)}
+.btn:active{transform:translate(4px,4px);box-shadow:1px 1px 0 var(--ink)}
+.btn.hot{background:var(--tomato);color:#fff}
+.btn svg{width:20px;height:20px;flex:none}
+
+/* --- Escenario: carnet colgante + pegatinas --- */
+.stage{position:relative;min-height:600px;display:flex;justify-content:center;padding-bottom:2.6rem}
+@media(max-width:520px){.stage{min-height:510px}}
+.sway{position:relative;display:flex;flex-direction:column;align-items:center;transform-origin:50% 0;animation:sway 6s ease-in-out infinite}
+@keyframes sway{0%,100%{transform:rotate(2.5deg)}50%{transform:rotate(-2.5deg)}}
+.strap{width:30px;height:110px;background:var(--tomato);border:2px solid var(--ink);border-top:0;display:grid;place-items:center;overflow:hidden}
+.strap span{writing-mode:vertical-rl;font:800 .7rem var(--sans);letter-spacing:.3em;color:#fff;white-space:nowrap}
+.clip{width:46px;height:22px;border:2px solid var(--ink);border-radius:6px;background:linear-gradient(#ddd,#9a9a9a);margin-top:-2px;position:relative;z-index:1}
+.idcard{position:relative;width:min(310px,64vw);margin-top:-6px;perspective:1200px;background:none;border:0;padding:0;cursor:pointer;text-align:left}
+.flip{position:relative;transition:transform .9s cubic-bezier(.3,1.3,.5,1);transform-style:preserve-3d}
+.idcard.back .flip{transform:rotateY(180deg)}
+.face{background:#fffdf7;border:2px solid var(--ink);border-radius:20px;box-shadow:8px 8px 0 var(--ink);overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.face .band{display:flex;justify-content:space-between;align-items:center;background:var(--ink);color:var(--paper);padding:.7rem 1rem;font:700 .75rem var(--sans);letter-spacing:.2em;text-transform:uppercase}
+.face .band i{width:44px;height:10px;border-radius:9px;background:var(--paper);border:2px solid var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+.photo{margin:.9rem .9rem 0;border:2px solid var(--ink);border-radius:12px;overflow:hidden;aspect-ratio:3/4;background:#fff}
+.photo img{width:100%;height:100%;object-fit:cover}
+.idinfo{padding:.8rem 1rem 1rem}
+.idinfo b{display:block;font:800 1.65rem/1 var(--serif);letter-spacing:-.02em}
+.idinfo small{display:block;margin-top:.3rem;font-size:.95rem;color:var(--ink-2)}
+.idrow{display:flex;justify-content:space-between;align-items:center;margin-top:.8rem;font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.idrow .ok{display:flex;align-items:center;gap:.4rem}
+.idrow .ok::before{content:"";width:8px;height:8px;border-radius:50%;background:#2fbf4a}
+.barcode{height:34px;margin-top:.7rem;background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 4px,var(--ink) 4px 7px,transparent 7px 9px,var(--ink) 9px 10px,transparent 10px 14px)}
+.face.rear{position:absolute;inset:0;transform:rotateY(180deg);background:var(--ink);color:var(--paper);display:flex;flex-direction:column;justify-content:center;gap:1.1rem;padding:1.6rem}
+.rear p{margin:0;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:#a29a8e}
+.rear p b{display:block;margin-top:.3rem;font:italic 500 1.6rem/1.15 var(--serif);letter-spacing:0;text-transform:none;color:var(--lime)}
+.rear svg{width:70%;color:var(--paper)}
+.rear .barcode{background:repeating-linear-gradient(90deg,var(--paper) 0 2px,transparent 2px 4px,var(--paper) 4px 7px,transparent 7px 9px)}
+.note{position:absolute;font-size:1.65rem;color:var(--ink);display:flex;align-items:center;gap:.3rem;pointer-events:none;white-space:nowrap}
+.note svg{width:56px;height:40px;flex:none}
+.note.me{left:0;top:42%;transform:rotate(-8deg)}
+.note.tap{left:50%;bottom:0;transform:translateX(-50%) rotate(3deg);font-size:1.5rem;color:var(--ink-2)}
+@media(max-width:520px){.note.me{display:none}}
+/* pegatinas arrastrables */
+.stk{position:absolute;z-index:5;touch-action:none;cursor:grab;user-select:none;-webkit-user-select:none;border:2px solid var(--ink);box-shadow:4px 4px 0 var(--ink);font-weight:800;transform:translate(var(--x,0),var(--y,0)) rotate(var(--r,0deg));transition:box-shadow .2s}
+.stk.drag{cursor:grabbing;box-shadow:10px 12px 0 var(--ink);z-index:6}
+.stk.price{top:4%;left:2%;--r:-10deg;background:var(--lime);border-radius:10px 22px 22px 10px;padding:.6rem 1rem .6rem 1.7rem;font-size:1rem;line-height:1.1}
+.stk.price::before{content:"";position:absolute;left:.55rem;top:50%;width:10px;height:10px;margin-top:-5px;border-radius:50%;border:2px solid var(--ink);background:var(--paper)}
+.stk.price big{display:block;font:900 1.9rem/1 var(--serif)}
+.stk.hand1{top:14%;right:0;--r:9deg;background:var(--tomato);color:#fff;border-radius:50%;width:104px;height:104px;display:grid;place-items:center;text-align:center;font-size:.95rem;line-height:1.05}
+.stk.mob{bottom:9%;right:0;--r:6deg;background:var(--sky);border-radius:99px;padding:.6rem 1.1rem;font-size:1rem}
+.stk.star{bottom:30%;right:4%;--r:-14deg;background:var(--paper);border-radius:12px;padding:.5rem .9rem;font-family:var(--hand);font-size:1.6rem;font-weight:700}
+@media(max-width:520px){.stk.hand1{width:84px;height:84px;font-size:.8rem}.stk.price big{font-size:1.5rem}.stk.price,.stk.mob{font-size:.85rem}.stk.star{font-size:1.3rem}}
+
+/* ================= Cintas ================= */
+.tapes{overflow:hidden;padding:1.6rem 0}
+.tape{position:relative;z-index:2;background:var(--ink);color:var(--paper);border-block:2px solid var(--ink);transform:rotate(-2deg);margin:0 -3vw;overflow:hidden}
+.tape.alt{background:var(--lime);color:var(--ink);transform:rotate(1.5deg);margin-top:-.6rem}
+.tape .track{display:flex;width:max-content;animation:slide 32s linear infinite}
+.tape.alt .track{animation-direction:reverse;animation-duration:40s}
+.tape span{font-family:var(--serif);font-weight:700;font-size:clamp(1.5rem,3.4vw,2.4rem);padding:.55rem 0;white-space:nowrap;display:flex;align-items:center}
+.tape span::after{content:"✺";color:var(--tomato);margin:0 .8em;font-size:.8em}
+.tape.alt span::after{color:var(--ink)}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* ================= Secciones ================= */
+.sec{padding:clamp(4.5rem,10vw,8rem) 0}
+.sec.tight{padding-top:0}
+.head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:1rem 2rem;margin-bottom:clamp(2.5rem,6vw,4.5rem)}
+.eyebrow{font-weight:700;font-size:.95rem;letter-spacing:.18em;text-transform:uppercase;display:flex;align-items:center;gap:.6rem;margin:0 0 .8rem}
+.eyebrow::before{content:"";width:28px;height:2px;background:currentColor}
+h2{font-family:var(--serif);font-weight:800;font-size:clamp(2.8rem,7.5vw,6rem);line-height:.95;letter-spacing:-.04em;margin:0}
+h2 em{font-style:italic;font-weight:400;color:var(--tomato)}
+.head p{max-width:32ch;margin:0;color:var(--ink-2);font-size:1.2rem}
+.head .hand{display:block;margin-top:.6rem;font-size:1.7rem;color:var(--tomato);transform:rotate(-2deg)}
+
+/* --- Escaparate --- */
+.wall{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1.8rem,4vw,3rem) clamp(.9rem,3vw,2.5rem)}
+@media(min-width:1000px){.wall{grid-template-columns:repeat(4,minmax(0,1fr))}.work:nth-child(even){margin-top:4.5rem}}
+.work{--r:-2deg;text-decoration:none;display:block;perspective:900px}
+.work:nth-child(2){--r:2.5deg}.work:nth-child(3){--r:1.5deg}.work:nth-child(4){--r:-3deg}
+.frame{position:relative;transform:rotate(var(--r)) rotateX(var(--ry,0deg)) rotateY(var(--rx,0deg));transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.work:hover .frame,.work:focus-visible .frame{transform:rotate(0) translateY(-8px) rotateX(var(--ry,0deg)) rotateY(var(--rx,0deg))}
+.frame::before{content:"";position:absolute;z-index:3;top:-12px;left:50%;width:38%;height:24px;transform:translateX(-50%) rotate(calc(var(--r) * -2));background:rgba(255,250,235,.75);border:1px solid rgba(0,0,0,.08);box-shadow:0 1px 2px rgba(0,0,0,.12)}
+/* ojo: nada de padding/gap en cqw sobre .poster (el contenedor), solo en sus hijos */
+.poster{position:relative;aspect-ratio:3/4;overflow:hidden;border:2px solid var(--ink);border-radius:4px;container-type:inline-size;box-shadow:0 18px 30px -18px rgba(22,19,15,.55)}
+.poster .in{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center}
+.num{position:absolute;z-index:4;top:5cqw;right:5cqw;font:700 4.6cqw/1 var(--sans);background:var(--paper);color:var(--ink);border:1.5px solid var(--ink);border-radius:99px;padding:.35em .6em}
+.cap{margin-top:1.1rem;display:flex;gap:.7rem;justify-content:space-between;align-items:start}
+.cap h3{font-family:var(--serif);font-weight:700;font-size:1.2rem;line-height:1.1;margin:0;letter-spacing:-.01em}
+.cap p{margin:.35rem 0 0;color:var(--ink-2);font-size:.98rem;line-height:1.4}
+@media(min-width:700px){.cap h3{font-size:1.45rem}.cap p{font-size:1.05rem}}
+.go{flex:none;display:grid;place-items:center;width:38px;aspect-ratio:1;border-radius:50%;border:2px solid var(--ink);transition:background .2s,color .2s,transform .3s}
+.go svg{width:50%}
+.work:hover .go{background:var(--tomato);border-color:var(--tomato);color:#fff;transform:rotate(45deg)}
+.more-ex{display:flex;flex-direction:column;align-items:center;gap:1rem;margin-top:clamp(3.5rem,8vw,6rem);text-align:center}
+.more-ex .btn{font-size:1.15rem;padding:1.1rem 1.7rem}
+.more-ex .hand{font-size:1.7rem;color:var(--ink-2);transform:rotate(-2deg)}
+
+/* Póster 1 · Taberna */
+.p-bar{background:#2b0d08;color:#f3e9d2}
+.p-bar .in{padding:12cqw 10cqw 9cqw}
+.p-bar .arch{flex:1;width:100%;border-radius:999px 999px 0 0;border:2.2cqw solid #f5c26b;background:#f3e9d2 repeating-conic-gradient(#1e4a7a 0 25%,#f3e9d2 0 50%) 0 0/9cqw 9cqw;transition:background-position 1.2s ease;position:relative}
+.p-bar .arch::after{content:"";position:absolute;inset:16% 22% 0;border-radius:999px 999px 0 0;background:#9b2d20;border:1.4cqw solid #f5c26b;border-bottom:0}
+.work:hover .p-bar .arch{background-position:9cqw 9cqw}
+.p-bar b{font:italic 400 12cqw/1 var(--serif);margin-top:6cqw;letter-spacing:-.02em}
+.p-bar small{font:700 3.8cqw/1 var(--sans);letter-spacing:.3em;text-transform:uppercase;color:#f5c26b;margin-top:3cqw}
+
+/* Póster 2 · Peluquería */
+.p-hair{background:linear-gradient(140deg,#fecdd3,#f3e3ff 50%,#fef3c7)}
+.p-hair .in{justify-content:center}
+.p-hair::before,.p-hair::after{content:"";position:absolute;border-radius:50%;transition:transform 1.4s cubic-bezier(.2,.8,.2,1)}
+.p-hair::before{width:85cqw;aspect-ratio:1;left:-30cqw;top:-18cqw;background:radial-gradient(circle,#f0abfc 0,#f0abfc00 68%)}
+.p-hair::after{width:95cqw;aspect-ratio:1;right:-38cqw;bottom:-28cqw;background:radial-gradient(circle,#fcd34d 0,#fcd34d00 68%)}
+.work:hover .p-hair::before{transform:translate(18cqw,14cqw)}
+.work:hover .p-hair::after{transform:translate(-16cqw,-12cqw)}
+.p-hair .glass{position:relative;z-index:1;width:74%;padding:11cqw 6cqw;text-align:center;border-radius:7cqw;background:rgba(255,255,255,.38);border:1px solid rgba(255,255,255,.8);box-shadow:0 4cqw 10cqw rgba(120,80,110,.22),inset 0 1px 0 #fff;color:#44403c}
+.p-hair .glass b{display:block;font:400 11.5cqw/1 'Italiana',serif}
+.p-hair .glass small{display:block;margin-top:4cqw;font:600 3.4cqw/1 var(--sans);letter-spacing:.35em;text-transform:uppercase}
+.p-hair .scis{position:absolute;z-index:1;bottom:9cqw;left:50%;transform:translateX(-50%);font-size:9cqw;color:#a8a29e}
+
+/* Póster 3 · Peruano */
+.p-inti{background:#0b2b2a;color:#f3e9d2}
+.p-inti .in{justify-content:center;padding-bottom:9cqw}
+.p-inti .sun{position:relative;width:56cqw;aspect-ratio:1;border-radius:50%;background:repeating-conic-gradient(#f59e0b 0 6deg,transparent 0 15deg);-webkit-mask:radial-gradient(circle,#000 0 68%,transparent 69%);mask:radial-gradient(circle,#000 0 68%,transparent 69%);transition:transform 2s cubic-bezier(.2,.8,.2,1)}
+.p-inti .disc{position:absolute;inset:0;margin:auto;width:27cqw;aspect-ratio:1;border-radius:50%;background:#f59e0b;box-shadow:0 0 0 2.2cqw #0b2b2a,0 0 0 3.4cqw #e11d74}
+.work:hover .p-inti .sun{transform:rotate(90deg)}
+.p-inti b{font:900 16cqw/1 var(--serif);letter-spacing:-.04em;margin-top:2cqw}
+.p-inti .kind{font:italic 400 6.4cqw/1 var(--serif);margin-top:2cqw}
+.p-inti small{font:700 3.3cqw/1 var(--sans);letter-spacing:.3em;text-transform:uppercase;color:#f59e0b;margin-top:3.5cqw}
+.p-inti .stripes{position:absolute;inset:auto 0 0;height:9cqw;background:repeating-linear-gradient(90deg,#e11d74 0 6cqw,#f59e0b 0 12cqw,#0f766e 0 18cqw,#7c3aed 0 24cqw);border-top:1.4cqw solid #f3e9d2}
+
+/* Póster 4 · Gimnasio (neobrutalismo) */
+.p-gym{background:#ffd60a;color:#0a0a0a;font-family:'Archivo Black',sans-serif;text-transform:uppercase}
+.p-gym .words{position:absolute;left:6cqw;top:9cqw;font-size:21cqw;line-height:.86;letter-spacing:-.01em}
+.p-gym .words span{display:block;width:max-content;transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
+.p-gym .words .o{color:transparent;-webkit-text-stroke:.55cqw #0a0a0a}
+.p-gym .words .s{color:#ffd60a;background:#0a0a0a;padding:0 2cqw;margin-left:-2cqw}
+.work:hover .p-gym .words span:nth-child(1){transform:translateX(6cqw)}
+.work:hover .p-gym .words span:nth-child(3){transform:translateX(-4cqw)}
+.p-gym .kb{position:absolute;left:9cqw;bottom:16cqw;width:30cqw;transition:transform .45s cubic-bezier(.3,1.6,.5,1)}
+.p-gym .kb::before{content:"";display:block;width:19cqw;height:14cqw;margin:0 auto -4cqw;border:3.6cqw solid #0a0a0a;border-bottom:0;border-radius:9cqw 9cqw 0 0}
+.p-gym .kb i{display:grid;place-items:center;width:30cqw;aspect-ratio:1;border-radius:46% 46% 40% 40%;background:#0a0a0a;color:#ffd60a;font-style:normal;font-size:6cqw}
+.work:hover .p-gym .kb{transform:translateY(-8cqw) rotate(-6deg)}
+.p-gym .badge{position:absolute;right:7cqw;top:66cqw;width:34cqw;aspect-ratio:1;border-radius:50%;background:#ff5a1f;border:1.2cqw solid #0a0a0a;box-shadow:2.4cqw 2.4cqw 0 #0a0a0a;display:grid;place-items:center;text-align:center;font-size:4.6cqw;line-height:1.05;transform:rotate(-12deg);transition:transform .5s}
+.work:hover .p-gym .badge{transform:rotate(8deg) scale(1.08)}
+.p-gym .band{position:absolute;inset:auto 0 0;background:#0a0a0a;color:#ffd60a;font-size:4.2cqw;padding:2.6cqw 0;white-space:nowrap;overflow:hidden}
+.p-gym .band span{display:inline-block;animation:slide 9s linear infinite;animation-play-state:paused}
+.work:hover .p-gym .band span{animation-play-state:running}
+
+/* --- Antes / después --- */
+.ba{position:relative;aspect-ratio:4/5;border:2px solid var(--ink);border-radius:22px;overflow:hidden;box-shadow:8px 8px 0 var(--ink);container-type:inline-size;user-select:none;-webkit-user-select:none}
+@media(min-width:760px){.ba{aspect-ratio:16/9}}
+.ba .lay{position:absolute;inset:0}
+/* cada capa coloca su contenido en su mitad, para que se lea con el control en el centro */
+.ba .old{background:#fff;color:#000;font-family:"Times New Roman",Times,serif;text-align:left;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:2.2cqw;padding:12cqw 54% 4cqw 5cqw}
+.old .t1{font-size:4.4cqw;color:#0000ee;text-decoration:underline;font-weight:700}
+.old .t2{font-family:"Comic Sans MS","Comic Sans",cursive;font-size:3.6cqw;color:#c00;background:#ff0;padding:.2em .5em}
+.old .t3{width:30cqw;aspect-ratio:4/3;border:1px solid #999;background:#eee;display:grid;place-items:center;font-size:2.4cqw;color:#777}
+.old .t4{font-size:2.8cqw;color:#333}
+.old .t5{font-family:monospace;font-size:2.6cqw;background:#000;color:#0f0;padding:.3em .6em}
+.old .t6{font-size:1.9cqw;color:#888}
+@media(min-width:760px){.old .t1{font-size:2.8cqw}.old .t2{font-size:2.2cqw}.old .t3{width:16cqw;font-size:1.3cqw}.old .t4{font-size:1.4cqw}.old .t5{font-size:1.5cqw}.old .t6{font-size:1.1cqw}.ba .old{gap:1.2cqw}}
+.ba .new{background:#1b0f0a;color:#f3e9d2;clip-path:inset(0 0 0 var(--pos,50%));display:flex;flex-direction:column;align-items:flex-end;text-align:right;padding:13cqw 5cqw 6cqw 55%}
+.new nav{display:flex;width:100%;justify-content:space-between;align-items:center;gap:2cqw;font-size:3cqw;font-weight:600}
+.new nav b{font:italic 700 4.6cqw var(--serif);white-space:nowrap}
+.new nav span{white-space:nowrap}
+@media(max-width:759px){.new nav{flex-direction:column;align-items:flex-end}}
+.new nav span{background:var(--tomato);color:#fff;border-radius:99px;padding:.35em .9em}
+.new h4{margin:auto 0 0;font:800 8.4cqw/.95 var(--serif);letter-spacing:-.04em}
+.new h4 em{font-weight:400;color:#f5c26b}
+.new .row{display:flex;gap:2.4cqw;margin-top:5cqw;align-items:center}
+.new .row i{width:10cqw;aspect-ratio:1;border-radius:50%;border:.7cqw solid #f3e9d2}
+.new .row i:nth-child(1){background:radial-gradient(circle at 35% 35%,#f5c26b,#c2571a)}
+.new .row i:nth-child(2){background:radial-gradient(circle at 35% 35%,#9be15d,#0f766e)}
+.new .row i:nth-child(3){background:radial-gradient(circle at 35% 35%,#ff8a65,#9b2d20)}
+.new .row span{color:#f5c26b;font-size:3.4cqw;letter-spacing:.1em}
+.new .row{flex-wrap:wrap;justify-content:flex-end}
+@media(min-width:760px){.ba .new{padding:8cqw 4cqw 4cqw 54%}.ba .old{padding:8cqw 54% 4cqw 4cqw}.new nav{font-size:1.5cqw}.new nav b{font-size:2.4cqw}.new h4{font-size:5cqw}.new .row{margin-top:2.5cqw;gap:1.4cqw}.new .row i{width:7cqw;border-width:.4cqw}.new .row span{font-size:2cqw}}
+.ba .tag{position:absolute;top:3.5cqw;z-index:3;font:800 .85rem var(--sans);letter-spacing:.15em;text-transform:uppercase;padding:.4rem .8rem;border:2px solid var(--ink);border-radius:99px;background:var(--paper)}
+.ba .tag.l{left:3.5cqw}.ba .tag.r{right:3.5cqw;background:var(--lime)}
+.ba .line{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:4px;margin-left:-2px;background:var(--ink);z-index:3;pointer-events:none}
+.ba .knob{position:absolute;top:50%;left:50%;width:58px;height:58px;margin:-29px;border-radius:50%;background:var(--tomato);border:3px solid var(--ink);display:grid;place-items:center;color:#fff;box-shadow:3px 3px 0 var(--ink)}
+.ba .knob svg{width:30px}
+.ba input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;z-index:4}
+.ba-note{display:flex;justify-content:center;margin:1.2rem 0 0;font-size:1.7rem;color:var(--ink-2);transform:rotate(-1.5deg)}
+
+/* --- Cubo 3D: solo transformaciones CSS, sin librerías --- */
+.box3d{display:grid;gap:1.5rem 3rem;align-items:center}
+@media(min-width:860px){.box3d{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.scene{--s:min(270px,64vw);position:relative;width:var(--s);height:var(--s);margin:2.5rem auto 4.5rem;perspective:1100px;touch-action:pan-y;cursor:grab;user-select:none}
+.scene.drag{cursor:grabbing}
+.scene::after{content:"";position:absolute;left:5%;right:5%;bottom:-38%;height:22%;border-radius:50%;background:radial-gradient(closest-side,#16130f40,transparent);transform:translateZ(-1px)}
+.cube{position:relative;width:100%;height:100%;transform-style:preserve-3d;will-change:transform;transform:rotateX(-20deg) rotateY(-30deg)}
+.cube .f{position:absolute;inset:0;border:2.5px solid var(--ink);border-radius:14px;padding:1.3rem;display:flex;flex-direction:column;justify-content:space-between;background:var(--paper);box-shadow:inset 0 0 0 6px #ffffff26}
+.cube .f svg{width:48px;height:48px}
+.cube .f b{display:block;font:800 clamp(1.5rem,6vw,2rem)/1 var(--serif);letter-spacing:-.03em}
+.cube .f span{display:block;margin-top:.35rem;font-size:1rem;opacity:.8}
+.cube .f1{background:var(--tomato);color:#fff;transform:translateZ(calc(var(--s)/2))}
+.cube .f2{background:var(--lime);transform:rotateY(90deg) translateZ(calc(var(--s)/2))}
+.cube .f3{background:var(--sky);transform:rotateY(180deg) translateZ(calc(var(--s)/2))}
+.cube .f4{background:var(--ink);color:var(--paper);transform:rotateY(-90deg) translateZ(calc(var(--s)/2))}
+.cube .f5{transform:rotateX(90deg) translateZ(calc(var(--s)/2))}
+.cube .f6{background:#f5c26b;transform:rotateX(-90deg) translateZ(calc(var(--s)/2))}
+.faces{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.5rem 0 0;padding:0;list-style:none}
+.faces button{cursor:pointer;background:var(--paper);font-size:1.05rem}
+.faces button.on{background:var(--ink);color:var(--paper)}
+.box3d .hand{display:block;margin-top:1.2rem;font-size:1.7rem;color:var(--tomato);transform:rotate(-2deg)}
+
+/* --- Proceso --- */
+.steps{display:grid;gap:1.25rem}
+@media(min-width:860px){.steps{grid-template-columns:repeat(3,1fr)}}
+.step{position:relative;background:var(--paper);border:2px solid var(--ink);border-radius:18px;padding:2rem 1.6rem 1.8rem;overflow:hidden;transition:transform .3s}
+.step:nth-child(2){background:var(--lime)}
+.step:nth-child(3){background:var(--ink);color:var(--paper)}
+.step:hover{transform:translateY(-6px) rotate(-1deg)}
+.step .n{font-family:var(--serif);font-weight:300;font-style:italic;font-size:clamp(4.5rem,8vw,6.5rem);line-height:.8;letter-spacing:-.05em;display:block}
+.step h3{font-family:var(--serif);font-size:1.9rem;margin:1.4rem 0 .5rem;letter-spacing:-.02em}
+.step p{margin:0;opacity:.85;max-width:32ch;font-size:1.12rem}
+.step .ico{position:absolute;top:1.4rem;right:1.4rem;width:46px;height:46px;border-radius:50%;border:2px solid currentColor;display:grid;place-items:center}
+.step .ico svg{width:22px}
+.clock{display:flex;justify-content:center;margin-top:2.2rem}
+.clock span{display:inline-flex;align-items:center;gap:.6rem;background:var(--tomato);color:#fff;border:2px solid var(--ink);box-shadow:4px 4px 0 var(--ink);border-radius:99px;padding:.7rem 1.3rem;font-weight:700;font-size:1.1rem;text-align:center;transform:rotate(-1.5deg)}
+
+/* --- FAQ en forma de chat --- */
+.chat{max-width:820px;margin:0 auto;border:2px solid var(--ink);border-radius:28px;overflow:hidden;box-shadow:8px 8px 0 var(--ink);background:#ece3d2 radial-gradient(#16130f14 1.2px,transparent 1.4px) 0 0/18px 18px}
+.chat-top{display:flex;align-items:center;gap:.85rem;background:var(--ink);color:var(--paper);padding:.9rem 1.2rem}
+.chat-top img{width:46px;height:46px;border-radius:50%;object-fit:cover;object-position:50% 38%;border:2px solid var(--paper);background:#fff}
+.chat-top b{display:block;font-size:1.1rem}
+.chat-top small{color:var(--lime);font-size:.9rem}
+.msgs{padding:1.4rem clamp(.8rem,3vw,1.8rem) 1.8rem;display:flex;flex-direction:column;gap:.8rem}
+.day{align-self:center;background:var(--paper);border:1.5px solid var(--ink);border-radius:99px;padding:.25rem .9rem;font-size:.85rem;font-weight:600}
+.q summary{list-style:none;cursor:pointer;margin-left:auto;width:fit-content;max-width:88%;display:flex;align-items:flex-end;gap:.7rem;background:#d9fdd3;border:1.5px solid var(--ink);border-radius:20px 20px 5px 20px;padding:.8rem 1rem;font-weight:600;font-size:1.12rem;line-height:1.35;transition:transform .2s,box-shadow .2s}
+.q summary::-webkit-details-marker{display:none}
+.q summary:hover{transform:translate(-2px,-2px);box-shadow:3px 3px 0 var(--ink)}
+.q summary small{font-weight:500;font-size:.75rem;color:#5b6b58;white-space:nowrap}
+.q[open] summary small{color:#1c8fe0}
+.a{position:relative;margin-top:.7rem;width:fit-content;max-width:88%;background:#fffdf7;border:1.5px solid var(--ink);border-radius:20px 20px 20px 5px;padding:.9rem 1.1rem}
+.a p{margin:0;font-size:1.08rem;line-height:1.55}
+.dots{position:absolute;left:1.1rem;top:1.1rem;display:flex;gap:5px;opacity:0}
+.dots i{width:9px;height:9px;border-radius:50%;background:var(--ink-2);animation:bob .9s infinite}
+.dots i:nth-child(2){animation-delay:.15s}.dots i:nth-child(3){animation-delay:.3s}
+@keyframes bob{50%{transform:translateY(-5px);opacity:.4}}
+.q[open] .dots{animation:typing .8s both}
+.q[open] .a p{animation:appear .35s .75s both}
+@keyframes typing{0%,90%{opacity:1}100%{opacity:0}}
+@keyframes appear{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.faq-hint{display:flex;justify-content:center;margin:0 0 1.2rem;font-size:1.8rem;color:var(--tomato);transform:rotate(-1.5deg)}
+.more{align-self:center;margin-top:.6rem}
+
+/* ================= Contacto ================= */
+.contact{background:var(--ink);color:var(--paper);position:relative;overflow:hidden;padding:clamp(5rem,12vw,9rem) 0 2rem;border-radius:clamp(24px,4vw,48px) clamp(24px,4vw,48px) 0 0}
+.contact h2{font-size:clamp(3rem,10vw,9rem)}
+.contact h2 em{color:var(--lime)}
+.contact .lead{color:#c9c1b4;margin-top:1.5rem}
+.contact .hand{color:var(--lime);font-size:1.9rem;display:inline-block;transform:rotate(-3deg);margin-top:.8rem}
+.mail{display:inline-flex;align-items:center;gap:.4em;margin-top:clamp(2rem,5vw,3.5rem);font-family:var(--serif);font-weight:400;font-style:italic;font-size:clamp(1.3rem,4.6vw,3.6rem);text-decoration:none;border-bottom:2px solid #ffffff40;padding-bottom:.15em;max-width:100%;overflow-wrap:anywhere;transition:color .2s,border-color .2s}
+.mail:hover{color:var(--lime);border-color:var(--lime)}
+.mail svg{width:.8em;flex:none;transition:transform .3s}
+.mail:hover svg{transform:translate(4px,-4px)}
+.contact .ctas{margin-top:2.5rem}
+.contact .btn{background:var(--paper);color:var(--ink);box-shadow:5px 5px 0 var(--tomato);border-color:var(--paper)}
+.contact .btn:hover{box-shadow:7px 7px 0 var(--tomato)}
+.contact .btn.wa{background:#25D366;border-color:#25D366;color:#0a2a14}
+.giant{font-family:var(--serif);font-weight:900;font-size:24vw;line-height:.75;letter-spacing:-.06em;color:transparent;-webkit-text-stroke:1.5px #ffffff22;white-space:nowrap;margin:clamp(3rem,8vw,6rem) 0 0;text-align:center;user-select:none;transition:-webkit-text-stroke-color .4s}
+.giant:hover{-webkit-text-stroke-color:var(--tomato)}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem 2rem;border-top:1px solid #ffffff22;padding-top:1.5rem;margin-top:-1rem;font-size:.95rem;color:#a29a8e}
+
+/* WhatsApp flotante */
+.fab{position:fixed;right:18px;bottom:18px;z-index:40;width:60px;height:60px;border-radius:50%;display:grid;place-items:center;background:#25D366;color:#fff;border:2px solid var(--ink);box-shadow:4px 4px 0 var(--ink);transition:transform .2s}
+.fab:hover{transform:scale(1.08) rotate(-8deg)}
+.fab svg{width:32px}
+@media(max-width:759px){.contact{padding-bottom:6rem}}
+
+/* Cursor propio (solo con ratón) */
+.cur{display:none}
+.has-cur,.has-cur *{cursor:none!important}
+.has-cur .cur{display:grid;place-items:center;position:fixed;left:0;top:0;z-index:100;width:16px;height:16px;margin:-8px 0 0 -8px;border-radius:50%;background:var(--tomato);border:2px solid var(--ink);pointer-events:none;font:800 .9rem var(--sans);color:#fff;transition:width .25s,height .25s,margin .25s,background .25s,opacity .2s}
+.cur span{opacity:0;transition:opacity .2s;white-space:nowrap}
+.cur.link{width:44px;height:44px;margin:-22px 0 0 -22px;background:transparent}
+.cur.view{width:100px;height:100px;margin:-50px 0 0 -50px;background:var(--tomato)}
+.cur.view span{opacity:1}
+.cur.off{opacity:0}
+
+/* Aparición al hacer scroll */
+.rv{opacity:0;transform:translateY(40px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.8,.2,1)}
+.rv.on{opacity:1;transform:none}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .tape .track,.sway{animation:none}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a href="#" class="logo"><img src="favicon.svg" alt=""><span>Pedro Millán</span></a>
+    <span class="status">Aceptando proyectos</span>
+    <div class="tools">
+      <div class="fs" role="group" aria-label="Tamaño de letra">
+        <button type="button" class="s" id="fsDown" aria-label="Letra más pequeña">A−</button>
+        <button type="button" class="b" id="fsUp" aria-label="Letra más grande">A+</button>
+      </div>
+      <a href="#proyectos" class="chip hide-s">Proyectos</a>
+      <a href="#faq" class="chip hide-s">Dudas</a>
+      <a href="#contacto" class="chip solid">Hablemos</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="kicker"><span id="hi">¡Hola!</span> Soy <b>Pedro Millán</b> y hago</p>
+      <h1>
+        <span class="ln"><span>webs con</span></span>
+        <span class="ln"><span>alma de</span></span>
+        <span class="ln"><span><em>barrio.<svg class="squig" viewBox="0 0 400 30" preserveAspectRatio="none" aria-hidden="true"><path d="M5 18 Q 40 4 75 16 T 145 16 T 215 16 T 285 16 T 395 12"/></svg></em></span></span>
+      </h1>
+      <p class="lead">Soy <strong>estudiante y diseñador web freelance.</strong> Ayudo a distintos negocios a tener una web profesional y con personalidad propia.</p>
+      <div class="ctas">
+        <a href="#proyectos" class="btn hot">Ver proyectos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
+        <a href="#contacto" class="btn">Quiero mi web</a>
+      </div>
+    </div>
+
+    <div class="stage">
+      <div class="sway">
+        <div class="strap" aria-hidden="true"><span>PEDRO · WEBS · PEDRO · WEBS</span></div>
+        <div class="clip" aria-hidden="true"></div>
+        <button type="button" class="idcard" id="card" aria-label="Carnet de Pedro Millán. Tócalo para darle la vuelta">
+          <div class="flip">
+            <div class="face">
+              <div class="band"><span>Pase · Diseñador web</span><i></i></div>
+              <div class="photo"><img src="foto.jpeg" alt="Foto de Pedro Millán" width="1086" height="1448"></div>
+              <div class="idinfo">
+                <b>Pedro Millán</b>
+                <small>Diseñador web freelance</small>
+                <div class="idrow"><span>Nº 001</span><span class="ok">Disponible</span></div>
+                <div class="barcode"></div>
+              </div>
+            </div>
+            <div class="face rear" aria-hidden="true">
+              <p>Válido para<b>una web que deje con la boca abierta a tus clientes.</b></p>
+              <p>Caduca<b>nunca.</b></p>
+              <p>Firma</p>
+              <svg viewBox="0 0 200 60" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 42c14-30 22-34 24-20s-10 26-4 20 14-28 20-24-8 26 2 22 10-14 16-10 4 12 12 8 12-20 20-16-2 14 8 12 14-10 22-8 10 6 18 2 20-6 46-8"/></svg>
+              <div class="barcode"></div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <span class="note me hand" aria-hidden="true"><span>¡este<br>soy yo!</span><svg viewBox="0 0 56 40" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 30C18 34 34 28 48 12M38 10l10 2-2 10"/></svg></span>
+      <span class="note tap hand" aria-hidden="true">(dale la vuelta ↻)</span>
+
+      <div class="stk price" aria-hidden="true">Webs desde<big>300 €</big></div>
+      <div class="stk hand1" aria-hidden="true">Hecho<br>a mano<br>✋</div>
+      <div class="stk mob" aria-hidden="true">📱 100% móvil</div>
+      <div class="stk star" aria-hidden="true">sin plantillas!</div>
+    </div>
+  </div>
+</section>
+
+<div class="tapes">
+<div class="tape" aria-hidden="true"><div class="track"><span>Bares</span><span>Peluquerías</span><span>Gimnasios</span><span>Restaurantes</span><span>Tiendas</span><span>Talleres</span><span>Cafeterías</span><span>Academias</span><span>Bares</span><span>Peluquerías</span><span>Gimnasios</span><span>Restaurantes</span><span>Tiendas</span><span>Talleres</span><span>Cafeterías</span><span>Academias</span></div></div>
+<div class="tape alt" aria-hidden="true"><div class="track"><span>Hecho a mano</span><span>Pensado para el móvil</span><span>Listo para Google</span><span>Sin plantillas</span><span>Con personalidad</span><span>Hecho a mano</span><span>Pensado para el móvil</span><span>Listo para Google</span><span>Sin plantillas</span><span>Con personalidad</span></div></div>
+</div>
+
+<!-- ============ PROYECTOS ============ -->
+<section id="proyectos" class="sec">
+  <div class="wrap">
+    <div class="head rv">
+      <div><p class="eyebrow">Escaparate</p><h2>Webs <em>de muestra</em></h2></div>
+      <p>Cuatro negocios inventados, cuatro personalidades. Así podría quedar la tuya.<span class="hand">toca un cartel ↓</span></p>
+    </div>
+
+    <div class="wall">
+      <a href="bar/index.html" class="work rv" data-cur="Ver web">
+        <div class="frame"><div class="poster p-bar" aria-hidden="true"><span class="num">01</span><div class="in"><div class="arch"></div><b>El Azulejo</b><small>Taberna · Sevilla</small></div></div></div>
+        <div class="cap"><div><h3>Bar / Restaurante</h3><p>Taberna con tarjetas arco, azulejos y mapa.</p></div><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M7 17L17 7M8 7h9v9"/></svg></span></div>
+      </a>
+      <a href="peluqueria/index.html" class="work rv" data-cur="Ver web">
+        <div class="frame"><div class="poster p-hair" aria-hidden="true"><span class="num">02</span><div class="in"><div class="glass"><b>Atelier Lumière</b><small>Hair studio</small></div></div><span class="scis">✂</span></div></div>
+        <div class="cap"><div><h3>Peluquería / Estética</h3><p>Estilo suave y elegante, con servicios, precios y cita.</p></div><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M7 17L17 7M8 7h9v9"/></svg></span></div>
+      </a>
+      <a href="peruano/index.html" class="work rv" data-cur="Ver web">
+        <div class="frame"><div class="poster p-inti" aria-hidden="true"><span class="num">03</span><div class="in"><div class="sun"><span class="disc"></span></div><b>Inti</b><span class="kind">Restaurante peruano</span><small>Triana · Sevilla</small></div><span class="stripes"></span></div></div>
+        <div class="cap"><div><h3>Restaurante peruano</h3><p>Colores andinos, carta deslizable y ubicación.</p></div><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M7 17L17 7M8 7h9v9"/></svg></span></div>
+      </a>
+      <a href="gimnasio/index.html" class="work rv" data-cur="Ver web">
+        <div class="frame"><div class="poster p-gym" aria-hidden="true"><span class="num">04</span>
+          <div class="words"><span class="o">Forja</span><span class="s">Forja</span><span class="o">Forja</span></div>
+          <div class="kb"><i>16kg</i></div>
+          <div class="badge">Sin<br>matrí-<br>cula</div>
+          <div class="band"><span>Fuerza · Constancia · Pesas · Cardio · Fuerza · Constancia · Pesas · Cardio ·&nbsp;</span></div>
+        </div></div>
+        <div class="cap"><div><h3>Gimnasio</h3><p>Neobrutalismo con tienda, bonos y contacto.</p></div><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M7 17L17 7M8 7h9v9"/></svg></span></div>
+      </a>
+    </div>
+    <div class="more-ex rv">
+      <a href="ejemplos-negocios/index.html" class="btn hot" data-cur="¡Vamos!">Ver 30 ejemplos más por tipo de negocio <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <span class="hand">bares, clínicas, talleres, tatuajes… ¡hay de todo!</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ANTES / DESPUÉS ============ -->
+<section class="sec tight">
+  <div class="wrap">
+    <div class="head rv">
+      <div><p class="eyebrow">El cambio</p><h2>De web <em>olvidable</em><br>a web que enamora.</h2></div>
+      <p>Muchas webs de negocio siguen pareciendo de 2005. Arrastra y mira la diferencia.</p>
+    </div>
+    <div class="ba rv" id="ba">
+      <div class="lay old" aria-hidden="true">
+        <span class="t1">¡¡Bienvenidos a la página web oficial de Bar Paco!!</span>
+        <span class="t2">🚧 Página en construcción 🚧</span>
+        <span class="t3">[imagen no disponible]</span>
+        <span class="t4">Somos un bar familiar con mucha experiencia en el sector de la hostelería. Para más información llame por teléfono en horario de oficina.</span>
+        <span class="t5">Visitas: 000137</span>
+        <span class="t6">Página optimizada para Internet Explorer 6 a 800x600</span>
+      </div>
+      <div class="lay new" aria-hidden="true">
+        <nav><b>Bar Paco</b><span>Reservar mesa</span></nav>
+        <h4>Tapas de siempre, <em>con alma.</em></h4>
+        <div class="row"><i></i><i></i><i></i><span>★★★★★</span></div>
+      </div>
+      <span class="tag l" aria-hidden="true">Antes</span><span class="tag r" aria-hidden="true">Conmigo</span>
+      <div class="line"><span class="knob"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span></div>
+      <input type="range" min="0" max="100" value="50" id="baR" aria-label="Comparar una web antigua con una web nueva">
+    </div>
+    <p class="ba-note hand">← arrastra →</p>
+  </div>
+</section>
+
+<!-- ============ QUÉ INCLUYE (cubo 3D) ============ -->
+<section class="sec tight">
+  <div class="wrap box3d">
+    <div class="rv">
+      <p class="eyebrow">Qué incluye</p>
+      <h2>Seis caras,<br>cero <em>sorpresas.</em></h2>
+      <p class="lead">Todo esto va de serie en cada web que hago. Gira el cubo o toca cada cosa para verla.</p>
+      <ul class="faces" id="faces">
+        <li><button type="button" class="chip on" data-f="0">Diseño único</button></li>
+        <li><button type="button" class="chip" data-f="1">Móvil</button></li>
+        <li><button type="button" class="chip" data-f="2">Google y Maps</button></li>
+        <li><button type="button" class="chip" data-f="3">WhatsApp</button></li>
+        <li><button type="button" class="chip" data-f="4">Rápida</button></li>
+        <li><button type="button" class="chip" data-f="5">Tuya</button></li>
+      </ul>
+      <span class="hand" aria-hidden="true">↻ arrastra el cubo</span>
+    </div>
+    <div class="scene rv" id="scene" data-cur="Gíralo" aria-hidden="true">
+      <div class="cube" id="cube">
+        <div class="f f1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.6 7.6"/><circle cx="11" cy="11" r="2"/></svg><div><b>Diseño único</b><span>Nada de plantillas.</span></div></div>
+        <div class="f f2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg><div><b>100% móvil</b><span>Perfecta en cualquier pantalla.</span></div></div>
+        <div class="f f3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><div><b>Google y Maps</b><span>Que te encuentren cerca.</span></div></div>
+        <div class="f f4"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#wa"/></svg><div><b>WhatsApp</b><span>Te escriben en un toque.</span></div></div>
+        <div class="f f5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg><div><b>Rápida</b><span>Carga en un suspiro.</span></div></div>
+        <div class="f f6"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3M15 8l2 2"/></svg><div><b>Tuya</b><span>Dominio a tu nombre.</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESO ============ -->
+<section class="sec tight">
+  <div class="wrap">
+    <div class="head rv">
+      <div><p class="eyebrow">Cómo trabajo</p><h2>Así de <em>fácil.</em></h2></div>
+      <p>Sin tecnicismos ni letra pequeña. Tú me cuentas, yo me encargo del resto.</p>
+    </div>
+    <div class="steps">
+      <article class="step rv"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg></span><span class="n">01</span><h3>Hablamos</h3><p>Me cuentas cómo es tu negocio, qué lo hace especial y qué necesitas.</p></article>
+      <article class="step rv"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.6 7.6"/><circle cx="11" cy="11" r="2"/></svg></span><span class="n">02</span><h3>Diseño</h3><p>Preparo una propuesta única, pensada para verse genial en el móvil.</p></article>
+      <article class="step rv"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span><span class="n">03</span><h3>Publicamos</h3><p>La pongo en marcha y te explico cómo sacarle todo el partido.</p></article>
+    </div>
+    <div class="clock rv"><span>⏱ De la primera charla a tu web publicada: 1–2 semanas</span></div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq" class="sec tight">
+  <div class="wrap">
+    <div class="head rv">
+      <div><p class="eyebrow">Preguntas frecuentes</p><h2>Lo que me preguntan<br>por <em>WhatsApp.</em></h2></div>
+      <p>Google, precios, plazos… Aquí tienes las dudas de siempre, respondidas en cristiano.</p>
+    </div>
+    <p class="faq-hint hand">toca una pregunta 👇</p>
+    <div class="chat rv">
+      <div class="chat-top"><img src="foto.jpeg" alt="" width="46" height="46"><div><b>Pedro Millán</b><small>en línea</small></div></div>
+      <div class="msgs">
+        <span class="day">Hoy</span>
+        <details class="q"><summary>¿Qué es eso del SEO? 🤔 <small>✓✓</small></summary><div class="a"><span class="dots"><i></i><i></i><i></i></span><p>Es todo lo que se hace para que Google entienda tu web y la enseñe cuando alguien busca lo que ofreces, por ejemplo «peluquería cerca de mí». Sin trucos raros: buena estructura, textos claros y una web rápida.</p></div></details>
+        <details class="q"><summary>¿Y saldré en Google? <small>✓✓</small></summary><div class="a"><span class="dots"><i></i><i></i><i></i></span><p>Sí. Dejo tu web preparada para que Google la encuentre y la doy de alta para que empiece a mostrarla. Salir el primero depende también de la competencia y del tiempo, pero partes con todo bien hecho desde el primer día.</p></div></details>
+        <details class="q"><summary>¿Y en Google Maps? 📍 <small>✓✓</small></summary><div class="a"><span class="dots"><i></i><i></i><i></i></span><p>Para un negocio local es clave. Te ayudo con tu ficha de Google (horario, fotos, reseñas) y la conecto con tu web, para que aparezcas cuando alguien busca «cerca de mí».</p></div></details>
+        <details class="q"><summary>Ya tengo Instagram, ¿para qué quiero web? <small>✓✓</small></summary><div class="a"><span class="dots"><i></i><i></i><i></i></span><p>Instagram es genial para el día a día, pero la web es tuya: sale en Google, tiene tu carta, precios, horario y reservas siempre a mano, y no depende de ningún algoritmo. Lo ideal es tener las dos y que se den la mano.</p></div></details>
+        <details class="q"><summary>¿Cuánto cuesta? 💸 <small>✓✓</small></summary><div class="a"><span class="dots"><i></i><i></i><i></i></span><p>Una web básica de una página está <b>desde 300 €</b>. Si necesitas más secciones, tienda o reservas, te preparo un presupuesto cerrado y sin compromiso.</p></div></details>
+        <details class="q"><summary>¿Y cuánto tardas? ⏱ <small>✓✓</small></summary><div class="a"><span class="dots"><i></i><i></i><i></i></span><p>Normalmente entre <b>1 y 2 semanas</b> desde que hablamos hasta que tu web está publicada.</p></div></details>
+        <details class="q"><summary>¿Hay que pagar algo cada mes? <small>✓✓</small></summary><div class="a"><span class="dots"><i></i><i></i><i></i></span><p>La web se paga una vez. Aparte están el dominio y el alojamiento (lo que mantiene la web en internet), que se renuevan cada año, y un plan de mantenimiento opcional si prefieres que yo me encargue de los cambios y de que todo funcione.</p></div></details>
+        <details class="q"><summary>¿El dominio es mío? <small>✓✓</small></summary><div class="a"><span class="dots"><i></i><i></i><i></i></span><p>Sí. El dominio (tunegocio.es) y la web quedan a tu nombre. Son tuyos y te los puedes llevar cuando quieras.</p></div></details>
+        <details class="q"><summary>¿Se verá bien en el móvil? 📱 <small>✓✓</small></summary><div class="a"><span class="dots"><i></i><i></i><i></i></span><p>Por supuesto. Diseño primero para el móvil, que es desde donde te va a buscar casi todo el mundo, y luego lo adapto a tablet y ordenador.</p></div></details>
+        <a href="https://wa.me/34669174839" class="chip solid more">¿Otra duda? Pregúntame 💬</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ CONTACTO ============ -->
+<footer id="contacto" class="contact">
+  <div class="wrap">
+    <p class="eyebrow rv">Contacto</p>
+    <h2 class="rv">¿Hablamos de<br>tu <em>negocio?</em></h2>
+    <p class="lead rv">Cuéntame tu idea y te digo cómo la haría. Sin compromiso.</p>
+    <span class="hand rv">de verdad, ¡escríbeme!</span><br>
+    <a class="mail rv" href="mailto:angelmillanpedro@gmail.com" data-cur="Escribir">angelmillanpedro@gmail.com<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+    <div class="ctas rv">
+      <a href="https://wa.me/34669174839" class="btn wa"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#wa"/></svg>WhatsApp</a>
+      <a href="mailto:angelmillanpedro@gmail.com" class="btn">Enviar email</a>
+    </div>
+    <p class="giant" aria-hidden="true">Pedro.</p>
+    <div class="foot"><span>© <span id="y">2026</span> Pedro Millán</span><span>Hecho a mano, sin plantillas.</span></div>
+  </div>
+</footer>
+
+<a href="https://wa.me/34669174839" class="fab" aria-label="Escribir por WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><use href="#wa"/></svg></a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><path id="wa" d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 2.5 1 3 .8 3.6.8.6-.1 1.8-.7 2-1.5.3-.7.3-1.3.2-1.5-.1-.1-.3-.2-.6-.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 0 1 12 2.2a9.8 9.8 0 1 1 0 19.6zm0-21.6A11.8 11.8 0 0 0 1.8 17.9L.1 24l6.3-1.6A11.8 11.8 0 1 0 12 .2z"/></defs></svg>
+
+<div class="cur" id="cur" aria-hidden="true"><span></span></div>
+
 <script>
-// Escala cada iframe para que la web completa quepa como miniatura
-const fit=()=>document.querySelectorAll('.pv').forEach(p=>p.querySelector('iframe').style.transform='scale('+p.clientWidth/1280+')');
-addEventListener('resize',fit);addEventListener('load',fit);fit();
-</script></body></html>
+const $=s=>document.querySelector(s), $$=s=>document.querySelectorAll(s);
+const calm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const mouse=matchMedia('(pointer:fine)').matches;
+
+// Año del pie y saludo según la hora
+$('#y').textContent=new Date().getFullYear();
+const h=new Date().getHours();
+$('#hi').textContent=h<6?'¿Trasnochando? 🌙':h<14?'¡Buenos días! ☀️':h<21?'¡Buenas tardes! 👋':'¡Buenas noches! 🌙';
+
+// Tamaño de letra (se recuerda en este navegador)
+const sizes=[100,112.5,125,137.5];let fi=0;
+try{fi=Math.min(sizes.length-1,Math.max(0,+localStorage.getItem('fs')||0))}catch(e){}
+const setFs=i=>{fi=i;document.documentElement.style.fontSize=sizes[i]+'%';$('#fsDown').disabled=i==0;$('#fsUp').disabled=i==sizes.length-1;try{localStorage.setItem('fs',i)}catch(e){}};
+setFs(fi);
+$('#fsDown').onclick=()=>setFs(Math.max(0,fi-1));
+$('#fsUp').onclick=()=>setFs(Math.min(sizes.length-1,fi+1));
+
+// Carnet: se le da la vuelta al tocarlo
+$('#card').onclick=e=>e.currentTarget.classList.toggle('back');
+
+// Pegatinas arrastrables
+$$('.stk').forEach(s=>{let sx,sy,ox=0,oy=0;
+  s.addEventListener('pointerdown',e=>{s.setPointerCapture(e.pointerId);s.classList.add('drag');sx=e.clientX-ox;sy=e.clientY-oy});
+  s.addEventListener('pointermove',e=>{if(!s.classList.contains('drag'))return;ox=e.clientX-sx;oy=e.clientY-sy;s.style.setProperty('--x',ox+'px');s.style.setProperty('--y',oy+'px')});
+  const up=()=>s.classList.remove('drag');s.addEventListener('pointerup',up);s.addEventListener('pointercancel',up);
+});
+
+// Aparición suave al entrar en pantalla
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
+$$('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%4)*90+'ms';io.observe(el)});
+
+// Antes / después: barrido de muestra la primera vez que se ve
+const ba=$('#ba'),baR=$('#baR');let touched=false;
+const setPos=v=>ba.style.setProperty('--pos',v+'%');
+baR.addEventListener('input',()=>{touched=true;setPos(baR.value)});
+if(!calm){const bo=new IntersectionObserver(([e])=>{if(!e.isIntersecting)return;bo.disconnect();
+  setTimeout(()=>{const t0=performance.now();const step=t=>{if(touched)return;const p=Math.min(1,(t-t0)/2600);
+    const v=50-Math.sin(p*Math.PI*2)*35*(1-p*.3);setPos(v);baR.value=v;if(p<1)requestAnimationFrame(step);else{setPos(50);baR.value=50}};
+  requestAnimationFrame(step)},700)},{threshold:.6});bo.observe(ba)}
+
+// Cubo 3D: gira solo mientras se ve, se arrastra y cada botón lleva a su cara
+{const sc=$('#scene'),cube=$('#cube'),btns=$$('#faces button');
+  const views=[[0,0],[0,-90],[0,-180],[0,90],[-90,0],[90,0]];
+  let rx=-20,ry=-30,vx=0,vy=calm?0:.18,tgt=null,drag=null,live=false,idle=0;
+  const near=(a,b)=>a+((b-a)%360+540)%360-180;
+  const paint=()=>cube.style.transform=`rotateX(${rx}deg) rotateY(${ry}deg)`;
+  const tick=()=>{if(!live)return;
+    if(tgt){rx+=(tgt[0]-rx)*.12;ry+=(tgt[1]-ry)*.12;if(Math.abs(tgt[0]-rx)+Math.abs(tgt[1]-ry)<.2){rx=tgt[0];ry=tgt[1];tgt=null;idle=performance.now()}}
+    else if(!drag){const rest=!calm&&performance.now()-idle>3500;
+      vx*=.92;vy+=((rest?.18:0)-vy)*.05;rx+=vx;ry+=vy;if(rest)rx+=(-20-rx)*.02}
+    paint();requestAnimationFrame(tick)};
+  new IntersectionObserver(([e])=>{const was=live;live=e.isIntersecting;if(live&&!was)requestAnimationFrame(tick)}).observe(sc);
+  sc.addEventListener('pointerdown',e=>{sc.setPointerCapture(e.pointerId);sc.classList.add('drag');tgt=null;drag={x:e.clientX,y:e.clientY}});
+  sc.addEventListener('pointermove',e=>{if(!drag)return;const dx=e.clientX-drag.x,dy=e.clientY-drag.y;drag={x:e.clientX,y:e.clientY};
+    ry+=dx*.5;rx=Math.max(-90,Math.min(90,rx-dy*.5));vy=dx*.5;vx=-dy*.5;paint()});
+  const end=()=>{if(!drag)return;drag=null;sc.classList.remove('drag');idle=performance.now()};
+  sc.addEventListener('pointerup',end);sc.addEventListener('pointercancel',end);
+  btns.forEach(b=>b.onclick=()=>{const v=views[b.dataset.f];tgt=[v[0],near(ry,v[1])];vx=0;vy=0;
+    btns.forEach(o=>o.classList.toggle('on',o==b));if(!live){rx=tgt[0];ry=tgt[1];tgt=null;paint()}});
+}
+
+if(mouse&&!calm){
+  // Inclinación 3D de los carteles
+  $$('.work').forEach(w=>{const f=w.querySelector('.frame');
+    w.addEventListener('pointermove',e=>{const r=f.getBoundingClientRect();
+      f.style.setProperty('--rx',((e.clientX-r.left)/r.width-.5)*14+'deg');
+      f.style.setProperty('--ry',(.5-(e.clientY-r.top)/r.height)*14+'deg')});
+    w.addEventListener('pointerleave',()=>{f.style.removeProperty('--rx');f.style.removeProperty('--ry')});
+  });
+  // Cursor propio: crece sobre enlaces y muestra texto sobre los carteles
+  const c=$('#cur'),ct=c.firstChild;document.documentElement.classList.add('has-cur');
+  addEventListener('pointermove',e=>{c.style.transform=`translate(${e.clientX}px,${e.clientY}px)`;
+    const t=e.target.closest('[data-cur],a,button,summary,input,.stk');
+    c.classList.toggle('view',!!(t&&t.dataset.cur));c.classList.toggle('link',!!t&&!t.dataset.cur);
+    if(t&&t.dataset.cur)ct.textContent=t.dataset.cur;c.classList.remove('off')},{passive:true});
+  document.addEventListener('pointerleave',()=>c.classList.add('off'));
+}
+</script>
+</body>
+</html>

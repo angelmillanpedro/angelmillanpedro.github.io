@@ -1,0 +1,94 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>(function(){var l=((navigator.languages&&navigator.languages[0])||navigator.language||'es').toLowerCase();var es=/^(es|ca|gl|eu)\b/.test(l);var d=document.documentElement;d.setAttribute('data-l',es?'es':'en');d.lang=es?'es':'en';
+document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('[data-hours]').forEach(function(el){try{var h=JSON.parse(el.getAttribute('data-hours'));var n=new Date(),day=n.getDay(),m=n.getHours()*60+n.getMinutes(),open=false;(h[day]||[]).forEach(function(r){var a=r[0].split(':'),b=r[1].split(':');var s=+a[0]*60+ +a[1],e=+b[0]*60+ +b[1];if(e<=s)e+=1440;if((m>=s&&m<e)||(m+1440>=s&&m+1440<e))open=true;});var p=(h[(day+6)%7]||[]);p.forEach(function(r){var a=r[0].split(':'),b=r[1].split(':');var s=+a[0]*60+ +a[1],e=+b[0]*60+ +b[1];if(e<=s&&m<e)open=true;});el.classList.add(open?'is-open':'is-closed');el.textContent=open?(es?'Abierto ahora':'Open now'):(es?'Cerrado ahora':'Closed now');}catch(e){}});
+var t=new Date().getDay();document.querySelectorAll('[data-day]').forEach(function(r){if(+r.getAttribute('data-day')===t)r.classList.add('today')});});})();</script>
+<style>html[data-l="es"] [lang="en"],html[data-l="en"] [lang="es"]{display:none!important}
+.demo-tag{position:fixed;left:max(10px,env(safe-area-inset-left));bottom:max(10px,env(safe-area-inset-bottom));z-index:9999;font:600 9px/1 system-ui,-apple-system,sans-serif;letter-spacing:.16em;text-transform:uppercase;padding:5px 7px;border-radius:3px;background:rgba(20,20,20,.55);color:#fff;opacity:.7;pointer-events:none}</style>
+
+<title>Taberna El Candil · Almería</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Caveat:wght@500;700&family=Libre+Franklin:wght@400;600&display=swap">
+<style>
+:root{--verde:#1f4d3a;--ocre:#d99a2b;--cal:#fbf8f1;--azul:#1d4f91;--tinta:#22221f;--pizarra:#2b2f2c}
+*{box-sizing:border-box}body{margin:0;background:var(--cal);color:var(--tinta);font:16px/1.55 "Libre Franklin",system-ui,sans-serif}
+.tiles{height:22px;background:
+ radial-gradient(circle at 50% 50%,var(--ocre) 0 3px,transparent 4px) 0 0/22px 22px,
+ conic-gradient(from 45deg,var(--azul) 25%,var(--cal) 0 50%,var(--azul) 0 75%,var(--cal) 0) 0 0/22px 22px}
+header{position:relative;min-height:78vh;display:flex;align-items:flex-end;color:#fff;background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(10,25,18,.85)),url(https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1100&q=70) center/cover}
+.hwrap{padding:28px 20px 34px;max-width:720px}
+.eyebrow{font:700 22px "Caveat",cursive;color:var(--ocre)}
+h1{font:400 clamp(44px,13vw,86px)/.92 "Alfa Slab One",serif;margin:4px 0 12px;letter-spacing:.5px}
+.lead{font-size:17px;max-width:34ch;opacity:.92}
+.cta{display:inline-flex;gap:10px;align-items:center;margin-top:18px;background:var(--ocre);color:var(--tinta);font-weight:600;text-decoration:none;padding:14px 20px;border-radius:999px}
+section{padding:44px 20px;max-width:760px;margin:0 auto}
+h2{font:400 30px/1.05 "Alfa Slab One",serif;color:var(--verde);margin:0 0 16px}
+.pizarra{background:var(--pizarra);color:#f2efe6;border:10px solid #7a5a33;border-radius:6px;padding:22px 20px;box-shadow:inset 0 0 40px rgba(0,0,0,.5);font-family:"Caveat",cursive}
+.pizarra h3{font-size:34px;margin:0 0 8px;text-align:center}
+.pizarra ul{list-style:none;padding:0;margin:0;font-size:24px}
+.pizarra li{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dashed rgba(255,255,255,.18);padding:6px 0}
+.pizarra .p{color:var(--ocre)}
+.grid{display:grid;grid-template-columns:1fr;gap:14px}
+@media(min-width:640px){.grid{grid-template-columns:1fr 1fr}}
+.photo{border-radius:4px;aspect-ratio:4/3;background:center/cover;border:6px solid #fff;box-shadow:0 6px 20px rgba(0,0,0,.12)}
+.hours{background:#fff;border:2px solid var(--verde);border-radius:6px;padding:18px}
+.hours table{width:100%;border-collapse:collapse}.hours td{padding:7px 0;border-bottom:1px solid #e9e3d3}
+.hours td:last-child{text-align:right;font-variant-numeric:tabular-nums}
+.today td{font-weight:600;color:var(--verde)}
+.st{display:inline-block;font-size:13px;font-weight:600;padding:3px 10px;border-radius:999px;margin-bottom:10px;background:#eee}
+.st.is-open{background:#d6efd9;color:#185c2a}.st.is-closed{background:#f6dcd6;color:#8a2c1b}
+.contact{background:var(--verde);color:#fff}.contact a{color:var(--ocre)}
+footer{text-align:center;padding:24px 20px 70px;font-size:13px;color:#6b675e}
+.wa{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:50;background:#25D366;color:#fff;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+</style></head><body>
+<div class="tiles"></div>
+<header><div class="hwrap">
+ <div class="eyebrow"><span lang="es">Desde 1987 en el centro</span><span lang="en">In the old town since 1987</span></div>
+ <h1>Taberna<br>El Candil</h1>
+ <p class="lead"><span lang="es">Tapas de toda la vida, vino de la tierra y la caña bien tirada. Con cada bebida, una tapa a elegir.</span><span lang="en">Traditional tapas, local wine and a well-poured beer. Every drink comes with a free tapa of your choice.</span></p>
+ <a class="cta" href="https://wa.me/34600000000?text=Hola%2C%20quer%C3%ADa%20reservar%20una%20mesa%20en%20Taberna%20El%20Candil"><span lang="es">Reservar por WhatsApp</span><span lang="en">Book on WhatsApp</span></a>
+</div></header>
+<div class="tiles"></div>
+<section>
+ <div class="pizarra">
+  <h3><span lang="es">Pizarra de hoy</span><span lang="en">Today's board</span></h3>
+  <ul>
+   <li><span lang="es">Gurullos con conejo</span><span lang="en">Gurullos pasta stew with rabbit</span><span class="p">tapa</span></li>
+   <li><span lang="es">Migas con tropezones</span><span lang="en">Migas with pork bits</span><span class="p">tapa</span></li>
+   <li><span lang="es">Calamar a la plancha</span><span lang="en">Grilled squid</span><span class="p">9,50 €</span></li>
+   <li><span lang="es">Tomate raf aliñado</span><span lang="en">Raf tomato salad</span><span class="p">7,00 €</span></li>
+   <li><span lang="es">Caña + tapa</span><span lang="en">Small beer + tapa</span><span class="p">2,80 €</span></li>
+  </ul>
+ </div>
+</section>
+<section>
+ <h2><span lang="es">Esto es lo nuestro</span><span lang="en">This is us</span></h2>
+ <div class="grid">
+  <div class="photo" style="background-image:url(https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=70)" role="img" aria-label="Tapas"></div>
+  <div class="photo" style="background-image:url(https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=800&q=70)" role="img" aria-label="Barra"></div>
+ </div>
+ <p><span lang="es">Barra de madera, jamón colgado y la tele con el partido. Aquí se viene a charlar y a picar algo rico sin prisas.</span><span lang="en">Wooden bar, hanging hams and the match on TV. Come for good chat and great food, no rush.</span></p>
+</section>
+<section>
+ <div class="hours">
+  <span class="st" data-hours='{"1":[["12:00","16:00"],["20:00","23:59"]],"2":[["12:00","16:00"],["20:00","23:59"]],"3":[["12:00","16:00"],["20:00","23:59"]],"4":[["12:00","16:00"],["20:00","23:59"]],"5":[["12:00","16:30"],["20:00","01:00"]],"6":[["12:00","16:30"],["20:00","01:00"]]}'>—</span>
+  <h2><span lang="es">Horario</span><span lang="en">Opening hours</span></h2>
+  <table>
+   <tr data-day="1"><td><span lang="es">Lunes</span><span lang="en">Monday</span></td><td>12:00–16:00 · 20:00–00:00</td></tr>
+   <tr data-day="2"><td><span lang="es">Martes</span><span lang="en">Tuesday</span></td><td>12:00–16:00 · 20:00–00:00</td></tr>
+   <tr data-day="3"><td><span lang="es">Miércoles</span><span lang="en">Wednesday</span></td><td>12:00–16:00 · 20:00–00:00</td></tr>
+   <tr data-day="4"><td><span lang="es">Jueves</span><span lang="en">Thursday</span></td><td>12:00–16:00 · 20:00–00:00</td></tr>
+   <tr data-day="5"><td><span lang="es">Viernes</span><span lang="en">Friday</span></td><td>12:00–16:30 · 20:00–01:00</td></tr>
+   <tr data-day="6"><td><span lang="es">Sábado</span><span lang="en">Saturday</span></td><td>12:00–16:30 · 20:00–01:00</td></tr>
+   <tr data-day="0"><td><span lang="es">Domingo</span><span lang="en">Sunday</span></td><td><span lang="es">Cerrado</span><span lang="en">Closed</span></td></tr>
+  </table>
+ </div>
+</section>
+<section class="contact" style="max-width:none"><div style="max-width:760px;margin:0 auto">
+ <h2 style="color:#fff"><span lang="es">Dónde estamos</span><span lang="en">Find us</span></h2>
+ <p>C. de las Tiendas, 12 · 04001 Almería<br>WhatsApp: <a href="https://wa.me/34600000000?text=Hola%20Taberna%20El%20Candil">600 000 000</a></p>
+ <p><span lang="es">Grupos de más de 8: avisa con un día de antelación.</span><span lang="en">Groups of 8+: please let us know a day ahead.</span></p>
+</div></section>
+<div class="tiles"></div>
+<footer>© Taberna El Candil · <span lang="es">Web de ejemplo</span><span lang="en">Sample website</span></footer>
+<a class="wa" href="https://wa.me/34600000000?text=Hola%2C%20quer%C3%ADa%20hacer%20una%20consulta" aria-label="WhatsApp"><svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2s-1 .3-3.4-.7a11.6 11.6 0 0 1-4.5-4c-.3-.5-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 .9c.3.2.5.2.6.4.1.1.1.7-.1 1.3z"/></svg></a>
+<div class="demo-tag">Demo</div>
+</body></html>

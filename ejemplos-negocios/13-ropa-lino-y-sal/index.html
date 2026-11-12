@@ -1,0 +1,50 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>(function(){var l=((navigator.languages&&navigator.languages[0])||navigator.language||'es').toLowerCase();var es=/^(es|ca|gl|eu)\b/.test(l);var d=document.documentElement;d.setAttribute('data-l',es?'es':'en');d.lang=es?'es':'en';
+document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('[data-hours]').forEach(function(el){try{var h=JSON.parse(el.getAttribute('data-hours'));var n=new Date(),day=n.getDay(),m=n.getHours()*60+n.getMinutes(),open=false;(h[day]||[]).forEach(function(r){var a=r[0].split(':'),b=r[1].split(':');var s=+a[0]*60+ +a[1],e=+b[0]*60+ +b[1];if(e<=s)e+=1440;if((m>=s&&m<e)||(m+1440>=s&&m+1440<e))open=true;});var p=(h[(day+6)%7]||[]);p.forEach(function(r){var a=r[0].split(':'),b=r[1].split(':');var s=+a[0]*60+ +a[1],e=+b[0]*60+ +b[1];if(e<=s&&m<e)open=true;});el.classList.add(open?'is-open':'is-closed');el.textContent=open?(es?'Abierto ahora':'Open now'):(es?'Cerrado ahora':'Closed now');}catch(e){}});
+var t=new Date().getDay();document.querySelectorAll('[data-day]').forEach(function(r){if(+r.getAttribute('data-day')===t)r.classList.add('today')});});})();</script>
+<style>html[data-l="es"] [lang="en"],html[data-l="en"] [lang="es"]{display:none!important}
+.demo-tag{position:fixed;left:max(10px,env(safe-area-inset-left));bottom:max(10px,env(safe-area-inset-bottom));z-index:9999;font:600 9px/1 system-ui,-apple-system,sans-serif;letter-spacing:.16em;text-transform:uppercase;padding:5px 7px;border-radius:3px;background:rgba(20,20,20,.55);color:#fff;opacity:.7;pointer-events:none}</style>
+
+<title>Lino y Sal · Moda de verano</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Italiana&family=Outfit:wght@300;400;600&display=swap">
+<style>
+:root{--lino:#efe8dc;--arena:#e2d5c0;--mar:#3f6e7a;--tinta:#29302f;--blanco:#fbf9f5}
+*{box-sizing:border-box}body{margin:0;background:var(--blanco);color:var(--tinta);font:300 16px/1.65 "Outfit",system-ui,sans-serif}
+.top{text-align:center;font-size:11px;letter-spacing:.3em;text-transform:uppercase;background:var(--mar);color:var(--blanco);padding:8px}
+header{padding:22px 20px 10px;text-align:center}
+h1{font:400 clamp(52px,16vw,110px)/.9 "Italiana",serif;margin:0;letter-spacing:.02em}
+h1 em{font-style:normal;color:var(--mar)}
+.sub{font-size:12px;letter-spacing:.35em;text-transform:uppercase;margin-top:10px}
+.hero{position:relative;margin:20px 0 0;height:115vw;max-height:640px;background:url(https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1200&q=70) center/cover}
+.hero p{position:absolute;left:20px;bottom:20px;margin:0;background:var(--blanco);padding:14px 18px;max-width:260px;font-size:15px}
+section{max-width:760px;margin:0 auto;padding:44px 20px}
+h2{font:400 38px/1 "Italiana",serif;margin:0 0 18px}
+.scroll{display:grid;grid-auto-flow:column;grid-auto-columns:72%;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px}
+@media(min-width:700px){.scroll{grid-auto-columns:31%}}
+.item{scroll-snap-align:start}
+.item .ph{aspect-ratio:3/4;background:var(--lino) center/cover}
+.item b{display:block;font-weight:400;margin-top:8px}.item span.p{color:var(--mar)}
+.colors{display:flex;gap:6px;margin-top:6px}.colors i{width:14px;height:14px;border-radius:50%;display:block;border:1px solid rgba(0,0,0,.1)}
+.quote{background:var(--lino);text-align:center;padding:50px 24px;font:400 28px/1.3 "Italiana",serif}
+.hrs{width:100%;border-collapse:collapse;font-size:15px}.hrs td{padding:8px 0;border-bottom:1px solid var(--arena)}.hrs td+td{text-align:right}
+.today td{font-weight:600;color:var(--mar)}
+.st{display:block;margin-bottom:8px;font-weight:600}.st.is-open{color:#2e7d5b}.st.is-closed{color:#a0553c}
+.wa{display:flex;justify-content:center;gap:10px;align-items:center;border:1px solid var(--tinta);color:var(--tinta);text-decoration:none;padding:15px;letter-spacing:.2em;text-transform:uppercase;font-size:12.5px;margin-top:22px}
+footer{text-align:center;font-size:12px;padding:20px 20px 80px;letter-spacing:.1em}
+</style></head><body>
+<div class="top"><span lang="es">Nueva colección · Verano mediterráneo</span><span lang="en">New collection · Mediterranean summer</span></div>
+<header><h1>Lino <em>&amp;</em> Sal</h1><div class="sub"><span lang="es">Boutique · Puerto de Aguadulce</span><span lang="en">Boutique · Aguadulce Marina</span></div></header>
+<div class="hero" role="img" aria-label="Ropa de lino"><p><span lang="es">Prendas de lino y algodón orgánico para vivir al lado del mar.</span><span lang="en">Linen and organic cotton pieces for living by the sea.</span></p></div>
+<section><h2><span lang="es">Lo más pedido</span><span lang="en">Bestsellers</span></h2>
+ <div class="scroll">
+  <div class="item"><div class="ph" style="background-image:url(https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=600&q=70)"></div><b><span lang="es">Camisa de lino oversize</span><span lang="en">Oversized linen shirt</span></b><span class="p">49 €</span><div class="colors"><i style="background:#f4efe6"></i><i style="background:#c9b79a"></i><i style="background:#3f6e7a"></i></div></div>
+  <div class="item"><div class="ph" style="background-image:url(https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=600&q=70)"></div><b><span lang="es">Vestido midi Cabo</span><span lang="en">Cabo midi dress</span></b><span class="p">69 €</span><div class="colors"><i style="background:#e9dcc8"></i><i style="background:#9a6b4f"></i></div></div>
+  <div class="item"><div class="ph" style="background-image:url(https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=600&q=70)"></div><b><span lang="es">Pantalón ancho Salina</span><span lang="en">Salina wide trousers</span></b><span class="p">55 €</span><div class="colors"><i style="background:#fbf9f5"></i><i style="background:#29302f"></i></div></div>
+ </div></section>
+<div class="quote"><span lang="es">“Menos prendas, mejor hechas.”</span><span lang="en">“Fewer clothes, better made.”</span></div>
+<section><h2><span lang="es">Visítanos</span><span lang="en">Visit us</span></h2><span class="st" data-hours='{"1": [["10:30", "14:00"], ["17:30", "21:30"]], "2": [["10:30", "14:00"], ["17:30", "21:30"]], "3": [["10:30", "14:00"], ["17:30", "21:30"]], "4": [["10:30", "14:00"], ["17:30", "21:30"]], "5": [["10:30", "14:00"], ["17:30", "21:30"]], "6": [["10:30", "14:00"], ["17:30", "21:30"]], "0": [["11:00", "14:00"]]}'>·</span><table class="hrs"><tr data-day="1"><td><span lang="es">Lunes</span><span lang="en">Monday</span></td><td>10:30–14:00 · 17:30–21:30</td></tr><tr data-day="2"><td><span lang="es">Martes</span><span lang="en">Tuesday</span></td><td>10:30–14:00 · 17:30–21:30</td></tr><tr data-day="3"><td><span lang="es">Miércoles</span><span lang="en">Wednesday</span></td><td>10:30–14:00 · 17:30–21:30</td></tr><tr data-day="4"><td><span lang="es">Jueves</span><span lang="en">Thursday</span></td><td>10:30–14:00 · 17:30–21:30</td></tr><tr data-day="5"><td><span lang="es">Viernes</span><span lang="en">Friday</span></td><td>10:30–14:00 · 17:30–21:30</td></tr><tr data-day="6"><td><span lang="es">Sábado</span><span lang="en">Saturday</span></td><td>10:30–14:00 · 17:30–21:30</td></tr><tr data-day="0"><td><span lang="es">Domingo</span><span lang="en">Sunday</span></td><td>11:00–14:00</td></tr></table>
+ <p style="margin-top:16px">Puerto Deportivo de Aguadulce, local 18 · 04720</p>
+ <a class="wa" href="https://wa.me/34600000000?text=Hola%20Lino%20y%20Sal%2C%20%C2%BFten%C3%A9is%20en%20mi%20talla%20la%20prenda"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2s-1 .3-3.4-.7a11.6 11.6 0 0 1-4.5-4c-.3-.5-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 .9c.3.2.5.2.6.4.1.1.1.7-.1 1.3z"/></svg> <span lang="es">Pregunta tallas por WhatsApp</span><span lang="en">Ask about sizes on WhatsApp</span></a></section>
+<footer>LINO &amp; SAL · <span lang="es">web de ejemplo</span><span lang="en">sample website</span></footer>
+<div class="demo-tag">Demo</div>
+</body></html>

@@ -1,0 +1,61 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>(function(){var l=((navigator.languages&&navigator.languages[0])||navigator.language||'es').toLowerCase();var es=/^(es|ca|gl|eu)\b/.test(l);var d=document.documentElement;d.setAttribute('data-l',es?'es':'en');d.lang=es?'es':'en';
+document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('[data-hours]').forEach(function(el){try{var h=JSON.parse(el.getAttribute('data-hours'));var n=new Date(),day=n.getDay(),m=n.getHours()*60+n.getMinutes(),open=false;(h[day]||[]).forEach(function(r){var a=r[0].split(':'),b=r[1].split(':');var s=+a[0]*60+ +a[1],e=+b[0]*60+ +b[1];if(e<=s)e+=1440;if((m>=s&&m<e)||(m+1440>=s&&m+1440<e))open=true;});var p=(h[(day+6)%7]||[]);p.forEach(function(r){var a=r[0].split(':'),b=r[1].split(':');var s=+a[0]*60+ +a[1],e=+b[0]*60+ +b[1];if(e<=s&&m<e)open=true;});el.classList.add(open?'is-open':'is-closed');el.textContent=open?(es?'Abierto ahora':'Open now'):(es?'Cerrado ahora':'Closed now');}catch(e){}});
+var t=new Date().getDay();document.querySelectorAll('[data-day]').forEach(function(r){if(+r.getAttribute('data-day')===t)r.classList.add('today')});});})();</script>
+<style>html[data-l="es"] [lang="en"],html[data-l="en"] [lang="es"]{display:none!important}
+.demo-tag{position:fixed;left:max(10px,env(safe-area-inset-left));bottom:max(10px,env(safe-area-inset-bottom));z-index:9999;font:600 9px/1 system-ui,-apple-system,sans-serif;letter-spacing:.16em;text-transform:uppercase;padding:5px 7px;border-radius:3px;background:rgba(20,20,20,.55);color:#fff;opacity:.7;pointer-events:none}</style>
+
+<title>Clínica Dental Sonrisa Indálica</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&family=Nunito:wght@400;600;700&display=swap">
+<style>
+:root{--sky:#3aa6f2;--sky2:#e8f5ff;--navy:#123a5c;--sun:#ffd166;--bg:#ffffff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--navy);font:16px/1.6 "Nunito",system-ui,sans-serif}
+.hero{background:linear-gradient(180deg,var(--sky2),#fff);padding:26px 18px 0;text-align:center;overflow:hidden}
+.logo{display:inline-flex;gap:8px;align-items:center;font:700 18px "Quicksand"}
+.tooth{width:30px;height:30px;background:var(--sky);border-radius:40% 40% 50% 50%/50% 50% 40% 40%;position:relative}
+.tooth::after{content:"";position:absolute;left:8px;top:7px;width:6px;height:6px;border-radius:50%;background:#fff}
+h1{font:700 clamp(36px,10vw,60px)/1.05 "Quicksand";margin:18px 0 10px}
+h1 span.h{background:linear-gradient(transparent 62%,var(--sun) 62%)}
+.hero p{max-width:34ch;margin:0 auto}
+.cta{display:inline-flex;gap:10px;align-items:center;background:var(--sky);color:#fff;text-decoration:none;border-radius:18px;padding:15px 22px;font-weight:700;margin:20px 0;box-shadow:0 8px 20px rgba(58,166,242,.35)}
+.smile{max-width:640px;margin:10px auto 0;aspect-ratio:16/10;border-radius:30px 30px 0 0;background:url(https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1100&q=70) center/cover}
+.promo{background:var(--sun);text-align:center;padding:14px;font-weight:700}
+section{max-width:760px;margin:0 auto;padding:36px 18px}
+h2{font:700 30px "Quicksand";margin:0 0 16px;text-align:center}
+.svc{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(min-width:680px){.svc{grid-template-columns:repeat(4,1fr)}}
+.s{background:var(--sky2);border-radius:22px;padding:16px;text-align:center}
+.s .e{font-size:30px}.s b{display:block;font-family:"Quicksand"}.s small{color:#4e7090}
+.team{display:grid;grid-template-columns:1fr 1fr;gap:12px}.team div{border-radius:22px;aspect-ratio:1;background:center/cover}
+details{border:2px solid var(--sky2);border-radius:18px;padding:0 16px;margin-bottom:10px}
+summary{cursor:pointer;padding:14px 0;font-weight:700;list-style:none}summary::-webkit-details-marker{display:none}
+summary::before{content:"＋ ";color:var(--sky)}details[open] summary::before{content:"－ "}
+details p{margin:0 0 14px}
+.hrs{width:100%;border-collapse:separate;border-spacing:0 6px}.hrs td{background:var(--sky2);padding:9px 14px}.hrs td:first-child{border-radius:14px 0 0 14px}.hrs td:last-child{border-radius:0 14px 14px 0;text-align:right}
+.today td{background:var(--sky);color:#fff;font-weight:700}
+.st{display:block;text-align:center;font-weight:700;margin-bottom:6px}.st.is-open{color:#14915f}.st.is-closed{color:#d14b4b}
+footer{text-align:center;font-size:12.5px;padding:20px 18px 80px;color:#5b7a95}
+</style></head><body>
+<div class="hero"><div class="logo"><span class="tooth"></span>Sonrisa Indálica</div>
+ <h1><span lang="es">Dentistas que <span class="h">no dan miedo</span></span><span lang="en">Dentists who <span class="h">aren't scary</span></span></h1>
+ <p><span lang="es">Clínica familiar en el centro de Almería. Niños, ortodoncia invisible, implantes y urgencias.</span><span lang="en">Family clinic in central Almería. Kids, clear aligners, implants and emergencies.</span></p>
+ <a class="cta" href="https://wa.me/34600000000?text=Hola%20Sonrisa%20Ind%C3%A1lica%2C%20quer%C3%ADa%20pedir%20cita%20para%20una%20revisi%C3%B3n"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2s-1 .3-3.4-.7a11.6 11.6 0 0 1-4.5-4c-.3-.5-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 .9c.3.2.5.2.6.4.1.1.1.7-.1 1.3z"/></svg> <span lang="es">Pide cita por WhatsApp</span><span lang="en">Book on WhatsApp</span></a>
+ <div class="smile" role="img" aria-label="Clínica dental"></div></div>
+<div class="promo">🦷 <span lang="es">Primera revisión y radiografía gratis</span><span lang="en">First check-up and X-ray free</span></div>
+<section><h2><span lang="es">¿Qué necesitas?</span><span lang="en">What do you need?</span></h2>
+ <div class="svc">
+  <div class="s"><div class="e">✨</div><b><span lang="es">Limpieza</span><span lang="en">Cleaning</span></b><small>35 €</small></div>
+  <div class="s"><div class="e">😁</div><b><span lang="es">Ortodoncia invisible</span><span lang="en">Clear aligners</span></b><small><span lang="es">desde 89 €/mes</span><span lang="en">from €89/mo</span></small></div>
+  <div class="s"><div class="e">🔩</div><b><span lang="es">Implantes</span><span lang="en">Implants</span></b><small><span lang="es">financiados</span><span lang="en">financing</span></small></div>
+  <div class="s"><div class="e">🧒</div><b><span lang="es">Odontopediatría</span><span lang="en">Kids' dentistry</span></b><small><span lang="es">desde 3 años</span><span lang="en">from age 3</span></small></div>
+ </div></section>
+<section class="team"><div style="background-image:url(https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=600&q=70)"></div><div style="background-image:url(https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=70)"></div></section>
+<section><h2><span lang="es">Preguntas frecuentes</span><span lang="en">FAQ</span></h2>
+ <details><summary><span lang="es">¿Atendéis urgencias?</span><span lang="en">Do you see emergencies?</span></summary><p><span lang="es">Sí, reservamos huecos cada día. Escríbenos y te damos la primera hora libre.</span><span lang="en">Yes, we keep slots every day. Message us for the first free time.</span></p></details>
+ <details><summary><span lang="es">¿Trabajáis con seguros?</span><span lang="en">Do you accept insurance?</span></summary><p><span lang="es">Trabajamos con las principales aseguradoras. Pregúntanos por la tuya.</span><span lang="en">We work with the main insurers. Ask us about yours.</span></p></details>
+ <details><summary><span lang="es">¿Puedo pagar a plazos?</span><span lang="en">Can I pay in instalments?</span></summary><p><span lang="es">Sí, financiación hasta 24 meses sin intereses en tratamientos de más de 600 €.</span><span lang="en">Yes, 0% financing up to 24 months on treatments over €600.</span></p></details>
+</section>
+<section><h2><span lang="es">Horario</span><span lang="en">Opening hours</span></h2><span class="st" data-hours='{"1": [["09:30", "14:00"], ["16:00", "20:30"]], "2": [["09:30", "14:00"], ["16:00", "20:30"]], "3": [["09:30", "14:00"], ["16:00", "20:30"]], "4": [["09:30", "14:00"], ["16:00", "20:30"]], "5": [["09:30", "15:00"]]}'>·</span><table class="hrs"><tr data-day="1"><td><span lang="es">Lunes</span><span lang="en">Monday</span></td><td>09:30–14:00 · 16:00–20:30</td></tr><tr data-day="2"><td><span lang="es">Martes</span><span lang="en">Tuesday</span></td><td>09:30–14:00 · 16:00–20:30</td></tr><tr data-day="3"><td><span lang="es">Miércoles</span><span lang="en">Wednesday</span></td><td>09:30–14:00 · 16:00–20:30</td></tr><tr data-day="4"><td><span lang="es">Jueves</span><span lang="en">Thursday</span></td><td>09:30–14:00 · 16:00–20:30</td></tr><tr data-day="5"><td><span lang="es">Viernes</span><span lang="en">Friday</span></td><td>09:30–15:00</td></tr><tr data-day="6"><td><span lang="es">Sábado</span><span lang="en">Saturday</span></td><td><span lang="es">Cerrado</span><span lang="en">Closed</span></td></tr><tr data-day="0"><td><span lang="es">Domingo</span><span lang="en">Sunday</span></td><td><span lang="es">Cerrado</span><span lang="en">Closed</span></td></tr></table>
+ <p style="text-align:center">Rambla Obispo Orberá, 8 · 04001 Almería</p></section>
+<footer>Clínica Dental Sonrisa Indálica · <span lang="es">web de ejemplo</span><span lang="en">sample website</span></footer>
+<div class="demo-tag">Demo</div>
+</body></html>

@@ -1,0 +1,59 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>(function(){var l=((navigator.languages&&navigator.languages[0])||navigator.language||'es').toLowerCase();var es=/^(es|ca|gl|eu)\b/.test(l);var d=document.documentElement;d.setAttribute('data-l',es?'es':'en');d.lang=es?'es':'en';
+document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('[data-hours]').forEach(function(el){try{var h=JSON.parse(el.getAttribute('data-hours'));var n=new Date(),day=n.getDay(),m=n.getHours()*60+n.getMinutes(),open=false;(h[day]||[]).forEach(function(r){var a=r[0].split(':'),b=r[1].split(':');var s=+a[0]*60+ +a[1],e=+b[0]*60+ +b[1];if(e<=s)e+=1440;if((m>=s&&m<e)||(m+1440>=s&&m+1440<e))open=true;});var p=(h[(day+6)%7]||[]);p.forEach(function(r){var a=r[0].split(':'),b=r[1].split(':');var s=+a[0]*60+ +a[1],e=+b[0]*60+ +b[1];if(e<=s&&m<e)open=true;});el.classList.add(open?'is-open':'is-closed');el.textContent=open?(es?'Abierto ahora':'Open now'):(es?'Cerrado ahora':'Closed now');}catch(e){}});
+var t=new Date().getDay();document.querySelectorAll('[data-day]').forEach(function(r){if(+r.getAttribute('data-day')===t)r.classList.add('today')});});})();</script>
+<style>html[data-l="es"] [lang="en"],html[data-l="en"] [lang="es"]{display:none!important}
+.demo-tag{position:fixed;left:max(10px,env(safe-area-inset-left));bottom:max(10px,env(safe-area-inset-bottom));z-index:9999;font:600 9px/1 system-ui,-apple-system,sans-serif;letter-spacing:.16em;text-transform:uppercase;padding:5px 7px;border-radius:3px;background:rgba(20,20,20,.55);color:#fff;opacity:.7;pointer-events:none}</style>
+
+<title>Kōen Ramen · Almería</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap">
+<style>
+:root{--rojo:#d7262b;--negro:#111;--papel:#f3eee4;--gris:#8a857c}
+*{box-sizing:border-box}body{margin:0;background:var(--papel);color:var(--negro);font:16px/1.55 "Zen Kaku Gothic New",system-ui,sans-serif}
+header{position:relative;background:var(--negro);color:var(--papel);overflow:hidden}
+.v{position:absolute;right:14px;top:16px;writing-mode:vertical-rl;font:700 46px "Zen Kaku Gothic New";color:var(--rojo);letter-spacing:.1em}
+.h{padding:26px 18px 0}
+h1{font:400 clamp(70px,24vw,180px)/.8 "Bebas Neue",sans-serif;margin:0;letter-spacing:1px}
+.h p{max-width:28ch;color:#c9c3b8}
+.bowl{height:72vw;max-height:520px;background:url(https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=1200&q=70) center/cover;clip-path:polygon(0 12%,100% 0,100% 100%,0 100%)}
+.noren{display:flex;gap:4px;background:var(--rojo);padding:10px 0;justify-content:center}
+.noren span{width:16%;height:30px;background:var(--rojo);border-left:2px solid var(--negro);font:400 22px "Bebas Neue";color:var(--papel);text-align:center;line-height:30px}
+section{padding:40px 18px;max-width:760px;margin:0 auto}
+h2{font:400 46px/.9 "Bebas Neue";margin:0 0 18px}h2 b{color:var(--rojo);font-weight:400}
+.steps{counter-reset:s;display:grid;gap:10px}
+.steps li{list-style:none;counter-increment:s;background:#fff;border-left:6px solid var(--rojo);padding:12px 14px}
+.steps li::before{content:counter(s,decimal-leading-zero) "  ";font:400 22px "Bebas Neue";color:var(--rojo)}
+.bowls{display:grid;gap:14px}@media(min-width:640px){.bowls{grid-template-columns:1fr 1fr}}
+.b{background:var(--negro);color:var(--papel);display:grid;grid-template-columns:110px 1fr}
+.b .im{background:center/cover}.b div.t{padding:14px}
+.b h3{margin:0;font:400 28px "Bebas Neue"}.b .p{color:var(--rojo);font-weight:700}
+.b p{margin:4px 0 0;font-size:14px;color:#bbb4a8}
+.hrs{width:100%;border-collapse:collapse}.hrs td{padding:9px 0;border-bottom:2px solid var(--negro)}.hrs td+td{text-align:right}
+.today td{background:var(--rojo);color:#fff}.today td:first-child{padding-left:6px}.today td:last-child{padding-right:6px}
+.st{display:inline-block;font:400 22px "Bebas Neue";letter-spacing:1px;margin-bottom:6px}.st.is-open{color:#1a7f37}.st.is-closed{color:var(--rojo)}
+.wa{display:flex;gap:10px;justify-content:center;align-items:center;background:var(--rojo);color:#fff;text-decoration:none;font:400 26px "Bebas Neue";padding:14px;margin-top:18px}
+footer{background:var(--negro);color:var(--gris);text-align:center;padding:24px 18px 70px;font-size:13px}
+</style></head><body>
+<header><div class="v">ラーメン</div><div class="h"><h1>Kōen<br>Ramen</h1>
+ <p><span lang="es">Caldo de 14 horas, fideos hechos aquí cada mañana. Doce taburetes y una barra.</span><span lang="en">14-hour broth, noodles made in-house every morning. Twelve stools and a counter.</span></p></div>
+ <div class="bowl" role="img" aria-label="Ramen"></div></header>
+<div class="noren"><span>醤</span><span>味</span><span>塩</span><span>辛</span><span>麺</span></div>
+<section><h2><span lang="es">Cómo <b>pedir</b></span><span lang="en">How to <b>order</b></span></h2>
+ <ol class="steps" style="padding:0;margin:0">
+  <li><span lang="es">Elige el caldo: shoyu, miso o tonkotsu.</span><span lang="en">Pick your broth: shoyu, miso or tonkotsu.</span></li>
+  <li><span lang="es">Elige el picante, de 0 a 5.</span><span lang="en">Pick the heat, from 0 to 5.</span></li>
+  <li><span lang="es">Añade extras: huevo, chashu, nori.</span><span lang="en">Add extras: egg, chashu, nori.</span></li>
+ </ol></section>
+<section><h2><span lang="es">Los <b>boles</b></span><span lang="en">The <b>bowls</b></span></h2>
+ <div class="bowls">
+  <div class="b"><div class="im" style="background-image:url(https://images.unsplash.com/photo-1557872943-16a5ac26437e?auto=format&fit=crop&w=400&q=70)"></div><div class="t"><h3>Tonkotsu</h3><span class="p">13,50 €</span><p><span lang="es">Cerdo, ajo negro, huevo marinado.</span><span lang="en">Pork, black garlic, marinated egg.</span></p></div></div>
+  <div class="b"><div class="im" style="background-image:url(https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=400&q=70)"></div><div class="t"><h3>Miso</h3><span class="p">12,50 €</span><p><span lang="es">Miso rojo, maíz, mantequilla.</span><span lang="en">Red miso, corn, butter.</span></p></div></div>
+  <div class="b"><div class="im" style="background-image:url(https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=70)"></div><div class="t"><h3>Gyozas (6)</h3><span class="p">7 €</span><p><span lang="es">Plancha y vapor, salsa ponzu.</span><span lang="en">Pan-fried and steamed, ponzu.</span></p></div></div>
+  <div class="b"><div class="im" style="background-image:url(https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=400&q=70)"></div><div class="t"><h3>Vegan shoyu</h3><span class="p">12 €</span><p><span lang="es">Setas shiitake y tofu ahumado.</span><span lang="en">Shiitake and smoked tofu.</span></p></div></div>
+ </div></section>
+<section><h2><span lang="es"><b>Horario</b></span><span lang="en"><b>Hours</b></span></h2><span class="st" data-hours='{"2": [["13:00", "16:00"], ["20:00", "23:30"]], "3": [["13:00", "16:00"], ["20:00", "23:30"]], "4": [["13:00", "16:00"], ["20:00", "23:30"]], "5": [["13:00", "16:00"], ["20:00", "23:30"]], "6": [["13:00", "16:30"], ["20:00", "23:30"]], "0": [["13:00", "16:30"], ["20:00", "23:30"]]}'>·</span><table class="hrs"><tr data-day="1"><td><span lang="es">Lunes</span><span lang="en">Monday</span></td><td><span lang="es">Cerrado</span><span lang="en">Closed</span></td></tr><tr data-day="2"><td><span lang="es">Martes</span><span lang="en">Tuesday</span></td><td>13:00–16:00 · 20:00–23:30</td></tr><tr data-day="3"><td><span lang="es">Miércoles</span><span lang="en">Wednesday</span></td><td>13:00–16:00 · 20:00–23:30</td></tr><tr data-day="4"><td><span lang="es">Jueves</span><span lang="en">Thursday</span></td><td>13:00–16:00 · 20:00–23:30</td></tr><tr data-day="5"><td><span lang="es">Viernes</span><span lang="en">Friday</span></td><td>13:00–16:00 · 20:00–23:30</td></tr><tr data-day="6"><td><span lang="es">Sábado</span><span lang="en">Saturday</span></td><td>13:00–16:30 · 20:00–23:30</td></tr><tr data-day="0"><td><span lang="es">Domingo</span><span lang="en">Sunday</span></td><td>13:00–16:30 · 20:00–23:30</td></tr></table>
+ <a class="wa" href="https://wa.me/34600000000?text=Hola%20K%C5%8Den%2C%20%C2%BFhay%20sitio%20hoy%20para"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2s-1 .3-3.4-.7a11.6 11.6 0 0 1-4.5-4c-.3-.5-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 .9c.3.2.5.2.6.4.1.1.1.7-.1 1.3z"/></svg> <span lang="es">Reserva tu taburete</span><span lang="en">Save your stool</span></a>
+ <p>C. Granada, 18 · 04003 Almería</p></section>
+<footer>Kōen Ramen · <span lang="es">web de ejemplo</span><span lang="en">sample website</span></footer>
+<div class="demo-tag">Demo</div>
+</body></html>

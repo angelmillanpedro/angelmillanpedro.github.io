@@ -1,0 +1,144 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>(function(){var l=((navigator.languages&&navigator.languages[0])||navigator.language||'es').toLowerCase();var es=/^(es|ca|gl|eu)\b/.test(l);var d=document.documentElement;d.setAttribute('data-l',es?'es':'en');d.lang=es?'es':'en';
+document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('[data-hours]').forEach(function(el){try{var h=JSON.parse(el.getAttribute('data-hours'));var n=new Date(),day=n.getDay(),m=n.getHours()*60+n.getMinutes(),open=false;(h[day]||[]).forEach(function(r){var a=r[0].split(':'),b=r[1].split(':');var s=+a[0]*60+ +a[1],e=+b[0]*60+ +b[1];if(e<=s)e+=1440;if((m>=s&&m<e)||(m+1440>=s&&m+1440<e))open=true;});var p=(h[(day+6)%7]||[]);p.forEach(function(r){var a=r[0].split(':'),b=r[1].split(':');var s=+a[0]*60+ +a[1],e=+b[0]*60+ +b[1];if(e<=s&&m<e)open=true;});el.classList.add(open?'is-open':'is-closed');el.textContent=open?(es?'Abierto ahora':'Open now'):(es?'Cerrado ahora':'Closed now');}catch(e){}});
+var t=new Date().getDay();document.querySelectorAll('[data-day]').forEach(function(r){if(+r.getAttribute('data-day')===t)r.classList.add('today')});});})();</script>
+<style>html[data-l="es"] [lang="en"],html[data-l="en"] [lang="es"]{display:none!important}
+.demo-tag{position:fixed;left:max(10px,env(safe-area-inset-left));bottom:max(10px,env(safe-area-inset-bottom));z-index:9999;font:600 9px/1 system-ui,-apple-system,sans-serif;letter-spacing:.16em;text-transform:uppercase;padding:5px 7px;border-radius:3px;background:rgba(20,20,20,.55);color:#fff;opacity:.7;pointer-events:none}</style>
+
+<title>Puerto Seguro · Correduría de seguros</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&family=Red+Hat+Text:wght@400;500&display=swap">
+<style>
+:root{--blue:#1846a3;--blue2:#eaf0fb;--ink:#0d1a33;--mute:#5a6782;--ok:#1a9c5b;--bg:#f7f9fd;--sun:#ffd166;--red:#e4572e}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Red Hat Text",system-ui,sans-serif;overflow-x:hidden}
+header{background:linear-gradient(180deg,#0f2f73,var(--blue));color:#fff;padding:18px 18px 0;position:relative;overflow:hidden}
+.hin{max-width:1040px;margin:0 auto;display:grid;gap:10px;align-items:end;position:relative;z-index:2}
+@media(min-width:820px){.hin{grid-template-columns:1.2fr 1fr}}
+.lg{display:flex;gap:10px;align-items:center;font:900 18px "Red Hat Display"}
+.shield{width:30px;height:34px;background:#fff;clip-path:path("M15 0 L30 6 L30 16 C30 26 22 32 15 34 C8 32 0 26 0 16 L0 6 Z");display:grid;place-items:center;color:var(--blue);font-size:16px}
+h1{font:900 clamp(38px,10vw,66px)/1.02 "Red Hat Display";margin:34px 0 14px;max-width:14ch;letter-spacing:-.02em}
+h1 em{font-style:normal;color:var(--sun)}
+header p{opacity:.88;max-width:40ch;margin:0 0 110px;font-size:17px}
+.stars{position:absolute;inset:0;background:radial-gradient(#fff 1px,transparent 1.5px) 0 0/90px 70px,radial-gradient(#fff 1px,transparent 1.5px) 40px 30px/120px 90px;opacity:.25}
+/* Faro */
+.faro{position:relative;height:330px;justify-self:center;width:260px;margin-bottom:46px}
+.faro svg{position:absolute;left:50%;bottom:0;width:150px;margin-left:-75px;overflow:visible}
+.haz{position:absolute;left:50%;top:65px;width:0;height:0;z-index:-1}
+.haz::before{content:"";position:absolute;left:0;top:-40px;width:520px;height:80px;background:linear-gradient(90deg,rgba(255,226,140,.75),rgba(255,226,140,0));clip-path:polygon(0 45%,100% 0,100% 100%,0 55%);transform-origin:0 50%;animation:gira 6s linear infinite}
+@keyframes gira{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+.olas{position:absolute;left:0;right:0;bottom:-1px;height:70px;z-index:3;overflow:hidden}
+.olas svg{position:absolute;bottom:0;width:200%;height:70px;animation:ola 10s linear infinite}
+.olas svg+svg{animation-duration:16s;animation-direction:reverse;opacity:.5;bottom:10px}
+@keyframes ola{to{transform:translateX(-50%)}}
+@media(max-width:819px){header p{margin-bottom:6px}.faro{height:240px;width:200px;margin-bottom:56px}.faro svg{width:110px;margin-left:-55px}.haz{top:52px}}
+/* Selector */
+.quick{max-width:1040px;margin:-20px auto 0;padding:0 14px;position:relative;z-index:4}
+.qbox{background:#fff;border-radius:22px;padding:18px;box-shadow:0 18px 40px -16px rgba(13,26,51,.25)}
+.qbox b{font-family:"Red Hat Display";display:block;margin-bottom:12px;font-size:18px}
+.types{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.types button{border:2px solid transparent;cursor:pointer;color:var(--ink);background:var(--blue2);border-radius:16px;padding:14px 4px;text-align:center;font:500 14px "Red Hat Text";transition:background .2s,color .2s,transform .2s}
+.types button:hover{transform:translateY(-2px)}
+.types button svg{display:block;width:28px;height:28px;margin:0 auto 6px}
+.types button[aria-pressed="true"]{background:var(--blue);color:#fff}
+section{max-width:1040px;margin:0 auto;padding:40px 16px}
+h2{font:900 30px "Red Hat Display";margin:0 0 16px;letter-spacing:-.01em}
+.tiers{display:grid;gap:14px}@media(min-width:760px){.tiers{grid-template-columns:repeat(3,1fr)}}
+.t{background:#fff;border:1px solid #dfe6f3;border-radius:20px;padding:20px;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s;animation:in .35s ease both}
+.t:nth-child(2){animation-delay:.06s}.t:nth-child(3){animation-delay:.12s}
+@keyframes in{from{opacity:0;transform:translateY(10px)}}
+.t:hover{transform:translateY(-4px);box-shadow:0 18px 30px -20px rgba(24,70,163,.6)}
+.t.best{border:2px solid var(--blue);position:relative}
+.t.best::before{content:attr(data-tag);position:absolute;top:-12px;left:18px;background:var(--sun);color:var(--ink);font:700 12px "Red Hat Display";border-radius:99px;padding:2px 10px}
+.t h3{font:700 19px "Red Hat Display";margin:0}.t .pr{font:900 34px "Red Hat Display";color:var(--blue)}.t .pr small{font:500 14px "Red Hat Text";color:var(--mute)}
+.t ul{list-style:none;padding:0;margin:10px 0 16px;flex:1}.t li{padding:4px 0}.t li::before{content:"✓ ";color:var(--ok);font-weight:700}.t li.no{color:#a2abbd}.t li.no::before{content:"– ";color:#a2abbd}
+.t a{display:block;text-align:center;text-decoration:none;font-weight:500;border-radius:12px;padding:11px;background:var(--blue2);color:var(--blue)}
+.t.best a{background:var(--blue);color:#fff}
+.note{color:var(--mute);font-size:13px}
+.trust{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;text-align:center}
+.trust b{display:block;font:900 30px "Red Hat Display";color:var(--blue)}
+.trust div{background:#fff;border:1px solid #dfe6f3;border-radius:18px;padding:16px 6px;font-size:13px;color:var(--mute)}
+/* Siniestro */
+.sin{display:grid;gap:14px;background:var(--ink);color:#fff;border-radius:24px;padding:26px}
+@media(min-width:760px){.sin{grid-template-columns:1fr 1.4fr;align-items:center}}
+.sin h2{color:#fff;margin:0}.sin h2 em{font-style:normal;color:var(--sun)}
+.sin ol{margin:0;padding:0;list-style:none;counter-reset:n;display:grid;gap:10px}
+.sin li{counter-increment:n;display:flex;gap:12px;align-items:center;background:rgba(255,255,255,.07);border-radius:14px;padding:12px}
+.sin li::before{content:counter(n);flex:none;width:32px;height:32px;border-radius:50%;background:var(--sun);color:var(--ink);display:grid;place-items:center;font-weight:700}
+.two{display:grid;gap:18px}@media(min-width:760px){.two{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.ph{border-radius:20px;min-height:240px;background:url(https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=900&q=70) center/cover}
+.hrs{width:100%;border-collapse:collapse}.hrs td{padding:8px 0;border-bottom:1px solid #dfe6f3}.hrs td+td{text-align:right}
+.today td{color:var(--blue);font-weight:500}
+.st{display:inline-block;border-radius:99px;padding:3px 12px;font-weight:500;font-size:14px;margin-bottom:10px}.st.is-open{background:#e3f6ec;color:var(--ok)}.st.is-closed{background:#fde9e9;color:#c0392b}
+.wa{display:flex;gap:10px;justify-content:center;align-items:center;background:#25D366;color:#fff;text-decoration:none;border-radius:14px;padding:15px;font-weight:500;margin-top:16px}
+footer{text-align:center;font-size:12.5px;color:var(--mute);padding:20px 16px 80px}
+@media(prefers-reduced-motion:reduce){.haz::before,.olas svg{animation:none}}
+</style></head><body>
+<header><div class="stars" aria-hidden="true"></div>
+ <div class="hin">
+  <div><div class="lg"><span class="shield">✓</span>Puerto Seguro</div>
+   <h1><span lang="es">El seguro que <em>de verdad</em> te cubre</span><span lang="en">Insurance that <em>actually</em> covers you</span></h1>
+   <p><span lang="es">Correduría independiente en Almería. Comparamos entre más de 15 aseguradoras y te acompañamos si tienes un siniestro.</span><span lang="en">Independent broker in Almería. We compare 15+ insurers and stay by your side when you need to claim.</span></p></div>
+  <div class="faro" aria-hidden="true"><span class="haz"></span>
+   <svg viewBox="0 0 150 300">
+    <rect x="58" y="18" width="34" height="34" rx="4" fill="#ffe28c" stroke="#0d1a33" stroke-width="3"/>
+    <path d="M50 18 L75 2 L100 18 Z" fill="#e4572e" stroke="#0d1a33" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="46" y="50" width="58" height="10" rx="3" fill="#0d1a33"/>
+    <path d="M52 60 L98 60 L114 290 L36 290 Z" fill="#fff" stroke="#0d1a33" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M55 105 L95 105 L99 150 L51 150 Z M47 195 L103 195 L107 240 L43 240 Z" fill="#e4572e"/>
+    <rect x="68" y="248" width="14" height="42" rx="7" fill="#0d1a33"/>
+    <circle cx="75" cy="84" r="6" fill="#0d1a33"/>
+   </svg></div>
+ </div>
+ <div class="olas" aria-hidden="true">
+  <svg viewBox="0 0 1200 70" preserveAspectRatio="none"><path fill="#f7f9fd" d="M0 40 Q75 10 150 40 T300 40 T450 40 T600 40 T750 40 T900 40 T1050 40 T1200 40 V70 H0Z"/></svg>
+  <svg viewBox="0 0 1200 70" preserveAspectRatio="none"><path fill="#f7f9fd" d="M0 40 Q75 10 150 40 T300 40 T450 40 T600 40 T750 40 T900 40 T1050 40 T1200 40 V70 H0Z"/></svg>
+ </div></header>
+<div class="quick"><div class="qbox"><b><span lang="es">¿Qué quieres asegurar?</span><span lang="en">What do you want to insure?</span></b>
+ <div class="types" role="group" aria-label="Tipo de seguro">
+  <button type="button" data-t="coche" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17H3v-5l2-5h14l2 5v5h-2M5 12h14"/><circle cx="7.5" cy="17" r="2"/><circle cx="16.5" cy="17" r="2"/></svg><span lang="es">Coche</span><span lang="en">Car</span></button>
+  <button type="button" data-t="hogar" aria-pressed="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8M5 10v10h14V10M10 20v-6h4v6"/></svg><span lang="es">Hogar</span><span lang="en">Home</span></button>
+  <button type="button" data-t="salud" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-8-5-8-11a4.5 4.5 0 0 1 8-3 4.5 4.5 0 0 1 8 3c0 6-8 11-8 11zM12 9v5M9.5 11.5h5"/></svg><span lang="es">Salud</span><span lang="en">Health</span></button>
+  <button type="button" data-t="negocio" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l2-5h14l2 5M3 9h18v2a3 3 0 0 1-6 0 3 3 0 0 1-6 0 3 3 0 0 1-6 0zM5 13v7h14v-7M10 20v-4h4v4"/></svg><span lang="es">Negocio</span><span lang="en">Business</span></button>
+ </div></div></div>
+<section><h2 id="tt"></h2><div class="tiers" id="tiers"></div><p class="note" id="nt"></p></section>
+<section><div class="trust"><div><b>15+</b><span lang="es">aseguradoras</span><span lang="en">insurers</span></div><div><b>24 h</b><span lang="es">respuesta</span><span lang="en">reply time</span></div><div><b>0 €</b><span lang="es">por comparar</span><span lang="en">to compare</span></div></div></section>
+<section><div class="sin"><h2><span lang="es">¿Tienes un siniestro? <em>Te acompañamos.</em></span><span lang="en">Need to claim? <em>We're with you.</em></span></h2>
+ <ol><li><span lang="es">Nos escribes por WhatsApp con fotos de lo ocurrido.</span><span lang="en">Message us on WhatsApp with photos of what happened.</span></li><li><span lang="es">Abrimos el parte con tu aseguradora por ti.</span><span lang="en">We open the claim with your insurer for you.</span></li><li><span lang="es">Te avisamos de cada paso hasta que se resuelva.</span><span lang="en">We keep you posted until it's resolved.</span></li></ol></div></section>
+<section class="two"><div class="ph" role="img" aria-label="Asesoramiento"></div>
+ <div><h2><span lang="es">Horario</span><span lang="en">Office hours</span></h2><span class="st" data-hours='{"1": [["09:00", "14:00"], ["17:00", "19:30"]], "2": [["09:00", "14:00"], ["17:00", "19:30"]], "3": [["09:00", "14:00"], ["17:00", "19:30"]], "4": [["09:00", "14:00"], ["17:00", "19:30"]], "5": [["09:00", "14:00"]]}'>·</span><table class="hrs"><tr data-day="1"><td><span lang="es">Lunes</span><span lang="en">Monday</span></td><td>09:00–14:00 · 17:00–19:30</td></tr><tr data-day="2"><td><span lang="es">Martes</span><span lang="en">Tuesday</span></td><td>09:00–14:00 · 17:00–19:30</td></tr><tr data-day="3"><td><span lang="es">Miércoles</span><span lang="en">Wednesday</span></td><td>09:00–14:00 · 17:00–19:30</td></tr><tr data-day="4"><td><span lang="es">Jueves</span><span lang="en">Thursday</span></td><td>09:00–14:00 · 17:00–19:30</td></tr><tr data-day="5"><td><span lang="es">Viernes</span><span lang="en">Friday</span></td><td>09:00–14:00</td></tr><tr data-day="6"><td><span lang="es">Sábado</span><span lang="en">Saturday</span></td><td><span lang="es">Cerrado</span><span lang="en">Closed</span></td></tr><tr data-day="0"><td><span lang="es">Domingo</span><span lang="en">Sunday</span></td><td><span lang="es">Cerrado</span><span lang="en">Closed</span></td></tr></table>
+ <p>C. Granada, 76 · 04008 Almería</p>
+ <a class="wa" href="https://wa.me/34600000000?text=Hola%20Puerto%20Seguro%2C%20quer%C3%ADa%20un%20presupuesto"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2s-1 .3-3.4-.7a11.6 11.6 0 0 1-4.5-4c-.3-.5-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 .9c.3.2.5.2.6.4.1.1.1.7-.1 1.3z"/></svg> <span lang="es">Presupuesto por WhatsApp</span><span lang="en">Get a quote on WhatsApp</span></a></div></section>
+<footer>Puerto Seguro Correduría · <span lang="es">web de ejemplo</span><span lang="en">sample website</span></footer>
+<div class="demo-tag">Demo</div>
+<script>
+(function(){var es=document.documentElement.dataset.l!=='en',L=function(a){return es?a[0]:a[1]};
+// Cada tipo: título, nota y tres niveles [nombre, precio, [incluye...], [no incluye...]]
+var D={
+ coche:{t:['Seguro de coche: elige nivel','Car insurance: pick a level'],n:['Precios orientativos para un conductor de 35 años en Almería.','Indicative prices for a 35-year-old driver in Almería.'],
+  p:[[['Terceros','Third party'],18,[['Responsabilidad civil','Liability'],['Asistencia en viaje','Roadside assistance']],[['Lunas','Windows'],['Daños propios','Own damage']]],
+     [['Terceros ampliado','Third party plus'],28,[['Responsabilidad civil','Liability'],['Asistencia en viaje','Roadside assistance'],['Lunas','Windows'],['Robo e incendio','Theft & fire']],[]],
+     [['Todo riesgo','Comprehensive'],55,[['Todo lo anterior','All of the above'],['Daños propios','Own damage'],['Coche de sustitución','Courtesy car'],['Sin franquicia','No excess']],[]]]},
+ hogar:{t:['Seguro de hogar: elige nivel','Home insurance: pick a level'],n:['Precios orientativos para un piso de 80 m² en Almería.','Indicative prices for an 80 m² flat in Almería.'],
+  p:[[['Básico','Basic'],9,[['Incendio y agua','Fire & water'],['Responsabilidad civil','Liability']],[['Robo','Theft'],['Asistencia 24 h','24 h assistance']]],
+     [['Completo','Complete'],15,[['Incendio y agua','Fire & water'],['Responsabilidad civil','Liability'],['Robo','Theft'],['Asistencia 24 h','24 h assistance']],[]],
+     [['Premium','Premium'],24,[['Todo lo anterior','All of the above'],['Daños estéticos','Cosmetic damage'],['Manitas gratis','Free handyman'],['Mascotas','Pets']],[]]]},
+ salud:{t:['Seguro de salud: elige nivel','Health insurance: pick a level'],n:['Precios orientativos por persona de 30 a 45 años.','Indicative prices per person aged 30–45.'],
+  p:[[['Básico','Basic'],29,[['Medicina general','GP'],['Especialistas','Specialists']],[['Hospitalización','Hospital stays'],['Dental','Dental']]],
+     [['Completo','Complete'],49,[['Medicina general','GP'],['Especialistas','Specialists'],['Hospitalización','Hospital stays'],['Urgencias 24 h','24 h emergencies']],[]],
+     [['Premium','Premium'],75,[['Todo lo anterior','All of the above'],['Dental incluido','Dental included'],['Reembolso de gastos','Expense refunds'],['Sin copagos','No co-payments']],[]]]},
+ negocio:{t:['Seguro para tu negocio: elige nivel','Business insurance: pick a level'],n:['Precios orientativos para un local de 60 m².','Indicative prices for a 60 m² shop.'],
+  p:[[['Básico','Basic'],25,[['Incendio y agua','Fire & water'],['Responsabilidad civil','Liability']],[['Robo','Theft'],['Pérdida de beneficios','Loss of income']]],
+     [['Completo','Complete'],42,[['Incendio y agua','Fire & water'],['Responsabilidad civil','Liability'],['Robo','Theft'],['Asistencia 24 h','24 h assistance']],[]],
+     [['Premium','Premium'],70,[['Todo lo anterior','All of the above'],['Pérdida de beneficios','Loss of income'],['Equipos electrónicos','Electronic equipment'],['Rotura de cristales','Glass breakage']],[]]]}};
+var NAME={coche:['coche','car'],hogar:['hogar','home'],salud:['salud','health'],negocio:['negocio','business']};
+function show(k){var d=D[k];
+ document.querySelectorAll('.types button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.t===k)});
+ document.getElementById('tt').textContent=L(d.t);document.getElementById('nt').textContent=L(d.n);
+ document.getElementById('tiers').innerHTML=d.p.map(function(p,i){
+  var msg=es?'Hola Puerto Seguro, me interesa el seguro de '+NAME[k][0]+' '+p[0][0]+' ('+p[1]+' €/mes)':'Hi Puerto Seguro, I am interested in the '+p[0][1]+' '+NAME[k][1]+' insurance (€'+p[1]+'/mo)';
+  return '<div class="t'+(i==1?' best':'')+'" data-tag="'+(es?'El más elegido':'Most popular')+'"><h3>'+L(p[0])+'</h3><div class="pr">'+p[1]+' €<small>/'+(es?'mes':'mo')+'</small></div><ul>'+
+   p[2].map(function(x){return '<li>'+L(x)+'</li>'}).join('')+p[3].map(function(x){return '<li class="no">'+L(x)+'</li>'}).join('')+
+   '</ul><a href="https://wa.me/34600000000?text='+encodeURIComponent(msg)+'">'+(es?'Lo quiero':'I want this')+'</a></div>'}).join('');}
+document.querySelectorAll('.types button').forEach(function(b){b.onclick=function(){show(b.dataset.t)}});
+show('hogar');})();
+</script>
+</body></html>

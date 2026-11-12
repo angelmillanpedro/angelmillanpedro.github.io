@@ -1,0 +1,65 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>(function(){var l=((navigator.languages&&navigator.languages[0])||navigator.language||'es').toLowerCase();var es=/^(es|ca|gl|eu)\b/.test(l);var d=document.documentElement;d.setAttribute('data-l',es?'es':'en');d.lang=es?'es':'en';
+document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('[data-hours]').forEach(function(el){try{var h=JSON.parse(el.getAttribute('data-hours'));var n=new Date(),day=n.getDay(),m=n.getHours()*60+n.getMinutes(),open=false;(h[day]||[]).forEach(function(r){var a=r[0].split(':'),b=r[1].split(':');var s=+a[0]*60+ +a[1],e=+b[0]*60+ +b[1];if(e<=s)e+=1440;if((m>=s&&m<e)||(m+1440>=s&&m+1440<e))open=true;});var p=(h[(day+6)%7]||[]);p.forEach(function(r){var a=r[0].split(':'),b=r[1].split(':');var s=+a[0]*60+ +a[1],e=+b[0]*60+ +b[1];if(e<=s&&m<e)open=true;});el.classList.add(open?'is-open':'is-closed');el.textContent=open?(es?'Abierto ahora':'Open now'):(es?'Cerrado ahora':'Closed now');}catch(e){}});
+var t=new Date().getDay();document.querySelectorAll('[data-day]').forEach(function(r){if(+r.getAttribute('data-day')===t)r.classList.add('today')});});})();</script>
+<style>html[data-l="es"] [lang="en"],html[data-l="en"] [lang="es"]{display:none!important}
+.demo-tag{position:fixed;left:max(10px,env(safe-area-inset-left));bottom:max(10px,env(safe-area-inset-bottom));z-index:9999;font:600 9px/1 system-ui,-apple-system,sans-serif;letter-spacing:.16em;text-transform:uppercase;padding:5px 7px;border-radius:3px;background:rgba(20,20,20,.55);color:#fff;opacity:.7;pointer-events:none}</style>
+
+<title>Nube Gelato · Heladería artesana</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&family=Nunito:wght@400;700&display=swap">
+<style>
+:root{--rosa:#ffb7c9;--menta:#a8e6cf;--lima:#fff3a6;--lila:#c9b6ff;--choco:#4a2c2a;--fondo:#fffaf6}
+*{box-sizing:border-box}body{margin:0;background:var(--fondo);color:var(--choco);font:16px/1.55 "Nunito",system-ui,sans-serif;overflow-x:hidden}html{overflow-x:clip}
+.blob{position:absolute;border-radius:50% 45% 55% 50%/55% 50% 50% 45%;filter:blur(0);z-index:-1}
+header{position:relative;text-align:center;padding:40px 18px 20px}
+h1{font:700 clamp(54px,17vw,110px)/.9 "Fredoka",sans-serif;margin:8px 0;color:var(--choco)}
+h1 span.c{color:#ff6f91}
+.cone{width:min(78vw,380px);aspect-ratio:1;margin:16px auto 0;border-radius:50%;background:url(https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?auto=format&fit=crop&w=800&q=70) center/cover;border:10px solid #fff;box-shadow:0 20px 40px rgba(255,111,145,.25)}
+.pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:18px}
+.pills span{background:#fff;border-radius:99px;padding:6px 14px;font-weight:700;font-size:14px;box-shadow:0 3px 0 rgba(74,44,42,.12)}
+section{max-width:680px;margin:0 auto;padding:36px 18px}
+h2{font:700 34px "Fredoka";text-align:center;margin:0 0 18px}
+.flavors{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media(min-width:600px){.flavors{grid-template-columns:repeat(3,1fr)}}
+.f{border-radius:24px;padding:16px;min-height:120px;display:flex;flex-direction:column;justify-content:space-between}
+.f b{font:700 19px "Fredoka"}.f small{font-size:13px}
+.f .new{align-self:flex-start;background:var(--choco);color:#fff;font-size:11px;font-weight:700;padding:2px 8px;border-radius:99px}
+.sizes{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.sz{background:#fff;border-radius:20px;padding:14px 18px;text-align:center;min-width:96px;box-shadow:0 4px 0 var(--rosa)}
+.sz b{font:700 22px "Fredoka";display:block}
+.pic{border-radius:30px;aspect-ratio:16/10;background:url(https://images.unsplash.com/photo-1488900128323-21503983a07e?auto=format&fit=crop&w=900&q=70) center/cover}
+.card{background:#fff;border-radius:30px;padding:22px;box-shadow:0 6px 0 var(--menta)}
+.hrs{width:100%;border-collapse:collapse}.hrs td{padding:8px 4px}.hrs td+td{text-align:right}
+.hrs tr:nth-child(odd){background:#fff6f8}.today td{background:var(--lima);font-weight:700}
+.st{display:block;text-align:center;font:700 16px "Fredoka";margin-bottom:10px}.st.is-open{color:#1f9d6b}.st.is-closed{color:#d9486d}
+.wa{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:20;background:#25D366;color:#fff;border-radius:999px;padding:14px 18px;display:flex;gap:8px;align-items:center;font:700 15px "Fredoka";text-decoration:none;box-shadow:0 6px 0 #179c4a}
+footer{text-align:center;font-size:13px;padding:20px 18px 90px}
+</style></head><body>
+<div style="position:absolute;top:0;left:0;right:0;height:640px;overflow:hidden;z-index:-1"><div class="blob" style="width:300px;height:300px;background:var(--rosa);top:-80px;left:-90px;opacity:.6"></div>
+<div class="blob" style="width:260px;height:260px;background:var(--menta);top:260px;right:-110px;opacity:.6"></div>
+</div>
+<header>
+ <div style="font-weight:700;letter-spacing:.2em;font-size:12px">GELATO · ALMERÍA</div>
+ <h1>Nube<br><span class="c">Gelato</span></h1>
+ <p><span lang="es">Helado artesano hecho cada mañana con fruta de la provincia.</span><span lang="en">Artisan gelato made every morning with local fruit.</span></p>
+ <div class="cone" role="img" aria-label="Helado"></div>
+ <div class="pills"><span>🍓 <span lang="es">Sin colorantes</span><span lang="en">No colourings</span></span><span>🌱 <span lang="es">Opciones veganas</span><span lang="en">Vegan options</span></span><span>🥛 <span lang="es">Sin lactosa</span><span lang="en">Lactose-free</span></span></div>
+</header>
+<section><h2><span lang="es">Sabores de hoy</span><span lang="en">Today's flavours</span></h2>
+ <div class="flavors">
+  <div class="f" style="background:var(--rosa)"><span class="new"><span lang="es">Nuevo</span><span lang="en">New</span></span><div><b><span lang="es">Fresa de Níjar</span><span lang="en">Níjar strawberry</span></b><br><small>sorbete</small></div></div>
+  <div class="f" style="background:var(--menta)"><div><b><span lang="es">Pistacho</span><span lang="en">Pistachio</span></b><br><small><span lang="es">100% pistacho</span><span lang="en">100% pistachio</span></small></div></div>
+  <div class="f" style="background:var(--lima)"><div><b><span lang="es">Limón y albahaca</span><span lang="en">Lemon & basil</span></b><br><small>vegano</small></div></div>
+  <div class="f" style="background:var(--lila)"><div><b><span lang="es">Higo y queso</span><span lang="en">Fig & cheese</span></b><br><small><span lang="es">de temporada</span><span lang="en">seasonal</span></small></div></div>
+  <div class="f" style="background:#e9d3c4"><div><b><span lang="es">Chocolate 70%</span><span lang="en">Dark chocolate</span></b><br><small><span lang="es">sin lactosa</span><span lang="en">lactose-free</span></small></div></div>
+  <div class="f" style="background:#d4ecff"><div><b><span lang="es">Nata y galleta</span><span lang="en">Cookies & cream</span></b><br><small><span lang="es">el de los peques</span><span lang="en">kids' favourite</span></small></div></div>
+ </div></section>
+<section><h2><span lang="es">Tamaños</span><span lang="en">Sizes</span></h2>
+ <div class="sizes"><div class="sz"><b>2,50 €</b><span lang="es">1 bola</span><span lang="en">1 scoop</span></div><div class="sz"><b>3,80 €</b><span lang="es">2 bolas</span><span lang="en">2 scoops</span></div><div class="sz"><b>9 €</b><span lang="es">Tarrina ½ kg</span><span lang="en">½ kg tub</span></div></div></section>
+<section><div class="pic" role="img" aria-label="Polos"></div></section>
+<section><div class="card"><h2><span lang="es">Horario</span><span lang="en">Opening hours</span></h2><span class="st" data-hours='{"1": [["16:00", "23:00"]], "2": [["16:00", "23:00"]], "3": [["16:00", "23:00"]], "4": [["16:00", "23:00"]], "0": [["16:00", "23:00"]], "5": [["12:00", "00:30"]], "6": [["12:00", "00:30"]]}'>·</span><table class="hrs"><tr data-day="1"><td><span lang="es">Lunes</span><span lang="en">Monday</span></td><td>16:00–23:00</td></tr><tr data-day="2"><td><span lang="es">Martes</span><span lang="en">Tuesday</span></td><td>16:00–23:00</td></tr><tr data-day="3"><td><span lang="es">Miércoles</span><span lang="en">Wednesday</span></td><td>16:00–23:00</td></tr><tr data-day="4"><td><span lang="es">Jueves</span><span lang="en">Thursday</span></td><td>16:00–23:00</td></tr><tr data-day="5"><td><span lang="es">Viernes</span><span lang="en">Friday</span></td><td>12:00–00:30</td></tr><tr data-day="6"><td><span lang="es">Sábado</span><span lang="en">Saturday</span></td><td>12:00–00:30</td></tr><tr data-day="0"><td><span lang="es">Domingo</span><span lang="en">Sunday</span></td><td>16:00–23:00</td></tr></table>
+ <p style="text-align:center;margin:16px 0 0">P.º de Almería, 70 · Almería</p></div></section>
+<footer>Nube Gelato · <span lang="es">web de ejemplo</span><span lang="en">sample website</span></footer>
+<a class="wa" href="https://wa.me/34600000000?text=Hola%20Nube%2C%20quer%C3%ADa%20encargar%20una%20tarrina%20de"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2s-1 .3-3.4-.7a11.6 11.6 0 0 1-4.5-4c-.3-.5-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 .9c.3.2.5.2.6.4.1.1.1.7-.1 1.3z"/></svg> <span lang="es">Encargar</span><span lang="en">Order</span></a>
+<div class="demo-tag">Demo</div>
+</body></html>

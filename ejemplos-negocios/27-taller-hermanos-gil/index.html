@@ -1,0 +1,65 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>(function(){var l=((navigator.languages&&navigator.languages[0])||navigator.language||'es').toLowerCase();var es=/^(es|ca|gl|eu)\b/.test(l);var d=document.documentElement;d.setAttribute('data-l',es?'es':'en');d.lang=es?'es':'en';
+document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('[data-hours]').forEach(function(el){try{var h=JSON.parse(el.getAttribute('data-hours'));var n=new Date(),day=n.getDay(),m=n.getHours()*60+n.getMinutes(),open=false;(h[day]||[]).forEach(function(r){var a=r[0].split(':'),b=r[1].split(':');var s=+a[0]*60+ +a[1],e=+b[0]*60+ +b[1];if(e<=s)e+=1440;if((m>=s&&m<e)||(m+1440>=s&&m+1440<e))open=true;});var p=(h[(day+6)%7]||[]);p.forEach(function(r){var a=r[0].split(':'),b=r[1].split(':');var s=+a[0]*60+ +a[1],e=+b[0]*60+ +b[1];if(e<=s&&m<e)open=true;});el.classList.add(open?'is-open':'is-closed');el.textContent=open?(es?'Abierto ahora':'Open now'):(es?'Cerrado ahora':'Closed now');}catch(e){}});
+var t=new Date().getDay();document.querySelectorAll('[data-day]').forEach(function(r){if(+r.getAttribute('data-day')===t)r.classList.add('today')});});})();</script>
+<style>html[data-l="es"] [lang="en"],html[data-l="en"] [lang="es"]{display:none!important}
+.demo-tag{position:fixed;left:max(10px,env(safe-area-inset-left));bottom:max(10px,env(safe-area-inset-bottom));z-index:9999;font:600 9px/1 system-ui,-apple-system,sans-serif;letter-spacing:.16em;text-transform:uppercase;padding:5px 7px;border-radius:3px;background:rgba(20,20,20,.55);color:#fff;opacity:.7;pointer-events:none}</style>
+
+<title>Talleres Hermanos Gil · Mecánica general</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;800&family=Barlow:wght@400;600&display=swap">
+<style>
+:root{--y:#ffc400;--k:#1b1d1f;--steel:#2c3034;--g:#e9eaeb;--r:#e03a1e}
+*{box-sizing:border-box}body{margin:0;background:var(--g);color:var(--k);font:16px/1.55 "Barlow",system-ui,sans-serif}
+.haz{height:14px;background:repeating-linear-gradient(-45deg,var(--y) 0 14px,var(--k) 14px 28px)}
+header{background:var(--steel) url(https://images.unsplash.com/photo-1625047509168-a7026f36de04?auto=format&fit=crop&w=1400&q=70) center/cover;background-blend-mode:multiply;color:#fff;padding:26px 18px 34px}
+.top{display:flex;justify-content:space-between;align-items:center}
+.lg{font:800 20px "Saira Condensed";text-transform:uppercase;background:var(--y);color:var(--k);padding:4px 10px}
+.tel{font:600 15px "Barlow"}
+h1{font:800 clamp(46px,14vw,96px)/.9 "Saira Condensed";text-transform:uppercase;margin:26px 0 12px}
+h1 span{color:var(--y)}
+header p{max-width:34ch;margin:0 0 18px}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.b{display:inline-flex;gap:8px;align-items:center;text-decoration:none;font:800 18px "Saira Condensed";text-transform:uppercase;padding:12px 18px}
+.b.y{background:var(--y);color:var(--k)}.b.o{border:2px solid #fff;color:#fff}
+section{max-width:960px;margin:0 auto;padding:34px 16px}
+h2{font:800 34px/1 "Saira Condensed";text-transform:uppercase;margin:0 0 16px;display:flex;gap:10px;align-items:center}
+h2::before{content:"";width:12px;height:28px;background:var(--y)}
+.svc{display:grid;grid-template-columns:1fr 1fr;gap:10px}@media(min-width:760px){.svc{grid-template-columns:repeat(4,1fr)}}
+.s{background:#fff;border-bottom:4px solid var(--y);padding:14px}
+.s .e{font-size:28px}.s b{font:800 19px "Saira Condensed";text-transform:uppercase;display:block}.s small{color:#5a5f64}
+.s .p{display:block;font:800 22px "Saira Condensed";margin-top:6px}
+.itv{background:var(--k);color:#fff;display:grid;gap:14px;padding:20px}
+@media(min-width:700px){.itv{grid-template-columns:1.2fr 1fr;align-items:center}}
+.itv .ph{aspect-ratio:16/10;background:url(https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=800&q=70) center/cover}
+.itv b{color:var(--y);font:800 26px "Saira Condensed";text-transform:uppercase}
+.check{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.check li{background:#fff;padding:10px 12px;display:flex;gap:10px}.check li::before{content:"✔";color:#1f8a4c;font-weight:700}
+.hrs{width:100%;border-collapse:collapse;background:#fff}.hrs td{padding:9px 12px;border-bottom:1px solid var(--g);font-weight:600}.hrs td+td{text-align:right}
+.today td{background:var(--y)}
+.st{display:inline-block;font:800 17px "Saira Condensed";text-transform:uppercase;padding:4px 10px;margin-bottom:10px;color:#fff}.st.is-open{background:#1f8a4c}.st.is-closed{background:var(--r)}
+.wa{position:fixed;right:max(14px,env(safe-area-inset-right));bottom:max(14px,env(safe-area-inset-bottom));z-index:20;background:#25D366;color:#fff;text-decoration:none;font:800 17px "Saira Condensed";text-transform:uppercase;padding:13px 16px;display:flex;gap:8px;align-items:center;box-shadow:4px 4px 0 var(--k)}
+footer{background:var(--k);color:#999;text-align:center;font-size:12.5px;padding:20px 16px 90px}
+</style></head><body>
+<div class="haz"></div>
+<header><div class="top"><span class="lg">Hnos. Gil</span><span class="tel">📞 950 000 000</span></div>
+ <h1><span lang="es">Tu coche, <span>en buenas manos</span></span><span lang="en">Your car, <span>in good hands</span></span></h1>
+ <p><span lang="es">Taller de mecánica general, electricidad y neumáticos. Presupuesto sin compromiso antes de tocar nada.</span><span lang="en">General mechanics, electrics and tyres. Free quote before we touch anything.</span></p>
+ <div class="btns"><a class="b y" href="https://wa.me/34600000000?text=Hola%20Talleres%20Gil%2C%20quer%C3%ADa%20presupuesto%20para%20mi%20coche%3A"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2s-1 .3-3.4-.7a11.6 11.6 0 0 1-4.5-4c-.3-.5-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 .9c.3.2.5.2.6.4.1.1.1.7-.1 1.3z"/></svg> <span lang="es">Presupuesto</span><span lang="en">Get a quote</span></a><a class="b o" href="#horario"><span lang="es">Horario</span><span lang="en">Hours</span></a></div></header>
+<div class="haz"></div>
+<section><h2><span lang="es">Servicios</span><span lang="en">Services</span></h2>
+ <div class="svc">
+  <div class="s"><div class="e">🛢️</div><b><span lang="es">Cambio de aceite</span><span lang="en">Oil change</span></b><small><span lang="es">Con filtro</span><span lang="en">Filter included</span></small><span class="p"><span lang="es">desde</span><span lang="en">from</span> 59 €</span></div>
+  <div class="s"><div class="e">🛞</div><b><span lang="es">Neumáticos</span><span lang="en">Tyres</span></b><small><span lang="es">Montaje y equilibrado</span><span lang="en">Fit & balance</span></small><span class="p"><span lang="es">desde</span><span lang="en">from</span> 55 €</span></div>
+  <div class="s"><div class="e">🛑</div><b><span lang="es">Frenos</span><span lang="en">Brakes</span></b><small><span lang="es">Pastillas delanteras</span><span lang="en">Front pads</span></small><span class="p"><span lang="es">desde</span><span lang="en">from</span> 79 €</span></div>
+  <div class="s"><div class="e">❄️</div><b><span lang="es">Aire acondicionado</span><span lang="en">A/C recharge</span></b><small><span lang="es">Carga y revisión</span><span lang="en">Recharge & check</span></small><span class="p">45 €</span></div>
+ </div></section>
+<section><div class="itv"><div><b><span lang="es">Pre-ITV gratis</span><span lang="en">Free pre-MOT check</span></b>
+ <p><span lang="es">Revisamos luces, frenos, holguras y emisiones antes de que pases la ITV. Si hay que arreglar algo, te lo decimos con precio cerrado.</span><span lang="en">We check lights, brakes, play and emissions before your inspection. If anything needs fixing, you get a fixed price.</span></p></div><div class="ph" role="img" aria-label="Mecánico"></div></div></section>
+<section><h2><span lang="es">Por qué nosotros</span><span lang="en">Why us</span></h2>
+ <ul class="check"><li><span lang="es">Garantía de 12 meses en reparaciones</span><span lang="en">12-month warranty on repairs</span></li><li><span lang="es">Coche de cortesía bajo reserva</span><span lang="en">Courtesy car on request</span></li><li><span lang="es">Te mandamos fotos del arreglo por WhatsApp</span><span lang="en">We send you photos of the repair on WhatsApp</span></li></ul></section>
+<section id="horario"><h2><span lang="es">Horario</span><span lang="en">Hours</span></h2><span class="st" data-hours='{"1": [["08:00", "13:30"], ["15:30", "19:00"]], "2": [["08:00", "13:30"], ["15:30", "19:00"]], "3": [["08:00", "13:30"], ["15:30", "19:00"]], "4": [["08:00", "13:30"], ["15:30", "19:00"]], "5": [["08:00", "13:30"], ["15:30", "19:00"]]}'>·</span><table class="hrs"><tr data-day="1"><td><span lang="es">Lunes</span><span lang="en">Monday</span></td><td>08:00–13:30 · 15:30–19:00</td></tr><tr data-day="2"><td><span lang="es">Martes</span><span lang="en">Tuesday</span></td><td>08:00–13:30 · 15:30–19:00</td></tr><tr data-day="3"><td><span lang="es">Miércoles</span><span lang="en">Wednesday</span></td><td>08:00–13:30 · 15:30–19:00</td></tr><tr data-day="4"><td><span lang="es">Jueves</span><span lang="en">Thursday</span></td><td>08:00–13:30 · 15:30–19:00</td></tr><tr data-day="5"><td><span lang="es">Viernes</span><span lang="en">Friday</span></td><td>08:00–13:30 · 15:30–19:00</td></tr><tr data-day="6"><td><span lang="es">Sábado</span><span lang="en">Saturday</span></td><td><span lang="es">Cerrado</span><span lang="en">Closed</span></td></tr><tr data-day="0"><td><span lang="es">Domingo</span><span lang="en">Sunday</span></td><td><span lang="es">Cerrado</span><span lang="en">Closed</span></td></tr></table>
+ <p>Polígono La Juaida, C. Torno, 12 · 04240 Viator (Almería)</p></section>
+<footer>Talleres Hermanos Gil · <span lang="es">web de ejemplo</span><span lang="en">sample website</span></footer>
+<a class="wa" href="https://wa.me/34600000000?text=Hola%20Talleres%20Gil"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2s-1 .3-3.4-.7a11.6 11.6 0 0 1-4.5-4c-.3-.5-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 .9c.3.2.5.2.6.4.1.1.1.7-.1 1.3z"/></svg> WhatsApp</a>
+<div class="demo-tag">Demo</div>
+</body></html>

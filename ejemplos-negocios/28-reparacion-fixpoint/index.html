@@ -1,0 +1,68 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>(function(){var l=((navigator.languages&&navigator.languages[0])||navigator.language||'es').toLowerCase();var es=/^(es|ca|gl|eu)\b/.test(l);var d=document.documentElement;d.setAttribute('data-l',es?'es':'en');d.lang=es?'es':'en';
+document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('[data-hours]').forEach(function(el){try{var h=JSON.parse(el.getAttribute('data-hours'));var n=new Date(),day=n.getDay(),m=n.getHours()*60+n.getMinutes(),open=false;(h[day]||[]).forEach(function(r){var a=r[0].split(':'),b=r[1].split(':');var s=+a[0]*60+ +a[1],e=+b[0]*60+ +b[1];if(e<=s)e+=1440;if((m>=s&&m<e)||(m+1440>=s&&m+1440<e))open=true;});var p=(h[(day+6)%7]||[]);p.forEach(function(r){var a=r[0].split(':'),b=r[1].split(':');var s=+a[0]*60+ +a[1],e=+b[0]*60+ +b[1];if(e<=s&&m<e)open=true;});el.classList.add(open?'is-open':'is-closed');el.textContent=open?(es?'Abierto ahora':'Open now'):(es?'Cerrado ahora':'Closed now');}catch(e){}});
+var t=new Date().getDay();document.querySelectorAll('[data-day]').forEach(function(r){if(+r.getAttribute('data-day')===t)r.classList.add('today')});});})();</script>
+<style>html[data-l="es"] [lang="en"],html[data-l="en"] [lang="es"]{display:none!important}
+.demo-tag{position:fixed;left:max(10px,env(safe-area-inset-left));bottom:max(10px,env(safe-area-inset-bottom));z-index:9999;font:600 9px/1 system-ui,-apple-system,sans-serif;letter-spacing:.16em;text-transform:uppercase;padding:5px 7px;border-radius:3px;background:rgba(20,20,20,.55);color:#fff;opacity:.7;pointer-events:none}</style>
+
+<title>FixPoint · Reparación de móviles</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Exo+2:wght@400;600&display=swap">
+<style>
+:root{--bg:#0b1020;--panel:#121a33;--line:#24305a;--acc:#4cc9f0;--acc2:#7b61ff;--ok:#3ddc97;--txt:#e6ecff;--mute:#8b97c2}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.55 "Exo 2",system-ui,sans-serif;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:34px 34px;background-attachment:fixed}
+nav{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;background:rgba(11,16,32,.9);border-bottom:1px solid var(--line)}
+.lg{font:700 20px "Chakra Petch"}.lg span{color:var(--acc)}
+.hero{padding:26px 16px;max-width:960px;margin:0 auto;display:grid;gap:20px}
+@media(min-width:780px){.hero{grid-template-columns:1fr 1fr;align-items:center}}
+.k{font:500 13px "Chakra Petch";color:var(--acc);letter-spacing:.2em;text-transform:uppercase}
+h1{font:700 clamp(38px,11vw,64px)/1 "Chakra Petch";margin:8px 0 12px}
+h1 em{font-style:normal;background:linear-gradient(90deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.ph{aspect-ratio:4/3;border-radius:16px;background:url(https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?auto=format&fit=crop&w=1000&q=70) center/cover;border:1px solid var(--line);position:relative}
+.ph::after{content:"";position:absolute;inset:0;border-radius:16px;background:linear-gradient(135deg,rgba(76,201,240,.25),rgba(123,97,255,.25))}
+section{max-width:960px;margin:0 auto;padding:30px 16px}
+h2{font:700 28px "Chakra Petch";margin:0 0 14px}
+.calc{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px}
+.calc label{display:block;font:500 13px "Chakra Petch";color:var(--mute);letter-spacing:.12em;text-transform:uppercase;margin:12px 0 6px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opts button{background:transparent;border:1px solid var(--line);color:var(--txt);border-radius:10px;padding:10px 14px;font:600 15px "Exo 2";cursor:pointer}
+.opts button[aria-pressed="true"]{border-color:var(--acc);background:rgba(76,201,240,.12);color:var(--acc)}
+.res{margin-top:18px;display:flex;justify-content:space-between;align-items:flex-end;gap:12px;border-top:1px dashed var(--line);padding-top:16px}
+.res b{font:700 40px "Chakra Petch";color:var(--ok)}.res small{color:var(--mute);display:block}
+.go{display:flex;gap:10px;justify-content:center;align-items:center;margin-top:16px;background:linear-gradient(90deg,var(--acc),var(--acc2));color:#071021;text-decoration:none;font:700 17px "Chakra Petch";padding:15px;border-radius:12px}
+.feat{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}@media(min-width:760px){.feat{grid-template-columns:repeat(4,1fr)}}
+.feat div{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px}.feat b{display:block;font-family:"Chakra Petch";color:var(--acc)}
+.hrs{width:100%;border-collapse:collapse}.hrs td{padding:8px 0;border-bottom:1px solid var(--line)}.hrs td+td{text-align:right;font-family:"Chakra Petch"}
+.today td{color:var(--acc)}
+.st{display:inline-block;font:500 14px "Chakra Petch";border-radius:6px;padding:3px 10px;margin-bottom:10px}.st.is-open{background:rgba(61,220,151,.15);color:var(--ok)}.st.is-closed{background:rgba(255,99,132,.15);color:#ff7a93}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px}
+footer{text-align:center;font-size:12.5px;color:var(--mute);padding:20px 16px 80px}
+</style></head><body>
+<nav><span class="lg">Fix<span>Point</span></span><span style="font-size:13px;color:var(--mute)">Almería</span></nav>
+<div class="hero"><div><div class="k">// <span lang="es">reparación exprés</span><span lang="en">express repair</span></div>
+ <h1><span lang="es">Tu móvil arreglado <em>en 1 hora</em></span><span lang="en">Phone fixed <em>in 1 hour</em></span></h1>
+ <p><span lang="es">Pantallas, baterías, conectores y daños por agua. iPhone, Samsung, Xiaomi y más. 6 meses de garantía.</span><span lang="en">Screens, batteries, ports and water damage. iPhone, Samsung, Xiaomi and more. 6-month warranty.</span></p></div>
+ <div class="ph" role="img" aria-label="Electrónica"></div></div>
+<section><h2><span lang="es">Calcula tu precio</span><span lang="en">Get your price</span></h2>
+ <div class="calc">
+  <label><span lang="es">Marca</span><span lang="en">Brand</span></label><div class="opts" id="br"><button data-v="apple" aria-pressed="true">iPhone</button><button data-v="samsung" aria-pressed="false">Samsung</button><button data-v="xiaomi" aria-pressed="false">Xiaomi</button><button data-v="otro" aria-pressed="false"><span lang="es">Otra</span><span lang="en">Other</span></button></div>
+  <label><span lang="es">Avería</span><span lang="en">Problem</span></label><div class="opts" id="fx"><button data-v="pantalla" aria-pressed="true"><span lang="es">Pantalla</span><span lang="en">Screen</span></button><button data-v="bateria" aria-pressed="false"><span lang="es">Batería</span><span lang="en">Battery</span></button><button data-v="carga" aria-pressed="false"><span lang="es">Conector de carga</span><span lang="en">Charging port</span></button><button data-v="camara" aria-pressed="false"><span lang="es">Cámara</span><span lang="en">Camera</span></button></div>
+  <div class="res"><div><small><span lang="es">Precio orientativo</span><span lang="en">Estimated price</span></small><b id="pr">—</b></div><small id="tm"></small></div>
+  <a class="go" id="go" href="https://wa.me/34600000000?text=Hola%20FixPoint"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2s-1 .3-3.4-.7a11.6 11.6 0 0 1-4.5-4c-.3-.5-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 .9c.3.2.5.2.6.4.1.1.1.7-.1 1.3z"/></svg> <span lang="es">Reservar reparación</span><span lang="en">Book repair</span></a>
+ </div></section>
+<section><div class="feat"><div><b>60 min</b><span lang="es">la mayoría de arreglos</span><span lang="en">most repairs</span></div><div><b>6 <span lang="es">meses</span><span lang="en">months</span></b><span lang="es">de garantía</span><span lang="en">warranty</span></div><div><b>0 €</b><span lang="es">diagnóstico</span><span lang="en">diagnosis</span></div><div><b>♻️</b><span lang="es">reciclamos tu pieza vieja</span><span lang="en">we recycle old parts</span></div></div></section>
+<section><div class="box"><h2><span lang="es">Horario</span><span lang="en">Hours</span></h2><span class="st" data-hours='{"1": [["10:00", "14:00"], ["17:00", "21:00"]], "2": [["10:00", "14:00"], ["17:00", "21:00"]], "3": [["10:00", "14:00"], ["17:00", "21:00"]], "4": [["10:00", "14:00"], ["17:00", "21:00"]], "5": [["10:00", "14:00"], ["17:00", "21:00"]], "6": [["10:00", "14:00"]]}'>·</span><table class="hrs"><tr data-day="1"><td><span lang="es">Lunes</span><span lang="en">Monday</span></td><td>10:00–14:00 · 17:00–21:00</td></tr><tr data-day="2"><td><span lang="es">Martes</span><span lang="en">Tuesday</span></td><td>10:00–14:00 · 17:00–21:00</td></tr><tr data-day="3"><td><span lang="es">Miércoles</span><span lang="en">Wednesday</span></td><td>10:00–14:00 · 17:00–21:00</td></tr><tr data-day="4"><td><span lang="es">Jueves</span><span lang="en">Thursday</span></td><td>10:00–14:00 · 17:00–21:00</td></tr><tr data-day="5"><td><span lang="es">Viernes</span><span lang="en">Friday</span></td><td>10:00–14:00 · 17:00–21:00</td></tr><tr data-day="6"><td><span lang="es">Sábado</span><span lang="en">Saturday</span></td><td>10:00–14:00</td></tr><tr data-day="0"><td><span lang="es">Domingo</span><span lang="en">Sunday</span></td><td><span lang="es">Cerrado</span><span lang="en">Closed</span></td></tr></table>
+ <p>Av. de Federico García Lorca, 101 · 04005 Almería</p></div></section>
+<footer>FixPoint · <span lang="es">web de ejemplo</span><span lang="en">sample website</span></footer>
+<div class="demo-tag">Demo</div>
+<script>
+(function(){var P={apple:{pantalla:89,bateria:49,carga:45,camara:69},samsung:{pantalla:79,bateria:45,carga:39,camara:59},xiaomi:{pantalla:59,bateria:35,carga:29,camara:45},otro:{pantalla:55,bateria:35,carga:29,camara:45}};
+var T={pantalla:'45 min',bateria:'30 min',carga:'40 min',camara:'50 min'};
+var N={apple:'iPhone',samsung:'Samsung',xiaomi:'Xiaomi',otro:'otra marca'};
+var NF={pantalla:'pantalla',bateria:'batería',carga:'conector de carga',camara:'cámara'};
+var es=document.documentElement.dataset.l!=='en';
+function cur(id){return document.querySelector('#'+id+' [aria-pressed="true"]').dataset.v}
+function up(){var b=cur('br'),f=cur('fx');document.getElementById('pr').textContent=(es?'desde ':'from ')+P[b][f]+' €';document.getElementById('tm').textContent='⏱ '+T[f];
+document.getElementById('go').href='https://wa.me/34600000000?text='+encodeURIComponent('Hola FixPoint, quería reparar la '+NF[f]+' de mi '+N[b]+'. Modelo: ');}
+['br','fx'].forEach(function(id){document.querySelectorAll('#'+id+' button').forEach(function(btn){btn.onclick=function(){document.querySelectorAll('#'+id+' button').forEach(function(x){x.setAttribute('aria-pressed',x===btn)});up()}})});up();})();
+</script>
+</body></html>

@@ -1,0 +1,61 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>(function(){var l=((navigator.languages&&navigator.languages[0])||navigator.language||'es').toLowerCase();var es=/^(es|ca|gl|eu)\b/.test(l);var d=document.documentElement;d.setAttribute('data-l',es?'es':'en');d.lang=es?'es':'en';
+document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('[data-hours]').forEach(function(el){try{var h=JSON.parse(el.getAttribute('data-hours'));var n=new Date(),day=n.getDay(),m=n.getHours()*60+n.getMinutes(),open=false;(h[day]||[]).forEach(function(r){var a=r[0].split(':'),b=r[1].split(':');var s=+a[0]*60+ +a[1],e=+b[0]*60+ +b[1];if(e<=s)e+=1440;if((m>=s&&m<e)||(m+1440>=s&&m+1440<e))open=true;});var p=(h[(day+6)%7]||[]);p.forEach(function(r){var a=r[0].split(':'),b=r[1].split(':');var s=+a[0]*60+ +a[1],e=+b[0]*60+ +b[1];if(e<=s&&m<e)open=true;});el.classList.add(open?'is-open':'is-closed');el.textContent=open?(es?'Abierto ahora':'Open now'):(es?'Cerrado ahora':'Closed now');}catch(e){}});
+var t=new Date().getDay();document.querySelectorAll('[data-day]').forEach(function(r){if(+r.getAttribute('data-day')===t)r.classList.add('today')});});})();</script>
+<style>html[data-l="es"] [lang="en"],html[data-l="en"] [lang="es"]{display:none!important}
+.demo-tag{position:fixed;left:max(10px,env(safe-area-inset-left));bottom:max(10px,env(safe-area-inset-bottom));z-index:9999;font:600 9px/1 system-ui,-apple-system,sans-serif;letter-spacing:.16em;text-transform:uppercase;padding:5px 7px;border-radius:3px;background:rgba(20,20,20,.55);color:#fff;opacity:.7;pointer-events:none}</style>
+
+<title>Molienda · Café de especialidad</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;700&display=swap">
+<style>
+:root{--esp:#2a1d17;--crema:#e9dccb;--menta:#cfe6dc;--leche:#fafaf7;--grano:#8a5a3b}
+*{box-sizing:border-box}body{margin:0;background:var(--leche);color:var(--esp);font:16px/1.6 "DM Sans",system-ui,sans-serif}
+.w{max-width:680px;margin:0 auto;padding:0 20px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;font-weight:700;letter-spacing:.2em;font-size:12px;text-transform:uppercase}
+.hero{display:grid;gap:18px;padding:10px 20px 40px;max-width:980px;margin:0 auto}
+@media(min-width:780px){.hero{grid-template-columns:1.1fr 1fr;align-items:center}}
+h1{font:400 clamp(48px,14vw,96px)/.95 "DM Serif Display",serif;margin:0}h1 em{color:var(--grano)}
+.circle{aspect-ratio:1;border-radius:50%;background:url(https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=70) center/cover;max-width:420px;width:100%;justify-self:center;outline:10px solid var(--menta);outline-offset:-10px}
+.lead{font-size:18px;max-width:34ch}
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #d8cfc3;border-bottom:1px solid #d8cfc3;margin:10px 0}
+.metrics div{padding:16px 6px;text-align:center}.metrics b{display:block;font:400 34px "DM Serif Display",serif}.metrics small{font-size:12px;color:#7b6a5e}
+section{padding:36px 0}
+h2{font:400 34px "DM Serif Display",serif;margin:0 0 14px}
+.menu{display:grid;gap:2px}
+.row{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:12px 0;border-bottom:1px dotted #cdbfae}
+.row span:first-child{font-weight:500}.row small{display:block;color:#806f62;font-weight:400}
+.row .p{font-variant-numeric:tabular-nums}
+.origin{background:var(--esp);color:var(--crema);padding:28px 20px;border-radius:18px;display:grid;gap:14px}
+.origin .img{aspect-ratio:16/10;border-radius:12px;background:url(https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=900&q=70) center/cover}
+.tag{display:inline-block;background:var(--menta);color:var(--esp);font-size:12px;padding:3px 10px;border-radius:99px;font-weight:700}
+.hrs{width:100%;border-collapse:collapse}.hrs td{padding:8px 0;border-bottom:1px solid #eee4d8}.hrs td+td{text-align:right}
+.today td{font-weight:700}
+.st{display:inline-block;margin-bottom:8px;font-size:13px;font-weight:700}.st.is-open{color:#2e7d5b}.st.is-closed{color:#a0482f}
+.st::before{content:"● "}
+.wa{display:flex;justify-content:center;gap:10px;align-items:center;background:var(--esp);color:var(--leche);text-decoration:none;padding:16px;border-radius:999px;font-weight:700;margin:16px 0}
+footer{text-align:center;font-size:13px;color:#8c7d70;padding:20px 0 70px}
+</style></head><body>
+<nav><span>Molienda</span><span>Almería</span></nav>
+<div class="hero">
+ <div><h1><span lang="es">Café que se <em>toma</em> despacio</span><span lang="en">Coffee you <em>take</em> slowly</span></h1>
+  <p class="lead"><span lang="es">Tostamos en pequeños lotes y lo preparamos al momento: espresso, filtro y brunch los fines de semana.</span><span lang="en">Small-batch roasted, brewed to order: espresso, filter coffee and weekend brunch.</span></p></div>
+ <div class="circle" role="img" aria-label="Cappuccino"></div>
+</div>
+<div class="w">
+ <div class="metrics"><div><b>3</b><small><span lang="es">orígenes</span><span lang="en">origins</span></small></div><div><b>92°</b><small><span lang="es">agua del V60</span><span lang="en">V60 water</span></small></div><div><b>18 g</b><small><span lang="es">doble espresso</span><span lang="en">double shot</span></small></div></div>
+ <section><h2><span lang="es">La carta</span><span lang="en">Menu</span></h2>
+  <div class="menu">
+   <div class="row"><span>Espresso<small><span lang="es">Brasil Cerrado, notas de cacao</span><span lang="en">Brazil Cerrado, cocoa notes</span></small></span><span class="p">1,60 €</span></div>
+   <div class="row"><span>Flat white<small><span lang="es">Leche entera o de avena</span><span lang="en">Whole or oat milk</span></small></span><span class="p">2,80 €</span></div>
+   <div class="row"><span>V60<small><span lang="es">Etiopía Guji, floral</span><span lang="en">Ethiopia Guji, floral</span></small></span><span class="p">3,50 €</span></div>
+   <div class="row"><span><span lang="es">Tostada de masa madre</span><span lang="en">Sourdough toast</span><small><span lang="es">Tomate, AOVE de Tabernas y sal</span><span lang="en">Tomato, local olive oil, salt</span></small></span><span class="p">3,20 €</span></div>
+   <div class="row"><span>Brunch Molienda<small><span lang="es">Sáb y dom · huevos, aguacate, zumo y café</span><span lang="en">Sat & Sun · eggs, avocado, juice and coffee</span></small></span><span class="p">11 €</span></div>
+  </div></section>
+ <div class="origin"><span class="tag"><span lang="es">Café del mes</span><span lang="en">Coffee of the month</span></span><div class="img" role="img" aria-label="Café"></div><p style="margin:0"><span lang="es">Colombia Huila, lavado. Panela, naranja y final largo. También en bolsa de 250 g para llevar a casa.</span><span lang="en">Colombia Huila, washed. Panela, orange and a long finish. Also sold in 250 g bags.</span></p></div>
+ <section><h2><span lang="es">Horario</span><span lang="en">Opening hours</span></h2><span class="st" data-hours='{"1": [["08:00", "14:00"]], "2": [["08:00", "14:00"]], "3": [["08:00", "14:00"]], "4": [["08:00", "14:00"]], "5": [["08:00", "14:00"]], "6": [["09:30", "14:30"]], "0": [["09:30", "14:30"]]}'>·</span><table class="hrs"><tr data-day="1"><td><span lang="es">Lunes</span><span lang="en">Monday</span></td><td>08:00–14:00</td></tr><tr data-day="2"><td><span lang="es">Martes</span><span lang="en">Tuesday</span></td><td>08:00–14:00</td></tr><tr data-day="3"><td><span lang="es">Miércoles</span><span lang="en">Wednesday</span></td><td>08:00–14:00</td></tr><tr data-day="4"><td><span lang="es">Jueves</span><span lang="en">Thursday</span></td><td>08:00–14:00</td></tr><tr data-day="5"><td><span lang="es">Viernes</span><span lang="en">Friday</span></td><td>08:00–14:00</td></tr><tr data-day="6"><td><span lang="es">Sábado</span><span lang="en">Saturday</span></td><td>09:30–14:30</td></tr><tr data-day="0"><td><span lang="es">Domingo</span><span lang="en">Sunday</span></td><td>09:30–14:30</td></tr></table>
+  <a class="wa" href="https://wa.me/34600000000?text=Hola%20Molienda%2C%20%C2%BFten%C3%A9is%20el%20caf%C3%A9%20del%20mes%20en%20bolsa%3F"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2s-1 .3-3.4-.7a11.6 11.6 0 0 1-4.5-4c-.3-.5-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 .9c.3.2.5.2.6.4.1.1.1.7-.1 1.3z"/></svg> <span lang="es">Escríbenos por WhatsApp</span><span lang="en">Message us on WhatsApp</span></a>
+  <p style="text-align:center">C. Real, 30 · 04002 Almería</p></section>
+</div>
+<footer>Molienda Café · <span lang="es">web de ejemplo</span><span lang="en">sample website</span></footer>
+<div class="demo-tag">Demo</div>
+</body></html>
